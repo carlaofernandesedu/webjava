@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,6 +67,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="hello.js" />
+    <Content Include="index.html" />
+    <Content Include="namespace.html" />
+    <Content Include="namespaceobjetodois.js" />
+    <Content Include="namespaceobjetoum.js" />
+    <Content Include="nulaveis.html" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -75,6 +82,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="tiposnulaveis.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
