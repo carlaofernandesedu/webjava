@@ -1,0 +1,408 @@
+Visual Design in web development is a broad topic. It combines typography, color theory, graphics, animation, and page layout to help deliver a site's message. The definition of good design is a well-discussed subject, with many books on the theme.
+Topico amplo= 
+Combina Tipografia 
+Teoria das Cores 
+Graficos Animacoes 
+HTML - fornece estrturua e semantica 
+CSS controls - layout e appearance 
+Ferramentas basicas para criar visuais design..
+#Alinhamento de texto 
+text-align justify 
+#Tamanhos width height 
+#Negrito = font-weight: bold; <b>
+#Sublinhado = text-decoration:none; <u> 
+#Italico = font-style:italic; <em>
+#Strikethrough = text-dcoration:line-through; <del>  
+#Linha horizontais <hr> 
+#mecanismo de opcacidade nas cores... nao somente solido background-color:rgba(3,3,3,0.5)
+#tamanho da font = Relacao entre os cabecalho e paragrafos... 
+#Box-shadow = Sombras no Elementos ... 
+offset-x quao longe sombra do elemento horizontal 
+offset-y quao longe sombra do elemennto vertical 
+blur-radius spread-radius color 
+http://elektronotdienst-nuernberg.de/bugs/box-shadow_inset.html
+Ter que estudar mais a aplicacao desse recurso... 
+http://elektronotdienst-nuernberg.de/bugs/box-shadow_inset.html
+#DECREASE OPACITY..  opacity (fique 0)
+Parei no text-transform Property
+#text-transform : Uppercase.. initial Capitalize lowercase
+#conceito de consistencia entre os elementos de acordo com H1 seções alterando o tamanho do fonte 
+#font-weight uso de font-weight :600 largura de cada letra 
+#line-height peso de cada linha no paragrafo... espacamento..vertical
+Conceito de PSEUDO CLASSES 
+A pseudo-class is a keyword that can be added to selectors, in order to select a specific state of the element.
+uma palavra chave usada no seletor para modificar o estado do elemento .. 
+adicionar a:hover{color:blue;}
+
+#Conceito Importantes CSS BOX MODEL 
+Trata cada elemento com uma caixa 
+Tipos Block-level automatica iniciam numa nova linha (exemplo divs headings,paragraphs) 
+Inline Items = permanecem dentro do elemento que o circunda.. (ex: img spans)
+Layout: NORMAL FLOW 
+#RELATIVE quando é alterado para esse passamos a ter mudanca na posicao do elemento
+quanto ele deve mover relativamente dentro do norma flow da pagina..
+left right ou top bottom 
+O documento tem um normal-flow..
+Comandos tem a relacao inversa bottom ira subir e left ira fazer ir para a direita..
+position:relative bottom:15px; left:10px;
+#ABSOLUTE ele trava a posicao em relacao ao elemento mais proximo... 
+item posicionado.. se nao estiver o item como item posicionado ele ira usar a referencia do body.. por exemplo..
+Conceitos nao ficaram bem explicados ...
+#FIXED
+Elementos nao movem quando fazem scrolls 
+Remove o elemento do normal-flow.. outros itens nao percebem onde ele esta posicionado...
+Outro elemento é o float 
+left ou right == position flot para a direitra ou esquerda do elemento pai.. 
+#Conceito de z-index
+Deve ser um numero inteiro Altos valores para frente da pilha
+#centraliza o item horizontalmente 
+COLOCAR margin:auto para imagens.. para blocks display:block 
+
+#CONCEITO DE TEORIA DAS CORES 
+Harmonia visual ... 
+Concieto de Cores Complementares = junto formam o cinza ... Roda de Cores 
+Identificar as cores .. Opostas.. combinar bem... 
+RGB quantidade de cada um deles ... 
+RedGreenBlue cores primarias  Secondarias cores misturando
+Cyan magenta e amarelo.. c(G+B) m(R+B) y(R+G) 
+e O Complemento é a que nao foi usada na criacao.... magenta complementar Verde 
+Terciaria Cores = resultado cor primaria com uma com secudanria vizinha...
+Total de Doze Cores.... 
+# split-complementary color scheme. 
+This scheme starts with a base color, then pairs it with the two colors that are adjacent to its complement. The three colors provide strong visual contrast in a design, but are more subtle than using two complementary colors.
+Se for usar um esquema complementar .. duas cores ... uma é predominante 
+e outra destaca alguns itens.... 
+# Saturation cinza.. // Lightness // branco e preto 
+# HSL (0,100,50)
+hsl(0, 100%, 50%) RED hsl(60, 100%, 50%) YELLOW
+Conceito de TONE ao alterarmos o Saturacao e Brilho.. procuramos opcoes complementares.. 
+#Criando um gradual CSS LINEAR GRADIENT....
+Applying a color on HTML elements is not limited to one flat hue. CSS provides the ability to use color transitions, otherwise known as gradients, on elements. This is accessed through the background property's linear-gradient() function. Here is the general syntax
+background:linear-gradient(35deg,#CCFFFF,#FFCCCC);
+parei 
+#Use a css linear gradient STRIPED ELEMENT Elemento despojado...
+repeating-linear-gradient() similiar repete o padrao aplicado em uma area 
+angle value is the direction of the gradient
+color stop mark transicao entre dado um percentual ou numero de pixels..
+  background: repeating-linear-gradient(
+      45deg,
+      yellow 0px,
+      yellow 40px,
+      black 40px,
+      black 80px
+    );
+#Create texture by adding a subtle 
+subtle pattern = padrao sutil ... estudar === 
+#CSS Transform scale property modificar o tamanho de elemento
+Escala do elemento doubles the size 
+Conceito de position e left e right ... 
+transform:scale(1.5);
+margin:50 auto   (centraliza o objeto e indica o tamanho da margin)
+#CSS transform scale um elemento no hover.. 
+hover flutuar.. 
+div:hover:transform:scale(1.1); 
+#CSS transform property skewX to skew an Element Along the X-Axis 
+skews = distorcer .. degree = grau  angle = angulo 
+transform:skewX(24deg); 
+#CSS transform property skewY
+transform: skewY(-10deg);
+#Create a Graphic using CSS 
+  background-color: transparent;
+  border-radius: 50px;
+  box-shadow: 25px 10px 0px 0px blue; 
+Criando a lua crescente ... 
+#Criando mais completas formas using CSS and HTML 
+Forma de Coracao ... 
+Criar com o proprio HTML e CSS ... 
+SELETORES BEFORE E AFTER ... 
+APLICAM ANTES E DEPOIS NO ELEMENTO ....
+Conceito de Rotate iguala-se como skewY skewX 
+.heart {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: pink;
+  height: 50px;
+  width: 50px;
+  transform:rotate(-45deg);
+}
+.heart:after {
+  background-color: pink;
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0px;
+  left: 25px;
+}
+.heart:before {
+  content:'' ;
+  background-color: pink;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 0px;
+}
+#Learn How the CSS @keyframes animations properties funcionam 
+Controles de Animantion deve, dozer como comportar o @keyframes rule 
+Oito propriedades de animacao no TOTAL ... 
+animation-name o nome da animacao que sera usado @keyframes rule 
+animation-duration cumprimento do tamanho de tempo da animacao...
+Especificos FRAMES ... percentula 0% a 100% 
+ #rect{
+    animation-name:rainbow;
+    animation-duration:4s;
+  }
+  @keyframes rainbow
+  {
+    0%
+    {
+      background-color:blue;
+    }
+    50%
+    {
+      background-color:green;
+    }
+    100%
+    {
+      background-color:yellow;
+    }
+#use css animation to change hover state 
+#modify fill mode of an animation 
+Existe um conceito de aplicar o elemento apos a duracao da animacacao...
+animation-fill-mode:fowards;
+ animation-name: background-color;
+    animation-duration: 500ms;
+   animation-fill-mode:forwards; 
+A aplicacao permanece no botão ... 
+#Create o conceito de movimentacao= create movement using CSS animation 
+When elements have a specified position, such as fixed or relative, the CSS offset properties right, left, top, and bottom can be used in animation rules to create movement.
+As shown in the example below, you can push the item downwards then upwards by setting the top property of the 50% keyframe to 50px, but having it set to 0px for the first (0%) and the last (100%) keyframe.   
+Modificacoes de Top e Left 
+@keyframes rainbow {
+  0% {
+    background-color: blue;
+    top: 0px;
+    left:0px     
+  }
+  50% {
+    background-color: green;
+    top: 50px;
+    left:25px;
+  }
+  100% {
+    background-color: yellow;
+    top: 0px;
+    left:-25px;
+  }  
+#Create a visual directiorn por Fading 
+Fade = enfraquecer...
+For this challenge, you'll change the opacity of an animated element so it gradually fades as it reaches the right side of the screen.
+FADE 
+ #ball {
+    width: 70px;
+    height: 70px;
+    margin: 50px auto;
+    position: fixed;
+    left: 20%;
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+
+  @keyframes fade {
+    50% {
+      left: 60%;
+      opacity:0.1;
+    }
+  }
+#Animate Elements Continually Using infinite Animation Count 
+Alem das propriedades pode ter animation-iteration-count 
+quanta vezes loop a animation 
+animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: 3;
+animation-iteration-count property to infinite.
+#Make a CSS HeartBreak 
+modificando o tamanho e cor de fundo..
+<style>
+  .back {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation-name: backdiv;
+    animation-duration: 1s; 
+    animation-iteration-count:infinite;
+  }
+
+  .heart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+    animation-name: beat;
+    animation-duration: 1s;
+    animation-iteration-count:infinite;
+  }
+  .heart:after {
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  .heart:before {
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
+
+  @keyframes backdiv {
+    50% {
+      background: #ffe6f2;
+    }
+  }
+
+  @keyframes beat {
+    0% {
+      transform: scale(1) rotate(-45deg);
+    }
+    50% {
+      transform: scale(0.6) rotate(-45deg);
+    }
+  }
+
+</style>
+<div class="back"></div>
+<div class="heart"></div>
+#animacao com estrelas 
+<style>
+  .stars {
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    animation-iteration-count: infinite;
+  }
+
+  .star-1 {
+    margin-top: 15%; 
+    margin-left: 60%;
+    animation-name: twinkle-1;
+    animation-duration: 1s;
+  }
+
+  .star-2 {
+    margin-top: 25%;
+    margin-left: 25%;
+    animation-name: twinkle-2;
+    animation-duration: 1s;
+  }
+
+  @keyframes twinkle-1 {
+    50% {
+      transform: scale(0.5);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes twinkle-2 {
+    20% {
+      transform: scale(0.5);
+      opacity: 0.5;
+    }
+  }
+
+  #back {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6);
+  }
+</style>
+
+<div id="back"></div>
+<div class="star-1 stars"></div>
+<div class="star-2 stars"></div>
+#TRocando o tempo de duração alternando muda a taxa de intervalo...
+#Change animation timing width keywords
+animation-timing-function outra proprieade 
+o quanto rapido modifica sobre a duracao...
+opçoes populares: linear,ease-out,
+animation-timing-function:cubic-bezier (0.25,0.25,0.75,0.75);
+X = tempo de escalha  Y = percentual o quanto foi alterado...
+#ease-out 
+animation-timing-function: cubic-bezier(0,0,0.58,1)
+<style>
+  .balls {
+    border-radius: 50%;
+    top: 249px;
+    position: fixed;  
+    width: 50px;
+    height: 50px;
+    top: 60%;
+    animation-name: jump;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  #red {
+    background: red;
+    left: 25%;
+    animation-timing-function: linear;
+  }
+  #blue {
+    background: blue;
+    left: 50%;
+    animation-timing-function: ease-out;
+  }
+  #green {
+    background: green;
+    left: 75%;
+    animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+  }
+
+  @keyframes jump {
+    50% {
+      top: 10%;
+    }
+  }
+</style>
+<div class="balls" id="red"></div>
+<div class="balls" id="blue"></div>
+<div class="balls" id="green"></div>
+https://beta.freecodecamp.org/en/challenges/applied-accessibility/introduction-to-the-applied-accessibility-challenges
+ 	

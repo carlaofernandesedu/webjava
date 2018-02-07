@@ -1,0 +1,78 @@
+CursoDeJavascript 
+Índice
+A pressa passa e a merda fica Introdução Histórica (e lição de vida)
+JavaScript un zero un ¡Hola Mundo!
+Como declarar uma variável Sério mesmo, como declarar uma variável!
+Conversão de tipos e falsy values
+Null e nullable
+Namespaces
+Number
+String
+Interpolação de variáveis
+Array
+RegExp
+Function
+Operadores rest e spread
+Como declarar objetos Se vc já achou as variáveis confusas...
+Object
+Objetos antigos
+Os muitos laços for
+Ado, a ado, cada um no seu quadrado
+Escopo das variáveis
+Variable Hoisting
+Módulos simples
+Closures
+Colocando coisas dentro do escopo e type aliasing
+Resolvendo var e corrigindo closures
+Tirando coisas de dentro do escopo
+
+#06/02/2018 - Aula 01 - Javascript 
+ECMA International para 
+Tecnologia de Script Manipular o conteudo , alterar a apresentacao,interagir com o usuario ,etc 
+interacao com linguagens dinamicas
+#06/02/2018 - Aula 02 - Javascript 
+Exemplo de Hello World 
+#06/02/2018 - Aula 03 - Browser 
+Interpretar a lingaguem de javascript 
+Oferecer ao javascript referencias aos elementos do browser... Auxilio do Browser .. Deixas as referencias do Browser.. 
+Conceito de Objetos propriedades e Metodos.. Objetos da vida .. caracteristicas... atributos e metodos acoes funcoes... 
+Pessoa = altura peso profissao e andar dormir trabalhar... 
+Objetos internos da Lingaguem (string ,date, number)
+Objeto Especificos do Browser ( window ,documento)
+Objetos Personalizados() via programados  
+#06/02/2018 - Aula 04- Manipuladores de Eventos 
+
+21:18 
+#06/02/2018 - Aula 05 - Variavel 
+Sintaxe ; nome = ""; _variavel ou variavel ou $variavel 
+Tipos Primitivos de variaveis = number string  boolean
+letras maiusculas criacao objetos ou constantes.. 
+tem por forma de escrita IDADE como constante 
+Pessoa (Objeto).. 
+Palavras reservadas... nao devem ser nomeadas ... 
+#06/02/2018 Constantes 
+Scape de String 
+undefined , null , Nan e Infinty 
+Constantes 
+Conceito de scape aspas dupla e aspa simples 
+"R'dddd"
+"R\"ddddd"
+"R\\ddddd"  caracter \ paa representar.. 
+\n quebra de linha 
+\n \u7231  caracteres unicode 
+UNICODE.ORG 
+Tipo Primitivos == undefined  um tipo null tipo Nan tipo infinty 
+uma valor maior positivo ou negativo... 
+Infinity como sendo uma constante... 
+
+var nome; undefined;
+nome = null;
+nome = 3 * "pessoas";
+nome = 2 + Infinity;
+
+#AULA 07 Camadas 
+Construindo em arquivos separados 
+Conceitos de Camdas 
+Adicionar Inlne Incorporado Externo 
+Comentarios Linha Unica e Multiplas Linhas 
+https://www.youtube.com/watch?v=IJeS19fBd1c&list=PLxQNfKs8YwvEk85FbeXxDnFecAntIQdRf&index=8   

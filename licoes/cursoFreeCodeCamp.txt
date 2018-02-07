@@ -1,0 +1,141 @@
+html lingugem de marcacao para descrever a estrutura de pagina web
+conexoes com hyperlinks...
+W3 Consortium ... atualiza com a ultima especificacao HTML5
+H1 para seção prinicpal  main heading 
+H2 para subheading 
+P para paragrafo
+<!-- -->
+Novas seções ...
+HTML 5 tags
+main = ajuda motores de busca a encontrar o conteudo principal da pagina   
+header  = 
+footer 
+nav 
+video
+article 
+section 
+SEO = Search Engine Optimization 
+falou de img e src e alt ==== 
+falou de a e href  e apontamento interno do a 
+target="_blank" abre em uma nova tela 
+href="#" criar um link morto na tela 
+links ao redor da imagem e dentro de p  
+ul e li  conceitos de lista nao ordenadas ,,, somente . item 
+ol e li conceito de exibir a numeracao ordenacao 1. item 
+<input type="text"> e placeholder
+<form action =""> 
+<button type="submit" 
+conceito de required paara os campos.. exemplo input 
+
+Aprendi para radio button  um entre varios 
+ <label for="indoor"> <input type="radio" </label> 
+ Melhor assistir no processos que esse label seja colocado por cada input 
+ e colocado o atributo for ... 
+Para definir que o item esta configurado por Padrao no checkbox e radio 
+uso de checked..
+div um container para outros elementos ... 
+Topo do elemento deve dizer ao browser qual versao de html você está utilizando 
+HTML é atualizada regularmente... 
+<!DOCTYPE html>
+head = informacao sobre sua pagina (metadados link meta title style)
+body = conteudo da pagina marcacao  
+Aprendi mais de uma opcao os checkbocex dentro de label e com atibuto for  
+
+CSS 
+é case sensitive .. tomar cuidado
+CSS diz ai browser como exibir o texto e conteudo que escreve em html 
+o que permite controlar : 
+7 itemns 
+color, fonts , positioning, spacing, sizing , decorations ,transitions  
+3 formas de adicionar estilos... 
+style inline na propria tag
+style como tags  ou style como link external... 
+Seletor para obter elementos DOM e  aplicar uma variedade de atributos... aqueles 
+elementos ... 
+Como adicionar CSS styles .. aos elementos ...
+
+#modificar a cor 
+<style="color:blue;" >  boa pratica no final colocar ;
+usar o mecanismo por tag style ... 
+<style>h2{color:blue;}</style>
+conceito de classes no CSS colocar .classes 
+<style>.red-text{color:red;}</style> <h2 class="red-text"
+
+#modificar size da fonte font-size 
+p{font-size:16px;}
+modificar tipo da fonte 
+font-familiy:
+Alternativa de fonte nao disponivel e carregar fonte externa do google 
+Importacao de Google Fonts =====
+copy a url a partir do link e trazer uma fonte do proprio google 
+href:"https://fonts.googleapis.com/css?family=Lobster
+sao case sensitive == os nomes e se tiver espacos colocar aspas 
+"Open Sans"
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+Browsers ja possuem fonts padroes como Monospace , Serif, Sans-Serif 
+rebaixar uma fonte nao disponivel utilizam outra 
+h2{font-family: Lobster,Monospace;}
+
+#Modificando tamanho de suas imagens 
+width: 500px 
+
+#Bordas para os elementos e arrendondamento das bordas 
+style color witdh BORDER 
+e colocar mais de uma classes entre espaços 
+border-color border-width border-style 
+Arrendondar as bordas para apresentar melhor ... 
+para arrendodar border-radius: 10px; ou por porcentagem 50
+Que interessante ao realizar procedimento circular... 50%
+CINQUENTA POR CENTO = 50%...............DESENHO CIRCULAR
+
+#Cores para o Fundo
+background-color:green; 
+
+#identificador unico
+atributo id.. ele tem maior importancia do que uma classe...
+pode cadastra com # para estilo de id..
+Não precisa fazer referencia pela classe já pelo id ele se transforma ... 
+
+#Conceitos de Padding Margin Border 
+padding == controla a quantidade de espaco entre o conteudo do elemento e a borda 
+marging = depois da borda em relacao aos outros elementos ... 
+Colocar a margin para negativo 
+Fará o crescimento do proprio elemento ... 
+Customizar os padding para cada lado 
+Customizar os margin para cada lado  right left bottom top
+
+#Notacao CLOCKWISE (sentido dos ponteiros clockwise rotation)
+Top,Right,Bottom,Left 
+
+#Conceitos de Seletor 
+Alem de .classe #id temos [attr=value] para definicacoa de estilos 
+[type='radio']
+
+Conceito de ABSOLUTE E RELATIVE 
+in polegadas mm - milimetro - px - pixels 
+Unidades relativas tem um ponto de referencia == em
+Unidade (em) referencia a outro elemento normalmente o pai 
+
+#Conceito de Heranca ... 
+herda estilos do elemento pai... 
+entre classes a classe declarada por ultima predomina 
+estilos e classe.. classe predomina .. 
+Browser fara a leitura de cima para baixo com relacao as classes... 
+Tambem realiza a tratativa de ser applicar o mais restritivo por ultimo 
+Elementos, [attr-value], classes, id, inline 
+
+#Dicas para garantir o CSS uso do important  
+incluir a palavra chave !important
+ 
+#Representacao de Cores  
+usar a casas decimal e a casa hex  
+Cores puras red green blue 
+duas casas para cada cor seis casas #FF00AA 
+256 milhoes de combinacoes 
+Tem uma abreviacao curta para cores #F00  (tres digitos)
+Uso de padrao rgb(0,0,0)
+rgb(0,0,0) 
+
+
+
+

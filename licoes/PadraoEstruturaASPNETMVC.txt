@@ -1,0 +1,120 @@
+Documentacao para o MVC 
+http://www.tutorialsteacher.com/mvc/mvc-folder-structure
+https://jqueryvalidation.org/reference/
+http://vmsdurano.com/asp-net-5-getting-started-with-mvc-6/
+https://msdn.microsoft.com/pt-br/library/dn877998.aspx
+https://msdn.microsoft.com/en-us/library/ee671793(v=vs.98).aspx
+https://www.codeproject.com/Articles/641783/Customizing-Routes-in-ASP-NET-MVC
+
+
+Estamos com qual versao
+https://www.nuget.org/packages/jQuery/1.10.1
+Jquery = 2013 = 
+https://www.nuget.org/packages/jQuery.Validation
+https://www.nuget.org/packages/jQuery.Validation/1.11.1
+Jquery validate 1.11.1 = 2013 = jquery >= 1.4.4 
+https://www.nuget.org/packages/Modernizr/
+Modernizr v2.6.2 = 2012 = sem dependencias  
+https://www.nuget.org/packages/jquery/
+
+
+
+https://www.nuget.org/packages/bootstrap
+https://www.nuget.org/packages/bootstrap/3.0.0
+bootstrap.js v3.0.0 = 2013 Dependencias = jquery >= 1.9.0 
+
+Atuais 
+Jquery = 3.3.1 = 2018 
+Jquey = 3.1.1 = 2016 
+Jquery Validate 1.17 = 2018  
+Jquery Validate 1.16 = 2016
+BootStrap 4.0.0 = 2018  
+BootStrap 3.3.7 = 2016 
+Modernizr 2.8.3 = 2014
+
+Estudar o conceito de partial views 
+http://www.tutorialsteacher.com/mvc/mvc-folder-structure
+Pasta ~/Scripts 
+
+Pesquisa dentro do projeto 
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(19):            
+  "~/Scripts/Base/custom.validation.js"));
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(22):            
+  "~/Scripts/offline.js"));
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(25):            
+  "~/Scripts/Base/enums.js",
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(26):            
+  "~/Scripts/Base/base.js"));
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(33):            
+  "~/Scripts/Base/controles.js"));
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(38):            
+  //"~/Scripts/smalot-datetimepicker/bootstrap-datetimepicker.js",
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(51):            
+  "~/Scripts/smalot-datetimepicker/bootstrap-datetimepicker.js",
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(52):            
+  "~/Scripts/bootbox.min.js"));
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(55):            
+  "~/Scripts/notifyjs-master/dist/notify.js",
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(56):            
+  "~/Scripts/notifyjs-master/dist/styles/metro/notify-metro.js",
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(57):            
+  "~/Scripts/notify_execucao.js"
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(146):            
+  "~/Scripts/Base/crudbase.js",
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(147):            
+  "~/Scripts/Base/crudfiltro.js"));
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(150):                
+  "~/Scripts/Base/clientstorage.js"));
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(381):               
+  "~/Scripts/Base/crud.modal.grid.js"));
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(387):             
+  "~/Scripts/plugin/jquery.FormatarProtocoloProcesso.js",
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(430):                        
+  "~/Scripts/mask-money/jquery.maskMoney.js"));
+  F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(440):                        
+  "~/Scripts/plugin/jquery.FormatarProtocoloProcesso.js",
+  
+  Mapeando os itens para trabalho... 
+  root/Offline.js
+  root/bootbox.min   
+  root/Smalot-DateTimePicker/BootStrap-DateTimePicker.js 
+  root/Notifyjs-master/dist/notify.js 
+  root/Notify_execucao.js 
+  root/Mask-Money/jquery.MaskMoney 
+  Pasta base 
+  crudbase.js 
+  crudfiltro.js 
+  clientstorage.js 
+  crud.modal.grid.js 
+  Pasta plugin 
+  Jquery.FormatarProtocoloProcesso.js 
+  
+  Mapeando pelos Assets 
+  megamenu 
+  okayNav 
+  Pasta Base 
+  classificacao-cascade-ddl.js 
+  cnae-autocomplete.js 
+  Pasta Bootstrap-modal-master (Aqui tem um grupo por Javascript)
+  bower.json 
+  bs3.html 
+  index.html 
+  
+  Root = 
+  bootstrap-datetimepicker
+  bootstrap-tagsinput 
+  bootstrap-typehead 
+  datables.responsive.js 
+  editor.js 
+  global.js 
+  
+  mask.js 
+  methods_pt.js 
+  moment-with-locales.js 
+  npm.js 
+  scripts.js 
+  ui.datepicker-pt-BR.js 
+  vertical-responsive-menu.js 
+  
+  
+
