@@ -1,0 +1,40 @@
+https://www.msn.com/pt-br/tv/noticias/11-s%C3%A9ries-da-netflix-que-v%C3%A3o-bugar-o-seu-c%C3%A9rebro/ss-BBIPwOF?li=AAggNbi&ocid=mailsignout#image=7
+
+jquery.com 
+CSS3 complaint HTML 5 forte poderoso ... 
+1.9.1 trabalhar com a versao 2.0
+The JQuery Plugin Registry 
+Trabalhando NPM.. para baixar os plugins 
+jquey.UI estaveis componentes graficos de formas mais facil e integrados 
+widgets .. personalizar... 
+Forcou a baixar para Jquery 1.12.4 
+Alo Mundo JQuery..
+#Aula 4 Entendendo operadores 
+$ cifrao esse operador da api Jquery $() usando o document objeto implicito todo o documento html 
+$() onde vou atuar no documento inteiro ou item especifico
+$(document). Funcao ready toda a pagina seja carregada funcoes js e css 
+pode ser usado jQuery usando o operador inteiro 
+Operador $ Operador .  Operador # (acessar minucioso os elementos htmls)
+.<nomedaclasse> #<identificadordoelemento> leituraPorTags 
+Funcoes passiva ou Funcao ativa 
+Ao ter a opcao $().click() temos a funcao ativa 
+$().click(function(){}); 
+#Aula 5 usando chamadas entre elementos 
+chamada entre elementos ..  retorno de objetos  funcoes encadeadas 
+encadeamento de chamadas pesquisa pela tag e pelos elementos dentro dela ...
+dar um espaço e colocar a regra na frente definicacao igual ao do CSS 
+'#div1 a' obteve os links da div1..
+'#div1 a.x'  links da div1 com a classe x  se coloca espaco.. ou #div1 .x 
+regra de Jquery depende do designer realize.. 
+Conceito de Aplicar voces separam por operador virgula para pesquisar por itens .. 
+#Aula 6 usando funcoes encadeadas 
+Chamadas entre elementos .. operador virgula para buscar de elementos 
+retorno de objetos associadas a funcoes encadeadas. Uso de Progrmacao Fluente 
+retorna o mesmo objeto.. 
+Recupera o objeto == cada elemento html Objeto Javascript [Object object]
+metodos de acoes sobre o objeto e recuperar o objeto.. 
+Ha alguns metodos que nao recuperam o objeto como o valor val()...
+#Aula 07 
+Hierarquia == Seletores no Jquery ... 
+Conceito de Pai e Filho direto  ul > li e lista > li  #lista > ul > li 
+Mesmo nó mesmo irmaos... #el1 + li  ou #el1 ~ li  

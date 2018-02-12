@@ -1,3 +1,248 @@
+Conceitos Basicos 
+http://www.tutorialsteacher.com/mvc/mvc-folder-structure
+
+#AULA DE LAYOUT 
+Conceito de Layout partes comuns retutilzar ... master page para web forms application 
+pode conter sempre por exemplo: header, footer, left menu, right bar..
+Um mesmo template... conceito de placeholder... para substituir ..o item dinamico ... 
+Pasta Shared... ele procura pelo  _Layout.cshtml 
+<meta name="viewport"
+ @Styles.Render("~/Content/css")
+ @Scripts.Render("~/bundles/modernizr")
+ @RenderBody()
+ @Scripts.Render("~/bundles/jquery")
+ @Scripts.Render("~/bundles/bootstrap")
+ @RenderSection("scripts", required: false) 
+
+Ele é incluido em todas as views por padrao 
+ _ViewStart.cshtml  configura todas as views da pasta e subpasta por padrao using o Layout 
+Pode atribuir qualquer pagina para o layout property ..
+~/Views/Shared/_Layout.cshtml 
+Dentro de uma subpasta 
+Pode ser incluido dentro de uma subpasta... e ira influenciar as views daquela subpasta ... 
+dentro da pasta home ter o arquivo _ViewStart.cshtml apontando para a mylayoutPage.cshtml 
+Tem a opção de override o layout pre configurado... 
+
+Basta que no arquivo de cshtml você coloque  Layout = "";
+ViewBag.Title = "Home Page";
+Layout = "~/Views/Shared/_myLayoutPage.cshtml";
+ 
+Specify Layout page in ActionResult method:
+Via programacao  
+return View("Index", "_myLayoutPage");
+Retornar o nome da view e nome do layout a ser aplicado..
+Corelacao do MVC 
+O RenderBody e a propria informacao que esta na view sera colocado no threco apontado
+@section RightSection 
+@section MiddleSection  RenderSection("") 
+Criando o layout 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="panel-footer">
+        @RenderSection("footer", true)
+    </footer>
+</body>
+</html>
+Criando um view com o Layout 
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_myLayoutPage.cshtml";
+}
+
+<div class="jumbotron">
+    <h2>Index</h2>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <p>This is body.</p>
+    </div>
+    @section footer{
+        <p class="lead">
+            This is footer section.
+        </p>
+    }
+</div>
+
+O que é efetivamente partial view ... 
+E uma view reutilizavel, que pode ser usada como uma child view em multiplas view .. 
+Ele elimina codigo duplicado reutilizando a mesma partial view em diversos lugar.. Você pode usar as partial view 
+dentro do layout view, bem como outras view de conteudo...
+Para comecar pode criar uma barra de navegacao... para propositos de demonstracao ...
+We are not going to use any model for this partial view, so keep the Template dropdown as Empty 
+Manter o template como vazio ... 
+This will create an empty partial view in Shared folder. - criou na Shared Folder...
+Exemplo de renderizacao da partial view 
+_barradeNavegacao.cshtml 
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+        </div>
+    </div>
+</div>
+Tres formas de renderizar a partial view 
+Partial() RenderPartial() RenderAction()
+Html.Partial=> helper renderiza a partial view especificada. Ele aceita o nome da partial view como parametro de string 
+MVCHtmlString pode modificar antes de renderizar.. 
+Html.RenderPartial retorno void ... escreve o html diretamente no http response
+Html.RenderAction() => invocar o controller e o action  RouteValueDictionary
+Dentro da view Pai
+@{Html.RenderPartial("_HeaderNavBar");}
+@Html.Partial("_HeaderNavBar")
+
+#ViewBag 
+ContollerBase -Property  dynamic ViewBag 
+ViewBag.Name = valor 
+Wrapper do ViewData 
+#ViewData 
+dictionary contem key value key string ... 
+transferencia de lista de estudantes 
+@foreach (var std in ViewData["students"] as IList<Student>)
+{
+    <li>
+        @std.StudentName
+    </li>
+}
+ViewData.Add("Id", 1);
+ViewData.Add(new KeyValuePair<string, object>("Name", "Bill"));
+
+ViewData is derived from ViewDataDictionary which is a dictionary type
+
+#TempData 
+TempData is useful when you want to transfer non-sensitive data from one action method 
+to another action method of the same or a different controller as well as redirects
+TempDataDictionary 
+Para subsequents TempData.Keep(); entre os controllers ...
+
+#Routing 
+ASp.ne web form mapear para um arquivo fisico 
+Introduz a ROUTING .. elimina a necessidade de define um URL pattern que mapea para request handler
+pode ser uma arquivo ou classe..
+Controller e Acao... 
+Every MVC application must configure (register) at least one route, which is configured by MVC framework by default. You can register a route in RouteConfig class, which is in RouteConfig.cs under App_Start folder. 
+The following figure illustrates how to configure a Route in the RouteConfig class .
+Routing plays important role in MVC framework. Routing maps URL to physical file or class (controller class in MVC).
+Route contains URL pattern and handler information. URL pattern starts after domain name.
+Routes can be configured in RouteConfig class. Multiple custom routes can also be configured.
+Route constraints applies restrictions on the value of parameters.
+Route must be registered in Application_Start event in Global.ascx.cs file
+public class RouteConfig
+{
+    public static void RegisterRoutes(RouteCollection routes)
+    {
+        routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+        routes.MapRoute(
+            name: "Student",
+            url: "students/{id}",
+            defaults: new { controller = "Student", action = "Index"}
+        );
+
+        routes.MapRoute(
+            name: "Default",
+            url: "{controller}/{action}/{id}",
+            defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+        );
+        protected void Application_Start()
+        {
+              RouteConfig.RegisterRoutes(RouteTable.Routes);
+        }
+		
+#Dicas de uso por Controller 
+You can develop a customized scaffolding template using T4 templates as per your architecture and coding standard.
+System.Web.Mvc.Controller é base da classe Controller ... 
+
+#Conceito por Binding 
+Request[""]  (Request.Form) obter os parametros por POST 
+Request.QueryString[id] obter os parametros por GET 
+convertidos para os parametros por querystring 
+convertidos para os parametros no Request Form 
+ou FormCollection acessar por value[""]
+Somente mapeamento dos campos especificos 
+Bind(Include = "StudentId, StudentName")] Student std OR [Bind(Exclude = "Age")] Student std
+As you have seen that Model binding automatically converts request values into a primitive or complex type object. Model binding is a two step process. First, it collects values from the incoming http request and second, populates primitive type or complex type with these values.
+Value providers are responsible for collecting values from request and Model Binders are responsible for populating values.
+Form fields (Request.Form)
+The property values in the JSON Request body (Request.InputStream), but only when the request is an AJAX request
+Route data (RouteData.Values) // Querystring parameters (Request.QueryString) // Posted files (Request.Files)
+
+#Areas 
+Tem o conceito de particionar large apps .. em pequenas unidades onde cada unidade contem separado MVC Folder Structure 
+como o padrao MVC folder structure.. 
+admin //controllers models e views 
+finance // controllers models e views 
+HR // controllers models e views 
+Implementando 
+public class adminAreaRegistration : AreaRegistration 
+{
+    public override string AreaName 
+    {
+        get 
+        {
+            return "admin";
+        }
+    }
+
+    public override void RegisterArea(AreaRegistrationContext context) 
+    {
+        context.MapRoute(
+            "admin_default",
+            "admin/{controller}/{action}/{id}",
+            new { action = "Index", id = UrlParameter.Optional }
+        );
+    }
+AreaRegistration.RegisterAllAreas();
+https://www.codeguru.com/csharp/.net/net_asp/mvc/article.php/c20227/Using-Areas-in-ASPNET-MVC-Application.htm
+
+#Filters 
+Authorization filters	Performs authentication and authorizes before executing action method.	[Authorize], [RequireHttps]	IAuthorizationFilter
+Action filters	Performs some operation before and after an action method executes.	IActionFilter
+Result filters	Performs some operation before or after the execution of view result.	[OutputCache]	IResultFilter
+Exception filters	Performs some operation if there is an unhandled exception thrown during the execution of the ASP.NET MVC pipeline.	[HandleError]	IExceptionFilter
+Sequencia de execucao dos filtros 
+Authorization filters
+Action filters
+Response filters
+Exception filters
+class MyErrorHandler : FilterAttribute, IExceptionFilter
+{
+    public override void IExceptionFilter.OnException(ExceptionContext filterContext)
+    {
+        Log(filterContext.Exception);
+
+        base.OnException(filterContext);
+    }
+
+    private void Log(Exception exception)
+    {
+        //log exception here..
+ 
+    }
+}
+BEM INTERESSANTE...
+	
 Documentacao para o MVC 
 http://www.tutorialsteacher.com/mvc/mvc-folder-structure
 https://jqueryvalidation.org/reference/
@@ -73,7 +318,8 @@ Pesquisa dentro do projeto
   "~/Scripts/mask-money/jquery.maskMoney.js"));
   F:\Andre\2018\01SEMESTRE\ProjetoProcon\solutionsCopia\solutionsCopia\sistemaintegrado\br.procon.Fiscalizacao.UI\App_Start\BundleConfig.cs(440):                        
   "~/Scripts/plugin/jquery.FormatarProtocoloProcesso.js",
-  
+
+Scripts   
   Mapeando os itens para trabalho... 
   root/Offline.js
   root/bootbox.min   
@@ -88,7 +334,7 @@ Pesquisa dentro do projeto
   crud.modal.grid.js 
   Pasta plugin 
   Jquery.FormatarProtocoloProcesso.js 
-  
+Assets   
   Mapeando pelos Assets 
   megamenu 
   okayNav 

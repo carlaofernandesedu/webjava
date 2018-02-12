@@ -1,0 +1,48 @@
+BOWER E NPM 
+https://www.devmedia.com.br/gerenciando-bibliotecas-de-scripts-no-visual-studio-2015/31869
+Bundliing consiste na combinacao de varios arquivos em um simples unidade 
+Um novo arquivo gerado dinamicamente 
+Minification pratica que envolve a elimincacao em tempo de execucao de itens desnecessarios e comentarios 
+em arquivos CSS ou scripts, também para uma maior performance no carregamento de formulários HTML 
+Determinar qual versao de biblioteca de scripts será utilizada: 
+permite configurar o build de uma aplicação web 
+que seja usado o release estavel mais recente para um plugin Jquery.. 
+Download automatico dos arquivos necessários por exemplo.. 
+Verificacao de Codigo como JSHint , JSLint 
+O uso de pré-processadores de CSS como LESS e SASS mecanismos estes que viabilizam a utilizacao de variaveis, funcoes e mixins (agrupamentos de propriedades) em folhas de estilo..
+#O BOWER, gerenciador empregado na instalacao e restauracao de pacotes client-side 
+(arquivo de css e de scripts)
+#Executor de Tarefas = Grunt e Gulp
+Ambos fazem uso de arquivos de configuração com uma sintaxe baseada em Javascript, 
+sendo utilizados na automacao de tarefas envolvendo a manipulacao de scripts e CSS 
+#Sigla de Node Package Manager = Embora seja um gerenciador para pacotes Node.Js 
+esta ferramenta representa o ambiente a partir do qual outras soluções 
+
+#ASP.NET CORE 
+https://www.asp.net/
+http://www.eduardopires.net.br/2016/01/introducao-ao-asp-net-core-1-0/
+Forma de facilitar a adoção e padronizacao 
+Adoção de Asp.Net Core v1.0 para o novos itens 
+Asp.NET Core 1.0 
+Asp.NET 4.6 
+Framework 4.6 e .NEt Core 1.0 
+.Net Framework Libraries  .Net Core Libraries 
+Asp.NET MVC6 => Asp.Net Core 1.0 
+EF7 => EF Core 1.0 
+.NET Core 5 => .Net Core 1.0 
+A Unica forma de desenvolvimento inicialmente para Core 1.0 é o MVC 
+
+Conceito de .Net Standard Library 
+http://www.eduardopires.net.br/2017/06/net-standard-voce-precisa-conhecer/
+.NET Standard unificacao das plataformas ... 
+.NEt framework     .NEt Core        Xamarin 
+WPF Windows Forms   Asp.NET Core    iOS OS X Android 
+ASP.NET 
+.Net Standard Substitui = PCL... 
+Codigo sera compilado para uma versao especifica do framework ... 
+http://www.eduardopires.net.br/2017/06/net-standard-voce-precisa-conhecer/
+https://github.com/Microsoft/dotnet-apiport
+
+
+Novidades na versao do Framework 4.6 
+https://msdn.microsoft.com/pt-br/library/ms171868(v=vs.110).aspx

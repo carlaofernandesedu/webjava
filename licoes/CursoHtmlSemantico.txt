@@ -1,0 +1,24 @@
+HTML Semantico 
+cabecalho = <header>
+conteudo principal  <main>
+rodape <footer> 
+nav  = feita englobar um conjunto de links carrega o significador 
+paragrafo =  bloco de texto 
+figure =  container para imagens colocar .. 
+HTML = Algoritmo de Busca.. 
+Texto dentro do paragrafo ... 
+Semantico = <EM>
+Titulo de pagina mais relevancia H1 
+<nav><ul><li><a href="">
+<article> o texto auto contido 
+<section> 
+<article> 
+<article> 
+<article>   
+<footer> 
+<time>
+<section>
+<aside> 
+<figure>
+<figcaption>
+https://www.devmedia.com.br/o-que-preciso-saber-sobre-html-5/28078

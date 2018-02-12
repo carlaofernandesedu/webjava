@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Aula inicial de Curso Jquery - Funcoes Encadeadas</title>
+    <script type="text/javascript" src="Scripts/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        const idSelecao = '#selHierarquia';
+        const tagsLi = 'li';
+        //pai e filho direto
+        const buscaPaiFilhosDireto = '#nav1 > ul > li';
+        const buscaPaiFilhosDireto02 = 'ul > li';
+        //irmaos diretos no mesmo nivel  
+        const buscaIrmaoDireto = '#el01 + li';
+        //vizinhos diretos no mesmo nivel 
+        const buscaVizinhos = '#el01 ~ li';
+        jQuery(document).ready(function ()
+        {
+             
+            $(idSelecao).change(function ()
+            {
+                $(tagsLi).css('color', 'black');
+                let Opcao = $(idSelecao).val();
+                let busca;
+                switch (Opcao) {
+                    case "2":
+                        busca = buscaPaiFilhosDireto;
+                        break;
+                    case "3":
+                        busca = buscaIrmaoDireto;
+                        break;
+                    case "4":
+                        busca = buscaVizinhos;
+                        break;
+                    case "5":
+                        busca = buscaPaiFilhosDireto02;
+                        break;
+                }
+                $(busca).css('color', 'red');
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <select id="selHierarquia">
+            <option value="1">Descendentes do Pai</option>
+            <option value="2">Pai filho direto</option>
+            <option value="3">Irmao direto</option>
+            <option value="4">Vizinhos</option>
+            <option value="5">Pais Filhos Diretos</option>
+        </select>
+        <nav id="nav1">
+            <ul>
+                <li id="el01">item 1 do nivel 1</li>
+                <li>item 2 do nivel 1</li>
+                <li>item 3 do nivel 1</li>
+                <li>item 4 do nivel 1</li>
+                <ul>
+                    <li>item 1 do nivel 2</li>
+                    <li>item 2 do nivel 2</li>
+                    <ul>
+                        <li>item 1 do nivel 3</li>
+                        <li>item 2 do nivel 3</li>
+                    </ul>
+                </ul>
+            </ul>
+        </nav>
+    </main>
+</body>
+</html>

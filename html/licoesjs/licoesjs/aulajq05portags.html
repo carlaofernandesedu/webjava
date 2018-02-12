@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Aula inicial de Curso Jquery - Operacoes Por Tags</title>
+    <script type="text/javascript" src="Scripts/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        const idnavtaga = "#nav1 a.x";
+        const idnavclassex = "#nav1 .x";
+        const idsnavtaga = "#nav1 a.x,#nav2 a.x";
+        jQuery(document).ready(function ()
+        {
+            jQuery(idsnavtaga).click(function () { alert('Clicado classe x'); });
+        });
+    </script>
+</head>
+<body>
+    <nav id="nav1">
+        <ul>
+            <li><a href="#" class="x">Clique aqui 01 x</a></li>
+            <li><a href="#" class="x">Clique aqui 02 x</a></li>
+            <li><a href="#" >Clique aqui 03 </a></li>
+        </ul>
+    </nav>
+    <nav id="nav2">
+        <ul>
+            <li><a href="#" class="x" >Clique aqui 04 x</a></li>
+            <li><a href="#">Clique aqui 05 </a></li>
+        </ul>
+    </nav>
+    <nav id="nav3">
+        <ul>
+            <li><a href="#" class="x">Clique aqui 06 x</a></li>
+            <li><a href="#">Clique aqui 07 </a></li>
+        </ul>
+    </nav>
+</body>
+</html>

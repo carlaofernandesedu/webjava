@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Aula inicial de Curso Jquery - Funcoes Encadeadas</title>
+    <script type="text/javascript" src="Scripts/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        const idInput = "#texto01";
+        const taglink = "a";
+        jQuery(document).ready(function ()
+        {
+            $(taglink).click(function ()
+            {
+                let elementoInput = $(idInput);
+                let texto = elementoInput.val();
+                elementoInput.css('background-color', 'red');
+                alert(texto);
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav id="nav1">
+        <ul>
+            <li><a href="#" class="x">Clique aqui</a></li>
+        </ul>
+    </nav>
+    <input type="text" id="texto01" />
+</body>
+</html>

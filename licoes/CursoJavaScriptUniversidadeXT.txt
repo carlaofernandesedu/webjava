@@ -76,3 +76,193 @@ Conceitos de Camdas
 Adicionar Inlne Incorporado Externo 
 Comentarios Linha Unica e Multiplas Linhas 
 https://www.youtube.com/watch?v=IJeS19fBd1c&list=PLxQNfKs8YwvEk85FbeXxDnFecAntIQdRf&index=8   
+#Aula 8 Operadores == 
+Operadores e Operadores 
+Lista de Operadores 
+Denominacao (binario, unario, ter)
+Conversao de Dados 
+Precedencia 
+Tipos Matematicos - De Comparacao - Logicos - De Bits 
+Operadoes dois operandos = binarios 
+Operadores 
+% resto da divisao de um numero por outro 
+A partir do primeiro operando e tiver soma ele vai tenar converte para string 
+uso de outros operadores relacionados ao matemticos ... ela tentar converter matematicos 
+Aula 09 == 
+positivo e negativo  + -  UNARIO 
+++ Incremento  -- Decremento 
+exemplo var x = 7 +3;  alem de executar somar ou vamos concatenar duas strings ... 
+exemplo var x = "oi" + "pessoal"
+var x = 12.3 - 5; 
+var x = "texto" - "5"  gerar o valor NaN 
+var x = 5 * 3   var x = 5/3   (1.6666)
+var x = 5 % 3  (2)
+operador unario   var x = +4   var  x = -2;  trocar o sinal do operador  (-1*)
+var x = 6 
+var y = ++x;  igual x = x + 1 
+"x" iugal a 7 
+"y" igual a 7 
+Outras formas de usar Operador de Incremento... 
+var x = 8 
+var y = x++; 
+x igual a 9 
+y igual a 8 
+Aula 10 - Operacoes de Comparacao 
+== Igual 
+==== Igual e Tipo de Dados é igual um ao outro 
+!= 
+!=== Tipo e Valor diferente 
+> <  >= <= 
+var x = 6; 
+cenario 1 x == 6 true
+cenario 2 x ==7 false  
+cenario 3 x == "6"  true  fez a conversao do tipo 
+cenario 4 x === "6" false 
+cenario 5 x != "6"  false  
+cenario 6 x != "5" true 
+cenario 7 x !== "6" true tipo diferente 
+cenario 8 x > 7 false 
+cenario 9 x > 5 true 
+cenario 10 "a" > "b"  false comparacao com strings 
+cenario 11  x < 7 true 
+cenario 12 x >= 6 true 
+Aula 11 Operadores Logicos 
+&& AND || OR ! NOT 
+exemplos .... 
+var x = 6;
+(x >=1 && x <10) true 
+(x >=1 && x <5) false 
+(x >=1 || x <5) true 
+!(x>=1) false 
+Aula 12 - Operadores de Atribuicao - 
++= Atribuicao *= mutiplicacao /= divisao %= modulo  -= Subtracao 
+Exemplo 
+var x = 6;
+var x = x + 3; 
+var x += 3; 
+
+
+Aula 13 Operadores Especiais 
+?: operador ternario 
+, separa expressoes avaliadas 
+delete apaga operando 
+in indica se existe a propriedade especificada 
+instanceof indica se objeto é do tipo especificado 
+new cria nova instancia de objeto 
+this referencia do objeto atual 
+typeof retorna o tipo do operando 
+() chama a funcao .. 
+
+Exemplo do Ternario 
+var idade = 6; 
+var x =  (idade >=18) ? "maior de idade" : "menor de idade";
+Exemplo separador de expressoes 
+exemplo inicializar mais de uma variaves 
+var idade = 21, sexo = "masculino";
+Exemplo apaga um atributo de objeto ou elemento de um array 
+Pessoa = { nome:"Fulano"}; 
+alert(Pessoa.nome);
+delete Pessoa.nome;
+alert(Pessoa.nome);
+Exemplo de uso do in para verificar de propriedade em um objeto
+Pessoa = { nome:"Fulano"}; 
+alert("nome" in Pessoa); true 
+alert("email" in Pessoa); false; 
+Exemplo do instanceof 
+var idade = new Number(31);
+alert(idade instanceof String) false
+alert(idade instanceof Number) true
+Tem uma relacao ao uso do Construtor... na funcao 
+ou uso de tipos primitivos tem que utilizar New String New Date
+New Number para reconhecer que e uma String ou Object 
+
+Exemplo do Operador new() = criar um objeto.. 
+tomar cuidado para tipos primitivos... ira retonar object ao inves do tipo 
+
+Exemplo do typeof 
+alert(typeof(3))  number 
+alert(typeof(true)) boolean
+alert(typeof(function(){}))  function      
+uso de new Number new String == retornar object 
+Array retornar object usar outro metodos == 
+Array.isArray or Object.prototype.toString.call
+
+#Aula 15  = Declaracao para estruturas
+Controle Condicionais Loops Exceções ... 
+Declaracao explicitacoes =  var a, b, c;  , separacao de expressoes 
+Declaracao function dividir(x,y) declaracao return de uma operacao a ser atribuida...  
+se nao houver return voce tera um resultado undefined..
+#Aula 16 Estruturas condicionais ... 
+if/else estrutura  switch .. 
+if () situacao verdadeiro 
+Exemplo: var idade = 6; if (idade < 11) {alert('criança');} 
+Exemplo: var numero = 5 if ((numero % 2) == 0) { altert('par';); } 
+Exemplo: var passou = false; if(passou) {alert('contratado');} else {alert('estude mais');}
+Exemplo: var numero = 5 if ((numero % 2) == 0) { alert('par';); } else {alert('impar');}
+Conceit do else if 
+Exemplo: 
+if (idade < 11) {} 
+else if (idade > 11 && idade <= 16)
+else if (idade > 16 && idade <= 21)
+else if (idade > 21 && idade < 60) 
+else {}
+
+Aula 17 - Estrutura condicional switch = 
+um mesmo valor sendo comparado com varios valores diferentes .. 
+var sexo = "M";
+switch(sexo)
+{
+  case "M":
+  break; 
+  case "F":
+  break;
+  default: 
+}
+podemos suprimir o default e  breack 
+case "M":
+case "P": 
+Aula 18 - Estrutura Condicional do Calculo IMC
+
+Aula 19 - Estrutura de Repeticacao 
+inicializacao , teste ,acao , atualizacao
+for(var i=0; i<3; i++) {} ou decrementar for(var i=10; i>0; i--) 
+Numeros pares 
+var resultado = "";
+for(var i=0; i<20; i++) { if ((i%2) ==0) { resultado += i + ",";} }
+Outro Exemplo 
+for(var i=0; i<20; i++) { if ((i%2) ==0) { if(i==20) {resultado+= i;} else {resultado += i + ",";}} }
+Outro Exemplo 
+for(var i=0; i<20; i++) { if ((i%2) ==0) { if(i==20) {resultado+= i; break;} resultado += i + ",";} }
+interrompe a execução... 
+Cuidado com o  loop infinito...
+Aula 20 - Loop For IN - 
+iterates over the enumerable properties
+Estrutura 
+Exemplo: 
+var numeros = new  Array("um",""dois,"tres");
+basico 
+for (var i=0;i<numeros.length;i++)
+{
+  alert(numeros[i]);
+}
+for (i in numeros)
+{
+  alert(numeros[i]);
+}
+
+var Carro = {marca:"nissan", modelo:"3456"};
+for (var props in Carro)
+{
+  alert(props);
+  alert(Carro[props]);
+ 
+}
+Note: for...in should not be used to iterate over an Array where the index order is important.
+ColoredTriangle.prototype = triangle;
+
+var obj = new ColoredTriangle();
+
+for (const prop in obj) {
+  if (obj.hasOwnProperty(prop)) {
+    console.log(`obj.${prop} = ${obj[prop]}`);
+  } 
