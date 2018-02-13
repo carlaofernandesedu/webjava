@@ -38,3 +38,43 @@ Ha alguns metodos que nao recuperam o objeto como o valor val()...
 Hierarquia == Seletores no Jquery ... 
 Conceito de Pai e Filho direto  ul > li e lista > li  #lista > ul > li 
 Mesmo nó mesmo irmaos... #el1 + li  ou #el1 ~ li  
+#Aula 08
+Seletores básicos 
+Atuação em tabelas 
+Links 
+Jquery.com
+Basicos o que apredemos na aula passada...
+http://api.jquery.com/category/selectors/basic-css-selectors/
+http://api.jquery.com/category/selectors/basic-filter-selectors/
+Coonceito basico para aplicar um filtro na seleção 
+$('table tr:first')  $(table td:first) escopo para filtrar...
+$('table td:last') as ultimas 
+$('table td:eq(2)') busca em cima de um indice
+$('ts:eq(1), td:eq(2)') aplica na 1 e na 2 
+$('tr:even') a  cada um e um linha troca pelo verde (comeca da primeira linha) efeito zebra 
+$('tr:odd') a cada um e um linha troca pelo  (comeca da segunda linha) efeito zebra 
+$('tr:lt(3)') preencha as tr que sao menores que o index 3  
+$('tr:gt(3)') preencha as tr que sao menores que o index 3  
+$('input:not(:checked)') todos os inputs menos os checados 
+$('tr:not(tr:gt(3))') seleciona todos exceto os que sao maiores que index 3 
+--fazer exemplos ...
+#Aula 10 seletores de conteudo onde as mesmas se encontram.... 
+http://api.jquery.com/category/selectors/content-filter-selector/
+$('div:contains("Dio")')
+$('td:contains("Dio")')
+
+$('div:empty').addClass('vazio');
+$('td:empty').addClass('vazio');
+$('div:parent').addClass('cheio');
+$('td:parent').addClass('cheio');
+$('td:has("span")');
+#Aula 11 
+http://api.jquery.com/category/selectors/form-selectors/
+Criou o formulario com diversos tipos input 
+input type='radio' name= 's'
+input type='cehckbox' 
+
+estilos 
+.test{border:2px solid gray;padding:5px;} 
+
+.vazio { width:300px;heigth:300px;border:1px solid red;}

@@ -37,3 +37,4 @@ F:\Andre\devrepogit\github\webjava\html\licoesjs\licoesjs\obj\Debug\licoesjs.csp
 F:\Andre\devrepogit\github\webjava\html\licoesjs\licoesjs\obj\Debug\licoesjs.csproj.CoreCompileInputs.cache
 F:\Andre\devrepogit\github\webjava\html\licoesjs\licoesjs\obj\Debug\licoesjs.dll
 F:\Andre\devrepogit\github\webjava\html\licoesjs\licoesjs\obj\Debug\licoesjs.pdb
+F:\Andre\devrepogit\github\webjava\html\licoesjs\licoesjs\obj\Debug\licoesjs.csproj.CopyComplete

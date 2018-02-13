@@ -137,6 +137,7 @@
     <Content Include="aula08jsimc.html" />
     <Content Include="aulajq02porclasses .html" />
     <Content Include="aulajq06funcoesencadeadas - Cópia .html" />
+    <Content Include="aula02TipoConstrutor.html" />
     <Content Include="aulajq07Hierarquia.html" />
     <Content Include="aulajq05portags.html" />
     <Content Include="aulajq02portags.html" />
@@ -177,7 +178,10 @@
     <Content Include="Scripts\licoes\hello.js" />
     <Content Include="Scripts\licoes\lampoff.jpg" />
     <Content Include="Scripts\licoes\lampon.jpg" />
+    <Content Include="Scripts\licoes\namespcproduto02.js" />
+    <Content Include="Scripts\licoes\namespcproduto01.js" />
     <Content Include="Scripts\licoes\operadores.js" />
+    <Content Include="Scripts\licoes\tipoconstrutor.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />

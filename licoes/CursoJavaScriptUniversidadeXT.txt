@@ -266,3 +266,176 @@ for (const prop in obj) {
   if (obj.hasOwnProperty(prop)) {
     console.log(`obj.${prop} = ${obj[prop]}`);
   } 
+#Aula 21 = Estrutura while 
+var i=0;
+while (i <3)
+{
+  i++;
+} 
+
+do 
+{
+} 
+while()  
+#Aula 22 Estruturas de excecoes para tratamento de erros 
+throw 
+try catch finally
+Objeto Error.. traz informacoes sobre o erro que acabou de ocorrer 
+message name o tipo de erro  toString() tipo de erro mais a mensagem separado por um sinal de dois pontos .. 
+EvalError  Erro usando eval() 
+RangeError  Numero extrapola limites
+ReferenceError  referencia a valor indefinido 
+SintaxeError    Erro de sintaxe da linguagem 
+TypeError       Operando diferente do esperado 
+URIError        Uso errado das funcoes URI
+var x = prompt("informe um numero maior que 10");
+try{
+
+if(x < 10 ) { throw "numero menor que 10"; }
+
+}
+catch(e)
+{
+   alert(e.name + "-" + e.message);
+   alert(e.toString());
+}
+finally  // e executada ocorrendo ou nao um erro 
+{
+  alert('eecutado');
+}
+throw lancando uma string .. ou mesmo um erro..
+
+Temos a palavra Chave with define o escopo do bloco... 
+var Carro = {marca:"nissa", modelo:"350Z", potencia: {cavalos:350; velocidade: "320km"};}
+
+alert(Carro.potencia.cavalos);
+ou 
+with(Carro.potencia)
+{
+alert(cavalos);
+}
+
+#Aula 23 Objetos javascript 
+Tipos Primitivos Não são objetos = estados 
+number, string, boolean  dados bruto nao tem atibuto nem funcao 
+Objetos nos Javascript 
+Object mais generico que temos.. Todos os sao objects e todos arrays e nem sempre tratameot como Array 
+Boolean ele tem atributos e Number ele tem atributos e funcoes e String (contem o tipos primitivos)
+Array por lista se quisermos obter 
+Date para manipular datas 
+Math funcoes aritmeticas 
+Function para criar funcoes 
+Objetos de Erros nas linguagem Javascript 
+O que ocorre quando criamos tipos primitivos 
+var nome = "Ricardo";
+alert(typeof(nome)); //exibe a informacao string tudo minusculo ... 
+alert(nome.length) acabou de dizer tipos primitivos de dados e acessou um atributo. O tipo primitivo 
+esta andando de maos dadas com o Objeto relacionado. envolve um tipo primitivo ... 
+new String(nome).length ====> encapsula a informacao dentro .. faz por debaixo dos panos... 
+e logo em seguida descarta objeto que acabou de criar...
+nome.ToUpperCase() 
+  
+Number String Array Date Math Function (Nativos das linguagem)
+
+Aula 24# Universidade Objeto Bololean 
+Boolean encapsula o tipo primitivo boolean = true e false 
+
+Exemplo:
+var b = true; 
+alert(b);
+alert(typeof(b)); retorna boolean 
+Outro forma de exemplo 
+var b = new Boolean(true);
+alert(typeof(b)); retorna Object 
+alert( b instanceof Boolan);  retorna true 
+Forma de criar 
+var b = new Boolean(); OU var b = new Boolean(1); OU var b = new Boolean(false); OU var b new Boolean("");
+"Zero, null, NaN e a string vazia são ienerentemente false; o resto é tudo true";
+Funcoes para objetos Boolean 
+Metodo toString() e o metodo valueOf()
+b.valueOf()  retorna o valor primitivo do tipo... 
+b.toString() converte o valor primitivo para o tipo primitivo string 
+
+Aula 25# Objeto Number ==== 
+toString valueOf  representacao em string do tipo primitivo.. retornar o proprio tipo primitivo..
+var n = 120.35; 
+ou 
+var n = new Number(120.35);
+alert(typeof(n)) retorna um object 
+alert( n instance of Number) retornar true 
+var n = new Number("120.35"); converte o valor para o tipo primitivo.. 
+
+Conceito de Funcoes Estaticas ou Metodos Estatico... 
+Independente de uma instancia...
+Propriedades estaticas do Objeto Number 
+Number.MAX_VALUE = maior numero javascript 
+Number.MIN_VALUE = menor numero javascript 
+Number.NaN  referente NaN objeto que nao é numero 
+Number.NEGATIVE_INFINITY 
+Number.POSITIVE_INFINITY  
+Funcoes 
+n.toFixed() numero de casas decimais no parametros.. se omitido o numero nao retornara casas deciamis... se colocar 2 retornar precisao de duas casas.
+(n.toPrecision()) quantidade de digitos definidas no parametro.. PRECISAO 
+(n.toExponential()) converte para notacao cientifica... entre 0 e 20.. 
+
+#Aula 26
+String = Observar que é a string é imutavel e os métodos retornam novas instancias..  
+Conceitos de Templates ...
+w3wchools.com mantido pela mesma equipe W3C consortium... 
+Javascript = String 
+https://www.w3schools.com/js/js_string_methods.asp
+https://www.w3schools.com/jsref/jsref_obj_string.asp
+criar string  =  var x  = "texto dentro de aspas";
+var x = new String("texto dentro de aspas");
+alert(x);
+document.write(x); Acessar as informacoes O Leitor De Acessiblidade nao acessa esse tipo de informacao por esse metodo... 
+Metodos Principais..
+var x = String("texto dentro de aspas") 
+x.length = Comprimento dos caracteres  retorna 21 
+x.charAt(x.length - 1)   retornar o ultimo caractere.. letra s  posicionamento do caracter 
+x.charCodeAt() retornar no padrao unicode - retorna o codigo unicode codigo 115 para letra s  
+x.concat(" Javascript") = retorno  'texto dentro de aspas javascript'
+String.fromCharCode(115,123,154) = retorna as letras saf
+x.indexOf("dentro") comeca na posicao 6 pirmeira ocorrencia
+var x = new String("texto denro de texto de aspas"); 
+x.indexOf("texto") comeca na posicao 16 ulitma ocorrencia  
+var regularex = /[a-e]/;
+x.match(regularx);
+x.replace('texto','txt');
+--Funcoes recortar as strings 
+x.substring(5,8);  dois parametros inicio e fim
+x.substr(5,8) informa o parametro do indice inicial e soma os caracteres para frente seria 5,12  
+x.slice(5,8) é mais rigoroso que o substring == 
+var t = "a,g,h"; 
+t.split(',')[1]; usa o seprar para montar o array de caracteres a partir do Separador.. 
+x.toLoweCase() 
+x.toUpperCase()
+Funcoes para marcacoes nas strings colocar HTML = possuem problemas em relacao a acessibilidade..
+orientado a nao segui-las 
+x.big , x.blink , x.sup() , x.strike(), x.bold(), x.italic(), x.link('http://www.uol.com.br')
+Sring mais poderosas 
+Templates strings - com uso da crase - ES6 
+http://2ality.com/2013/09/javascript-unicode.html
+Interpolacao de variaveis 
+let nome = 'Pafúncio';
+let respostaSimples = 'Oi ' + nome + '. Já te ligo ok?';
+let respostaTemplate = `Oi ${nome}. Já te ligo ok?`;
+
+
+
+#Aula 27
+http://blog.alura.com.br/category/front-end/
+Array = Aula Informacao -   Colecao de dados Indexados 
+var paises = new Array();
+var paises = new Array("Brasil","Russia","India","China");
+paises = "Brasil","Russia","India","China"
+
+Arrays indexados cada um dos elementos recebem uma posição dentro do Array. 
+Essa indexacao são chamados de array indexados conjunto chave=valor chave = 0 valor = Brasil 
+
+Metodos do Array 
+alert(paises);
+
+  
+
+ 
