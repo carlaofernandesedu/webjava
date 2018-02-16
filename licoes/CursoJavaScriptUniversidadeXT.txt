@@ -433,9 +433,48 @@ paises = "Brasil","Russia","India","China"
 Arrays indexados cada um dos elementos recebem uma posição dentro do Array. 
 Essa indexacao são chamados de array indexados conjunto chave=valor chave = 0 valor = Brasil 
 
-Metodos do Array 
-alert(paises);
+Apresentar elementos do array = alert(paises);
+elemento na posicao 0 alert(paises[0]);
+Alterar elemento na posicao = paises[0] = "Brazil";
+length quantos elementos temos no nosso array alert(paises.length) temos 4 elementos 
+imprimindo elemento a elemento 
+for(var i=0; i < paises.length ; i++)
+{
+   alert(paises[i])
+}
+saber o indice do elemento = alert(paises.indexOf("India")); retorna 2 
+saber a ultima ocorrencia do elemento paises.lastIndexOf("Brasil")
+Falar sobre ressalva antes de entrar na ordenação 
+podemos criar um array == sintaxe literal =   var paises ["Brasil","",""];
+Quando um crio array literal ou via new Array sao criados como Array 
+via string tambem temos o conceito de array var s = "Acai"  alert(s[1]); acessar via for os elementos do string
+outra forma de inicializacao 
+var paises = new Array();
+paises[0] = "Brasil";
+funcao reverse inverte a do elementos do nosso array 
+alert(paises.reverse()) ordena pelo indice... troca 
+alert(paises.sort()) sort em ordem alfabetica
+paises.join(";")  alterar o separador para exibicao das informacoes 
+concat concatena no arrray outros elementos de outro array 
+paises.concat("EUA","Argentina); 
+a funcao slice retornar um subarray do nosso array Ela pode receber de um a dois parametros 
+frutas.slice(3)  ou frutas.slice(2,4)
+metodo splice remover elementos no array e pode incluir no lugar removido... 
+alert(frutas.splice(2,2),"abacate","acerola","umbu", "cupuacu") 
+Capacidade de trabalhar no Array como FILAS como FIFO padrao de uma fila ... 
+var pessoas =["Ricardo","Sandra","beatriz"],"Lwarence"]; 
+alert(pessoas.push("janaina"); retorna quantos item temos no array 
+pessoas.shift() remove da fila o primeiro elemento retorna o elemento .. e no final ficam 4 pessoas..
+poessoas.pop() remove o ultimo elemento da fila .. mostra a ultima removida e ficou somente as tres..
+pessoas.unshift no inicio da fila.. 
 
+
+
+https://escritoriodeprojetos.com.br/matriz-de-rastreabilidade-dos-requisitos
+https://www.devmedia.com.br/guia/requisitos-modelagem-e-uml/35697
+https://dotnetthoughts.net/building-a-private-nuget-repository-using-klondike/
+https://docs.microsoft.com/pt-br/nuget/hosting-packages/overview
+https://docs.microsoft.com/pt-br/nuget/hosting-packages/overview
   
 
  
