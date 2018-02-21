@@ -1,0 +1,186 @@
+
+Estrategia Base (Curso) 
+CSS 3 = W3C 
+FlexBox 
+BootStrap 60 =  6 aulas por dia pelo menos 
+Javascript Universidade XTI e Tutorial que estava vendo = 16 aulas  
+Jquery Devmedia 
+
+Estrategia Acessebilidade O Curso que eu posso ver  Rever as dicas do DevMedia e ver no livro   
+
+METAS PARA O JAVASCRIPT 
+01. CRUD DE PAGINACAO = Mapear no javascript  
+02. COMPONENTE DE AUTO COMPLETE =  
+03. INATIVIDADE DO USUARIO 
+04. TRATAMENTO DE MODAIS DENTRO DAS PAGINAS  
+05. FACEBOOK 
+06. Como Trocar as bibliotecas utilizadas de forma a padronizar ????
+
+
+Planos para o estudo .....
+BASICO HTML E CSS ===  FreeCodeCamp e CSS 
+33 horas 
+FreeCodeCamp = Basic HTML e HTML5 = 5 horas 
+FreeCodeCamp = Basic CSS = 5 horas 
+FreeCodeCamp = Applied Visual Design  5 horas 
+FreeCodeCamp = Applied Accessibility  5 horas
+FreeCodeCamp = Responsive Web Design Principles  5 ohras 
+FreeCodeCamp = CssFlexbox = 5 horas  
+FreeCodeCamp = 3 horas 
+Devmedia = Curso HTML Basico = 50h
+Devmedia = O que e CSS 
+Devmedia = Como criar a sua pagina em CSS = 6 horas 
+Devmedia = BootStrap Responsivo = 45 horas 
+Devmedia = Pseudo Classes do CSS  = 5 horas 
+Devmedia = 
+
+
+
+METAS PARA O JAVASCRIPT 
+01. CRUD DE PAGINACAO = Mapear no javascript  
+02. COMPONENTE DE AUTO COMPLETE =  
+03. INATIVIDADE DO USUARIO 
+04. TRATAMENTO DE MODAIS DENTRO DAS PAGINAS  
+05. FACEBOOK 
+
+Javascript 
+https://braziljs.org/blog/os-melhores-cursos-online-para-aprender-javascript/
+http://blog.alura.com.br/category/front-end/
+
+
+https://beta.freecodecamp.org/en/challenges/basic-html-and-html5/say-hello-to-html-elements
+http://marcoluglio.github.io/tutorialjs/ (Melhor fazer os exemplos do Marco) 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#Lexical_this 
+Interessante o site do Mozilla  
+
+Interessante Site do Google Developers 
+https://developers.google.com/web/fundamentals/primers/async-functions
+https://developers.google.com/web/fundamentals/accessibility/
+https://developers.google.com/web/fundamentals/performance/rail
+
+Assincrono 
+https://braziljs.org/blog/javascript-assincrono-introducao/
+https://braziljs.org/blog/javascript-multi-threading-com-web-workers-2/
+https://braziljs.org/blog/promises-no-javascript/
+https://braziljs.org/blog/fetch-api-e-o-javascript/
+https://braziljs.org/blog/generators-yield-e-iterators/
+https://braziljs.org/blog/promises-no-javascript/
+Artigo falar que o javascript tem programacao procedural, programacao funcional e orientacao a objeto por Prototipo 
+preciso entender o que o Prototipo .. 
+Falando de programacao assicrona ele tem o callback hell - forma elegante de resolver o conceito de promisse 
+outros recursos interessante async await , 
+
+Caixa de Ferramentas para o javascript 
+https://www.infoq.com/br/articles/modern-javascript-toolbox?utm_source=articles_about_javascript&utm_medium=link&utm_campaign=javascript
+WebStorm - JetBrains ... preferencia de Editor  == gratuito tem Brackets = Brackets
+Conceitos 
+Minification e Bundling == Arquivo de Mapeamento .. para conseguir no depurar abrir o codigo minificado 
+Uma ferramenta de linting analisa o código procurando erros comuns e equívocos nas regras de formatação
+JSHint e JSLint. sao as mais populares... 
+Interessante tentar acoplar SonarQube 
+https://stackoverflow.com/questions/31980013/how-to-add-jshint-or-eslint-or-tslint-to-sonar-qube
+Avaliar o uso do GRUNT  E GULP como ferramenta de Automacao ...  
+Uso do NPM gerenciador de pacotes 
+
+Experiencias REACT X ANGULARJS 
+https://www.infoq.com/br/presentations/evoluindo-a-experiencia-web-no-sportv-play-com-react?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=presentations_link&utm_content=link_text
+
+
+DEBUGAR O CODIGO 
+https://braziljs.org/blog/como-testar-o-tempo-de-execucao-seu-codigo-com-js/
+
+SABER SE A FUNCIONALIDADES ESTA PRESENTE NO BROWSERS
+https://caniuse.com/#search=Promises
+
+GITHUB DO ECMA SCRIT 
+https://github.com/tc39
+avaScript é uma linguagem de programação baseada em scripts e padronizada pela ECMA International (associação especializada na padronização de sistemas de informação).
+Foi criada por Brendan Eich (Netscape) e surgiu em 1995 como linguagem de script client-side de páginas web. É uma linguagem dinâmica, orientada a objetos e criada com sintaxe similiar à linguagem C.
+ESCMA SCRIPT X
+
+Ferramentas de dsenvolvimento 
+Chrome, Firefox (nativo), Opera e Safari: Ctrl + Shift + i
+Firefox (extensão firebug), Edge e IE: F12
+FIREFOX 
+Ela se chama scratchpad = Para conseguir executar blocos de Codigo 
+
+Tipos do JAvascript 
+
+
+Tutorial - Marco Luglio 
+jascript incompatibilidades ate IE8.. Existe uma biblioteca nos navegadores representa DOM..
+Javascript pode estar em arquivo extensoa .js htm ou svg..
+Dica do uso de strict = 'use strict' = compatiblidade versoes futuras 
+
+Tres formas de declarar = var let const 
+var tem pegadinhas // let mais parecido com o var que usamos  para indicar uma variavel  //const ja tem que atribuir o valor..
+Javascript não e fortemente tipado 
+o Tipo é inferido de acordo com o valor atribuido.. se mantivermos o tipo sera mais performatico...
+Descobrir o tipo é algo fragil mas pode ser feito com typeof ou Arra.isArray 
+Tambem converte automaticamente em true e false quando necessario 
+var naoInicializada2; // possui valor undefined
+var dica2 = 'Use "let" ao invés de "var"';
+Tratamento de Nulos || cuidaddo com '' pois ele e falsy 
+
+Conceito de implementar o namespace 
+Padroes de Module AMD - Asynchronous Module Definition  - mecanismo de definicao de modulo 
+
+
+Não entendi como funciona função anonima auto executavel ... escopo interno ... 
+(function(){})();
+
+Conceitos de quebrar por Crase... ES6 == Template Strings precisa estudar ... Nao entendi 
+Representacao da String UTF-16 . Nas Versoes ES6+ iterar pelo code points ... 
+Code points .. Tem conceito de CODE UNITS e CODE POINTS ...
+Percorer os caracteres de uma string pelo comando for (let caractere of multibyte)
+
+Indices inexistentes no Array = Muda de tamanho conforme necessidade // E pode armazenar tipos misturados 
+Note que não é feito nenhum tipo de restrição para acessar índices inexistentes na Array!
+
+Ganhamos performance.. Mesmo tipo para uma array...
+
+Funcoes e metodos sao sempre Objetos == Todas as funcoes sao variadicas == one which accepts a variable number of arguments
+implicitamente recebe arguments ... 
+ARGUMENTS ... por isso variavel ... 
+
+Metodos São diferenciados os métodos são diferenciados pelo seu nome exclusivamente
+Usar conceitos de strict dentro de funcoes para trativas em codigo antigos 
+Isso é útil nos casos em que precisamos dar manutenção em códigos antigos, ou quando inserimos código dentro de 
+tags <script />, ao invés de em arquivos externos.
+
+JavaScript suporta funções anônimas, ou expressões lambda. 
+Expressões lambda são utilizados frequentemente em JavaScript, por isso é importante compreender o que são.
+Nao entendi esse conceito == de expressoes lambda 
+()=>{}  function(){}
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#Lexical_this
+has a shorter syntax than a function expression and does not have its own this, arguments, super, or new.target. 
+These function expressions are best suited for non-method functions, 
+and they cannot be used as constructors
+Nao entendi bem o conceito de expressoes de funcao ==
+
+
+
+... (spread e rest ) para a sobrecarga de Metodos ... 
+Este operador é o recomendado atualmente para a programação de sobrecarga de métodos, ao invés de utilizar o objeto legado arguments 
+Esrategia de se verificar os tipos dentro do Array que será passado .. tipagem ... 
+
+Declaracao de objetos - Vamos nos ater ao básico por enquanto. Declaramos um objeto usando {}. Sim, um objeto literal
+usar notacao de Array para acessar a proprieade tambem é possível .... 
+Propriedades == podem ser WriteAble Enumerable e Confiigurable 
+Podem ser escritas, que sao mostradas em lacos for in seus atributos podem ser modificados..
+sintaxe mais parecida com a de outras linguagens usando a sintaxe class porem modelo de heranca usanda em prototipos nao tem conceito de class
+onde um objeto herda diretamente de outro 
+Nao entendi o conceito de Enumerable .. diferente da sintaxe de Objeto 
+Sintaxe antiga  == 
+// cria um objeto que herda de Retangulo
+const retangulo = new Retangulo(10, 20); 
+
+Laço For falando de itens que implementar o Iterator 
+Ele irá iterar pelos índices de uma Array ou pelas propriedades expostas por um objeto que implemente [Symbol.iterator]
+let propriedade of lala)
+(let i = 0; i < lala.length; i++
+
+Conceitos de Closure... Declaracao de Objetos situacoes diferentees ... 
+funcoes anonimas auto executaveis o problema do var e let .. bloco e laço dentro do for 
+comando for ... como interagir com o mesmo 
+Inicio do DOM..
