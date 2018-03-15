@@ -76,5 +76,53 @@ input type='cehckbox'
 
 estilos 
 .test{border:2px solid gray;padding:5px;} 
-
 .vazio { width:300px;heigth:300px;border:1px solid red;}
+Filtro por formularios.. 
+
+Funcoes de Atributos = Jquery associada a funcoes 
+Verificar na documentacao 
+http://api.jquery.com/category/attributes/
+baseada e, funções muitas das coisas passando atributos... 
+.addClass() adicionando uma class no parametro anterior ... estamos atualizando um atributo do button 
+melhorar a forma de melhorar mudar o estilo dinamico da pagina que html 
+.attr() buscar o valor de atributo ou atualizar um valor de atributo
+faz algumas pesquisas .. 
+var tipo = $('option').html(); primeiro da Option
+var tipo = $('option:eq(2)').html();
+funcao html() exibir o conteudo dentro da mesma 
+.hasClass() verificar se tem uma classe especifica 
+var tipo = $(':checkbox').hasClass('test');
+.attr(chave,valor) define um atributo com valor 
+var tipo = $(':checkbox').attr('style','padding:');
+.val() buscar o valor de atributo especifico...
+
+Manipulando o conteudo e atributos 
+manipulacao de atributos é essencial o tempo inteiro.. pode influenciar na pagina 
+manipular dinamismo na pagina 
+funcoes atributos .addClass , .attr e .hasClass diretamente no valores  
+funcoes com conteudo .val() 
+Buscar textos por exemplo... 
+<div>adfasdfasdfsadf<br/>
+</div> 
+As divs da minha aplicacao ter uma configuracao especifica 
+Explorar a funcao toggleclass 
+Representa um toogleClass  
+exemplo 
+$(document).ready(function () 
+{ 
+  $(':button').click(function (){$('div').css('border','2px solid red'); }});
+});
+
+.toggeClass() coloca a class se acionar de novo retiar a class aplicada ... 
+tem uma funcao chamada .text() age de forma semelhante ao html porém sem a tags html
+tem uma funcao replaceWith('abc') substituir o conteudo da minha tag por um conteudo especifico.. que voce informou...
+tem uma funcao recuperar a primeira verifica  prop remover prop 
+Tratamento de manipulacao de atributos 
+http://api.jquery.com/category/manipulation/
+
+Criar novos elementos dentro da nossa pagina criar dentro do sua pagina ....
+$('div1').append($('span'))
+Adiciona uma funcao ao final ... ele moveu o elementro ... 
+Caso queira adicionar o novo elemento ... 
+voce pode passar os dados para cirar um novo elemento 
+var imagem = $('<img/>', {src: 'img/devmedia.png', border:1, mouseover:function(){alert('fff')}};
