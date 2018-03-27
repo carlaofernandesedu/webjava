@@ -1,0 +1,51 @@
+https://developers.google.com/web/tools/chrome-devtools/javascript/
+Abrir o codigo com CTRL SHIFT I 
+Sources
+Event Listener Breakpoints
+Animation e Clipboard.
+Mouse, clique em Expand
+
+Pontos de interrupção condicionais, acionados somente quando a condição fornecida for verdadeira.
+Pontos de interrupção em exceções capturadas ou não capturadas.
+Pontos de interrupção XHR, acionados quando o URL selecionado corresponder a uma substring informada.
+
+Por linha de Codigo 
+Colocar o breakpoint na linha de codigo 
+https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints
+https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints
+https://developers.google.com/web/tools/chrome-devtools/javascript/step-code#stepping_in_action
+ou optar por debugger;
+
+Condicional BreakPoint 
+Colocar a expressao para verificar quando true parar
+
+Conceito de Deactivate 
+Deactivating all breakpoints instructs DevTools to ignore all line-of-code breakpoints, but to also maintain preserve their enabled state so that they are in the same state as before when you reactivate them.
+
+Clicar no elemento tab ... 
+Break on subtree modfifications 
+attribute modfifications ou node removal 
+
+XHR Breakpoints 
+org coloca um texto 
+
+Click the Sources tab.
+Click Pause on exceptions . It turns blue when enabled.
+(Optional) Check the Pause On Caught Exceptions checkbox if you also want to pause on caught 
+
+Para debugar uma funcao especifica 
+debug(sum); // Pass the function object, not a string.
+
+Escopo 
+Set a line-of-code breakpoint somewhere where the function is scope.
+Trigger the breakpoint.
+Call debug() in the DevTools Console while the code is still paused on your line-of-code breakpoint.
+
+
+https://originaleexclusivo.com.br/como-conectar-projetor-a-celular-ou-tablet-android/
+HDMI:
+Se o seu dispositivo tiver uma porta Mini-HDMI (o que é raro), use um cabo Mini-HDMI para conectar-se entre uma porta HDMI no dispositivo e a porta HDMI padrão no projetor. Alguns dispositivos como Samsung Galaxy S8 e Note8 tem adaptador USB-C para HDMI.
+MHL:
+Se o seu dispositivo Android suportar MHL, você pode conectar um adaptador MHL a HDMI ao dispositivo e, em seguida, conecte-o à porta HDMI no projetor.
+
+ 
