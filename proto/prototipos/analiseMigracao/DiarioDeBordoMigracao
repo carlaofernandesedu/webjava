@@ -1,0 +1,23 @@
+06/03/2018
+Feita a analise dos arquivos de Layout da pasta Shared . Foram gerados os arquivos de Resultado da Pesquisa estão na pasta Prototipos 
+07/03/2018 
+Elaborar um projeto de Prototipo para funcionar 
+Para isso foi feito uma pesquisa nos arquivos de Layout Shared para identificar as pastas principais que estao sendo utilizadas 
+Risco as pastas existentes do MVC tambem sao utilizadas assim com a pasta Assets 
+Abaixo seguem as pastas foras das pastas Assets 
+Line 54:             "~/Scripts/offline.js"));
+	Line 60:             "~/Scripts/Base/custom.validation.js"));
+	Line 65:             "~/Scripts/Base/enums.js",
+	Line 66:             "~/Scripts/Base/base.js"));
+	Line 71:             "~/Scripts/Base/controles.js"));
+	Line 77:             //"~/Scripts/smalot-datetimepicker/bootstrap-datetimepicker.js",
+	Line 90:             "~/Scripts/smalot-datetimepicker/bootstrap-datetimepicker.js",
+	Line 91:             "~/Scripts/bootbox.min.js"));
+	Line 95:             "~/Scripts/notifyjs-master/dist/notify.js",
+	Line 96:             "~/Scripts/notifyjs-master/dist/styles/metro/notify-metro.js",
+	Line 97:             "~/Scripts/notify_execucao.js"
+	Line 110:                 "~/Scripts/Base/clientstorage.js"));
+	
+Ao Verificar o pacote do Componente o Componente foi personalizado (Problema para migracao)  alem da estrutura estar errada 
+https://www.nuget.org/packages/smalot.bootstrap-datetimepicker/1.0.4	
+Criamos o projeto para Prototipacao

@@ -1,0 +1,105 @@
+﻿    .tabs-vertical-env .tab-content {
+    background: #f4f8fb;
+    }
+    .tabs-vertical-env .nav.tabs-vertical {
+    background: #ebeff2;
+}
+    .tabs-vertical-env .nav.tabs-vertical li.active > a {
+    background-color: #004d97;
+    border: 0;
+    color: #FFF!important;
+}
+.m-t-10 {
+    margin-top: 10px !important;
+}
+	.tab-content {
+		width: 100%;
+	}
+    #block{display:none;background:#eef;padding:10px;text-align:center;}
+    /* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 33px;
+  height: 20px;
+}
+    .label-texto {
+display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    }  
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+border: 1px solid #dfdfdf;
+  box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset;
+    border-color: rgb(223, 223, 223);
+    transition: border 0.4s, box-shadow 0.4s;
+    background-color: rgb(255, 255, 255);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 0px;
+  bottom: 0px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #81c868;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #81c868;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.question {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.question, .switch {
+    display: table-cell;
+    vertical-align: middle;
+} 
+
+table td label {
+    display: block;
+    margin: 0;
+    padding: 6px
+}
+table td {
+    padding:0 !important;
+}

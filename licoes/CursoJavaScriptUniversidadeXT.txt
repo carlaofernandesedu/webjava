@@ -470,6 +470,14 @@ pessoas.unshift no inicio da fila..
 
 
 
+
+Outros Itens 
+https://www.devmedia.com.br/programacao-assincrona-em-javascript-com-promises/33184
+https://www.devmedia.com.br/javascript-reduce-reduzindo-uma-colecao-em-um-unico-objeto/37981
+https://www.devmedia.com.br/javascript-concat-concatenando-arrays-e-strings/37964
+https://www.devmedia.com.br/javascript-como-e-quando-utilizar-os-operadores-e/37782
+
+
 https://escritoriodeprojetos.com.br/matriz-de-rastreabilidade-dos-requisitos
 https://www.devmedia.com.br/guia/requisitos-modelagem-e-uml/35697
 https://dotnetthoughts.net/building-a-private-nuget-repository-using-klondike/

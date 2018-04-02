@@ -1,0 +1,88 @@
+﻿
+#myTags {
+    display: none;
+}
+
+#parametros-classificacao tbody tr td:first-child, #parametros-vicio tbody tr td:first-child, #parametros-pedido tbody tr td:first-child {
+    cursor: pointer;
+}
+
+#parametros-classificacao tbody tr td, #parametros-vicio tbody tr td, #parametros-pedido tbody tr td {
+    line-height: 32px;
+}
+
+#parametros-classificacao td input[type="checkbox"], #parametros-vicio td input[type="checkbox"], #parametros-pedido td input[type="checkbox"] {
+    -webkit-appearance: none;
+    position: relative;
+    padding: 7px;
+    width: 20px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+}
+
+    #parametros-classificacao td input[type="checkbox"]:checked::after, #parametros-vicio td input[type="checkbox"]:checked::after, #parametros-pedido td input[type="checkbox"]:checked::after {
+        font-family: "Glyphicons Halflings";
+        content: "\e013";
+        background: #8BC34A;
+        position: absolute;
+        right: -2px;
+        top: 0;
+        font-size: 11pt;
+        text-align: center;
+        color: #fff;
+        padding: 4px 0;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+    }
+
+    #parametros-classificacao td input[type="checkbox"]::after, #parametros-vicio td input[type="checkbox"]::after, #parametros-pedido td input[type="checkbox"]::after {
+        font-family: "Glyphicons Halflings";
+        content: "\e014";
+        color: #eee;
+        position: absolute;
+        right: 2px;
+        top: 0;
+        font-size: 11pt;
+        text-align: center;
+    }
+
+#parametros-classificacao tbody tr td.ndisponivel, #parametros-vicio tbody tr td.ndisponivel {
+    font-size: 10pt;
+    font-style: italic;
+    background: #f5f5f5;
+    color: #aaa;
+}
+
+#parametros-classificacao tbody tr td:last-child, #parametros-vicio tbody tr td:last-child {
+    text-align: center;
+}
+
+    #parametros-classificacao tbody tr td:last-child button, #parametros-vicio tbody tr td:last-child button {
+        height: 34px;
+        width: 100%;
+    }
+
+    #parametros-classificacao tbody tr td:last-child .tooltip, #parametros-vicio tbody tr td:last-child .tooltip {
+        width: 120px;
+    }
+
+    #parametros-classificacao tbody tr td:last-child .btn-primary, #parametros-vicio tbody tr td:last-child .btn-primary {
+        display: none;
+    }
+
+#parametros-classificacao thead tr th:last-child {
+    width: 10%;
+}
+
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: #aaa !important;
+    color: #fff !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    color: #fff !important;
+}

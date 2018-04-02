@@ -1,0 +1,158 @@
+﻿@using System.Web.Optimization;
+@using System.Web.Mvc;
+@{
+    string version = "1.0.0.0";
+    string ip = "127.0.0.1";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - Sistema Integrado Procon</title>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#2d4982">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
+    <link rel="icon" href="~/favicon.ico" />
+    <link href="~/Assets/Css/aguarde.css" rel="stylesheet" />
+    <link href="~/Assets/Css/spinner.css" rel="stylesheet" />
+
+    @Styles.Render("~/bundles/offlinecss")
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/offlinejs")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/base")
+    @Scripts.Render("~/bundles/controles")
+    @Scripts.Render("~/bundles/scripts")
+    @Scripts.Render("~/bundles/notify")
+    @Scripts.Render("~/bundles/jquerymask")
+    @Scripts.Render("~/bundles/bootstraptypeahead")
+    @Scripts.Render("~/bundles/clientstorage")
+
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div class="container">
+        <header class="hero-spacer">
+            <div class="row">
+                <div class="col-xs-12 col-md-1 col-lg-1 form-group text-center">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img src="~/Assets/img/logo_procon.png" width="70" height="73" />
+                    </a>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3 form-group text-center">
+                    <p class="tituloLayout tituloLoginSistemaintegrado">Sistema Integrado Procon</p>
+                    <p class="subtituloLayout">Secretaria da Justiça e da Defesa da Cidadania</p>
+                </div>
+
+                <div class="col-xs-12 col-md-8 col-lg-8 form-group">
+                    <div class="secaoHeader">
+                            <div class="NomeUA">ACP-ASSESSORIA DE CONTROLE DE PROCESSOS/DAOC</div>
+                            <div class="secaoHeaderAcoes">
+                                <div class="secaoHeaderAcoesIcones">
+                                    <button type="button" id="btn-config" data-toggle="tooltip" data-placement="bottom" title="Menu do Usuário" data-original-title="Menu do Usuário"><i class="fa fa-2x fa-cog"></i></button>
+                                    <div class="secaoHeaderConfig">
+                                        <span class="seta-cima"></span>
+                                        <ul>
+                                            @*<li><a href="#">Meus dados</a></li>*@
+                                            <li><a href="/Login/AlterarSenha">Alterar Senha</a></li>
+                                            <li><a href="/Login/EncerrarSessao" onclick="Saida();">Sair</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                                <div class="secaoHeaderAcoesIcones" style="display: none">
+                                    <form action="" method="post">
+                                        <fieldset>
+                                            <ul class="toolbar clearfix">
+                                                <li>
+                                                    <input type="search" id="search" placeholder="Buscar"><input type="submit" id="buscar" name="buscar" value="OK">
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-sm" id="btn-search"><i class="fa fa-2x fa-search"></i></button>
+                                                </li>
+                                            </ul>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="secaoHeaderUsuarioData">
+                                <span class="DataUser">Quarta-Feira, 7 de Março de 2018 09:03</span>
+                                <span class="talqSeparador"></span>
+                                <span>Olá Administrador!</span>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+        </header>
+        <header class="menu-topo">
+          
+        </header>
+
+        <div class="row bread-topo">
+            <div class="col-lg-6 barrabc">
+                <ol class="breadcrumb">
+                    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+                    {
+                        @Html.ActionLink("Home", "Index", "Home")
+                        <li id="tituloLayout" class="active">
+                            / @ViewBag.Title
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="active">
+                            Home
+                        </li>
+                    }
+                </ol>
+            </div>
+            <div class="col-lg-6 text-right acessibilidade margT10">
+                <button class="btn btn-sm btn-default inc-font margT0" data-toggle="tooltip" data-placement="bottom" title="Aumentar fonte" data-original-title="Aumentar fonte"><b>A+</b></button>
+                <button class="btn btn-sm btn-default res-font margT0" data-toggle="tooltip" data-placement="bottom" title="Tamanho normal da fonte" data-original-title="Tamanho normal da fonte"><b>A&nbsp;</b></button>
+                <button class="btn btn-sm btn-default dec-font margT0" data-toggle="tooltip" data-placement="bottom" title="Diminuir fonte" data-original-title="Diminuir fonte"><b>A-</b></button>
+            </div>
+        </div>
+        <div class="row linha-bread" style="display: none">
+            <hr />
+        </div>
+        <div class="row margT10">
+            <div id="conteudo_principal" class="col-lg-12 conteudo">
+                @RenderBody()
+            </div>
+        </div>
+        <footer class="margB0">
+            <div class="row margT10">
+                <div class="col-lg-12 center">
+                    <p class="infFoooterLeft">Prodesp - Tecnologia da Informação</p>
+                    <p class="infFoooterCenter">versão @version | Servidor: @ip</p>
+                    <p class="infFoooterRight">
+                        <!--Suporte: ligue (11) 0800-00-0000-->
+                    </p>
+                </div>
+                <div class="col-lg-12">
+                    <p class="bg_footer margB0">&copy; @DateTime.Now.Year - Procon SP | Secretaria da Justiça e da Defesa da Cidadania</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    
+    <div class="fade submit-progress hidden" role="dialog" data-toggle="modal" id="divAguarde">
+        <i class="fa fa-2x fa-spinner fa-spin"></i>
+        <label>Por Favor, Aguarde!</label>
+    </div>
+
+    <!-- Place at bottom of page -->
+    <div class="spinner">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        <span class="sr-only">Carregando...</span>
+    </div>
+</body>
+</html>

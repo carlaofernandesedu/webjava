@@ -1,0 +1,251 @@
+.nextPrev {
+    color: #337ab7;
+}
+
+.control-label {
+    font-weight: normal;
+}
+
+.modal .form-group {
+    margin-bottom: 5px;
+}
+
+/* bloco */
+
+.blocoItem {
+    padding: 15px;
+    padding-top: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: left;
+}
+
+    .blocoItem input {
+        -webkit-appearance: none;
+        -moz-appearance: menubar;
+        appearance: none;
+    }
+
+    .blocoItem h3 {
+        text-transform: uppercase;
+        font-size: 1vw;
+        font-weight: bolder;
+    }
+
+
+textarea {
+    /* resize: vertical; */
+}
+
+
+/* ALTERAÇÕES SAULO 04-01 */
+
+.dadosFornecedor p.form-control-static {
+    min-height: inherit;
+    padding: 0;
+    font-size: 14px;
+}
+
+#enderecoCarregado, #dadosCarregados {
+    display: none;
+}
+
+/* Pesquisa Auto */
+
+.dadosPesquisa {
+    text-transform: uppercase;
+}
+
+.pesquisaAuto ul {
+    padding: 0;
+}
+
+    .pesquisaAuto ul .parametro {
+        list-style-type: none;
+        display: inline-block;
+        margin: 0 10px;
+        position: relative;
+    }
+
+        .pesquisaAuto ul .parametro.ativo {
+            font-weight: bold;
+        }
+
+            .pesquisaAuto ul .parametro.ativo .triangle {
+                position: absolute;
+                margin: auto;
+                top: 114%;
+                left: 0;
+                right: 0;
+                z-index: 9;
+                width: 15px;
+                height: 15px;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(225deg);
+                -moz-transform: rotate(225deg);
+                -o-transform: rotate(225deg);
+                -ms-transform: rotate(225deg);
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+                background: #fff;
+            }
+
+.tDisabled {
+    background: #eee !important;
+}
+
+.pesquisaAuto ul .parametro a:hover, .pesquisaAuto ul .parametro a:focus {
+    text-decoration: none;
+}
+
+/*#resultadoBusca {
+    display: none;
+    overflow-x: auto;
+}*/
+
+#resultadoBusca tbody tr {
+    cursor: pointer;
+}
+
+    #resultadoBusca tbody tr:hover {
+        background: #eee;
+    }
+
+@media screen and (max-width:768px) {
+    #resultadoBusca tbody tr {
+    white-space: nowrap;
+}
+}
+
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
+
+    /* style glyph */
+    .inner-addon .glyphicon {
+        position: absolute;
+        padding: 10px;
+        pointer-events: none;
+    }
+
+/* align glyph */
+.left-addon .glyphicon {
+    left: 0px;
+}
+
+.right-addon .glyphicon {
+    right: 0px;
+}
+
+/* add padding  */
+.right-addon input {
+    padding-right: 30px;
+}
+
+/* AUTO DE INFRAÇÃO */
+
+.btn-nulled {
+    background: none;
+    box-shadow: none;
+    color: #a5a5a5;
+}
+
+.noPad {
+    padding: 0;
+}
+
+#abreModalConduta .btn i {
+    vertical-align: middle;
+}
+
+#modalTabelaCondutas table {
+    display: block;
+}
+
+    #modalTabelaCondutas table tbody tr {
+        cursor: pointer;
+    }
+
+        #modalTabelaCondutas table tbody tr:hover {
+            background: #eee;
+        }
+
+.textoComplemento {
+    padding: 1px 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+    .textoComplemento.bg-success {
+        background: #30b532;
+    }
+
+    .textoComplemento:hover {
+        opacity: 0.8;
+    }
+
+.jumbotron.condutaExemplo, .infracaoCadastrada .jumbotron {
+    padding: 17px !important;
+    font-size: 13px;
+    color: #777;
+    display: inline-table;
+    background: #eee;
+}
+
+.boldFont {
+    font-weight: bold;
+}
+
+#campoComplemento textarea, .textoComplemento, .infracaoCadastrada .jumbotron {
+    text-transform: uppercase;
+}
+
+
+.borda-vermelha {
+    border-color: red;
+}
+
+/* Responsivo */
+
+@media screen and (max-width:480px) {
+    .parametro {
+        font-size: 13px;
+        margin: 0 3px !important;
+    }
+}
+
+@media screen and (max-width: 998px) {
+    #buscaSimples .buscarAutos {
+        margin: 10px 0 0 15px;
+    }
+}
+
+
+.docRG, .dataCPF {
+    display: none;
+}
+
+/* reg auto form */
+.fiscalResp {
+    padding: 0px 9px;
+    margin: 0 5px;
+}
+
+label.error {
+    color: red;
+}
+
+input.error, select.error, textarea.error {
+border-color: red;
+}
+
+#inputSerie, #Serie  {
+    text-transform: uppercase;
+}
+
+.campo-extenso {
+    word-break: break-word;
+}rd;
+}

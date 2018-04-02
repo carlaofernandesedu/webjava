@@ -1,0 +1,138 @@
+﻿.modal-dialog-login {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+
+.body-login {
+    background: #0b327f; /* Old browsers */
+    background: -moz-linear-gradient(top, #0b327f 0%, #2c4882 34%, #5d78af 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #0b327f 0%,#2c4882 34%,#5d78af 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #0b327f 0%,#2c4882 34%,#5d78af 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b327f', endColorstr='#5d78af',GradientType=0 ); /* IE6-9 */
+}
+
+.margT0 {
+    margin-top: 0!important;
+}
+.margT5 {
+    margin-top: 5px!important;
+}
+.margT10 {
+    margin-top: 10px!important;
+}
+.margT20 {
+    margin-top: 20px!important;
+}
+.margT23 {
+    margin-top: 23px!important;
+}
+.margT25 {
+    margin-top: 25px!important;
+}
+.margT30 {
+    margin-top: 30px!important;
+}
+
+.margB0 {
+    margin-bottom: 0!important;
+}
+.margB10 {
+    margin-bottom: 10px!important;
+}
+
+.margL0 {
+    margin-left: 0!important;
+}
+.margL5 {
+    margin-left: 5px!important;
+}
+.margL20 {
+    margin-left: 20px!important;
+}
+
+.margR5 {
+    margin-right: 5px!important;
+}
+
+.margR0 {
+    margin-right: 0!important;
+}
+
+.padT0 {
+    padding-top: 0!important;
+}
+
+.padB0 {
+    padding-bottom: 0!important;
+}
+
+.padL0 {
+    padding-left: 0!important;
+}
+
+.padR0 {
+    padding-right: 0!important;
+}
+
+
+.tituloLayout {
+    font-size: 24px!important;
+    font-stretch: condensed;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    margin: 10px 0 0 0!important;
+}
+
+.tituloLogin {
+    font-size: 29px;
+    font-stretch: condensed;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.tituloLogin p{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.tituloLoginSistemaintegrado {
+    color: #006699 !important;
+}
+
+.subtituloLayout {
+    font-size: 13px!important;
+    font-stretch: condensed;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.subtituloLogin {
+    font-size: 16px;
+    font-stretch: condensed;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.jumbotron{
+    background: transparent;
+    margin-bottom: 15px;
+}
+
+.text-default{
+    color: #000!important;
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media(min-width: 768px) {
+    .modal-dialog-login {
+        width: 450px !important;
+        margin: 30px auto;
+    }
+}

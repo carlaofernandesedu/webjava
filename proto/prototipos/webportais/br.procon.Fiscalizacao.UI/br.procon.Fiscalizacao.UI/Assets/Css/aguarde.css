@@ -1,0 +1,18 @@
+﻿  .submit-progress {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      height: 96px;
+      padding-top: 36px;
+      width: 220px;
+      margin-left: -160px;
+      padding-left: 33px;
+      background-color: #EEE;
+      color: #000;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+  }
+  .submit-progress i {
+      margin-right: 8px;
+  }

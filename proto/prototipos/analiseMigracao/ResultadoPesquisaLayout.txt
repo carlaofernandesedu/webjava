@@ -1,0 +1,110 @@
+PESQUISA LAYOUT TIMBRE  
+    @Styles.Render("~/bundles/css")
+    @Styles.Render("~/bundles/paper")
+    @Styles.Render("~/bundles/timbre")
+
+PESQUISA LAYOUT MODAL
+   @Styles.Render("~/bundles/css")
+   @Scripts.Render("~/bundles/jquery")
+   @Scripts.Render("~/bundles/scripts")
+
+PESQUISA LAYOUT 
+<link href="~/Assets/Css/aguarde.css" rel="stylesheet" />
+<link href="~/Assets/Css/spinner.css" rel="stylesheet" />
+<img src="~/Assets/img/logo_procon.png" width="70" height="73" />
+    @Styles.Render("~/bundles/offlinecss")
+            bundles.Add(new StyleBundle("~/bundles/offlinecss").Include(
+            "~/Content/css/offline-mensagens.css",
+            "~/Content/css/offline-theme.css"));
+
+    @Styles.Render("~/bundles/css")
+            bundles.Add(new StyleBundle("~/bundles/css").Include(
+            "~/Assets/Css/bootstrap.css",
+            "~/Assets/Css/bootstrap-custom.css",
+            "~/Assets/Css/estilo_interno.css",
+            "~/Assets/Css/SourceSansPro.css",
+            "~/Assets/Css/RobotoCondensed.css",
+            "~/Assets/Css/loader.css",
+            "~/Assets/Css/responsivo_interno.css",
+            "~/Assets/css/bootstrap-duallistbox.css",
+            "~/Assets/Css/dataTables.css",
+            //"~/Content/smalot-datetimepicker/bootstrap-datepicker.css",
+            "~/Content/smalot-datetimepicker/bootstrap-datetimepicker.css",
+            //"~/Assets/Css/bootstrap-datetimepicker.css",
+            "~/Assets/Css/jquery-ui.css",
+            "~/Assets/Css/bootstrap-tagsinput.css",
+            "~/Assets/css/jquery-ui.css",
+            "~/Assets/Css/dataTables.responsive.css",
+            "~/Content/css/md-font.css",
+            "~/Assets/Css/editor.css",
+            "~/Assets/megamenu/megamenu.css",
+            "~/Assets/Css/crud_interno.css",
+            "~/Assets/Css/processo.css",
+            "~/Assets/Css/FiscalizacaoOperacional/autuacao.css",
+            "~/Assets/Scripts/bootstrap-modal-master/css/bootstrap-modal.css",
+            "~/Assets/Scripts/bootstrap-modal-master/css/bootstrap-modal-bs3patch.css").Include("~/Assets/font-awesome/css/font-awesome.css", new CssRewriteUrlTransform()));
+
+    @Scripts.Render("~/bundles/jquery")
+           bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            "~/Assets/Scripts/jquery-{version}.js"));
+
+	
+    @Scripts.Render("~/bundles/offlinejs")
+           bundles.Add(new ScriptBundle("~/bundles/offlinejs").Include(
+            "~/Scripts/offline.js"));
+
+    @Scripts.Render("~/bundles/jqueryval")
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+            "~/Assets/Scripts/jquery.validate*",
+            "~/Assets/Scripts/methods_pt.js",
+            "~/Scripts/Base/custom.validation.js"));
+
+	
+    @Scripts.Render("~/bundles/base")
+            bundles.Add(new ScriptBundle("~/bundles/base").Include(
+            "~/Scripts/Base/enums.js",
+            "~/Scripts/Base/base.js"));
+
+    @Scripts.Render("~/bundles/controles")
+           bundles.Add(new ScriptBundle("~/bundles/controles").Include(
+             "~/Assets/Scripts/Atendimento/AtendimentoBase/atendimentobase.js",
+            "~/Scripts/Base/controles.js"));
+
+    @Scripts.Render("~/bundles/scripts")
+          bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
+            "~/Assets/Scripts/date.js",
+            "~/Assets/Scripts/scripts.js",
+            //"~/Scripts/smalot-datetimepicker/bootstrap-datetimepicker.js",
+            "~/Assets/Scripts/bootstrap.js",
+            "~/Assets/Scripts/global.js",
+            "~/Assets/Scripts/jquery.dataTables.min.js",
+            "~/Assets/Scripts/dataTables.responsive.js",
+            "~/Assets/Scripts/jquery.bootstrap-duallistbox.js",
+            "~/Assets/Scripts/editor.js",
+            "~/Assets/Scripts/jquery-ui.js",
+            "~/Assets/Scripts/bootstrap-tagsinput.min.js",
+            "~/Assets/Scripts/bootstrap-modal-master/js/bootstrap-modal.js",
+            "~/Assets/Scripts/bootstrap-modal-master/js/bootstrap-modalmanager.js",
+            "~/Assets/megamenu/megamenu.js",
+            "~/Assets/Scripts/moment-with-locales.js",
+            "~/Scripts/smalot-datetimepicker/bootstrap-datetimepicker.js",
+            "~/Scripts/bootbox.min.js"));
+
+    @Scripts.Render("~/bundles/notify")
+           bundles.Add(new ScriptBundle("~/bundles/notify").Include(
+            "~/Scripts/notifyjs-master/dist/notify.js",
+            "~/Scripts/notifyjs-master/dist/styles/metro/notify-metro.js",
+            "~/Scripts/notify_execucao.js"
+            ));
+
+    @Scripts.Render("~/bundles/jquerymask")
+            bundles.Add(new ScriptBundle("~/bundles/jquerymask").Include(
+            "~/Assets/Scripts/jquery.mask.js",
+            "~/Assets/Scripts/mask.js"));
+
+    @Scripts.Render("~/bundles/bootstraptypeahead")
+           bundles.Add(new ScriptBundle("~/bundles/bootstraptypeahead").Include("~/Assets/Scripts/bootstrap-typeahead.js", "~/Assets/Scripts/bootstrap-typeahead-ci.min.js"));
+
+   @Scripts.Render("~/bundles/clientstorage")
+   bundles.Add(new ScriptBundle("~/bundles/clientstorage").Include(
+                "~/Scripts/Base/clientstorage.js"));

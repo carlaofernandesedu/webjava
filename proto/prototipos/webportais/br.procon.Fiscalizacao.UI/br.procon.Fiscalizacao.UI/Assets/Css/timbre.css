@@ -1,0 +1,26 @@
+﻿#corpo {
+    margin-top: 10px;
+}
+
+.headerdiv {
+    float: left;
+    text-align: center;
+}
+
+.headersidediv {
+    width: 100px;
+}
+
+.headercenterdiv {
+    width: 518px;
+    padding-top: 10px;
+}
+
+.titulo1 {
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.titulo2 {
+    font-size: 12px;
+}

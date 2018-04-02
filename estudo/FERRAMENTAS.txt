@@ -1,0 +1,35 @@
+Aprender a usar a ferramentas NPM GRUNT E GULP
+Proxima tarefa inspecionar o javascript 
+Proxima tarefa automatizar tarefas do GIT por Tarefas 
+
+++++++++++++++++
+DATA 01/04/2016
+++++++++++++++++
+PADROES PARA O FRONT END 
+https://tableless.com.br/codigo-limpo/
+
+FERRAMENTAS 
+*** VALIDAR CODIGO JAVASCRIPT 
+JSHint  
+JSInspect  
+Sonar Qube 
+*** GERENCIADOR DE PACOTES 
+do NodeJS --> NPM 
+O NPM (Node Package Manager) possibilita que desenvolvedores compartilhem código, encorajando o reuso de código e facilitando a instalação/atualização de módulos externos ao NodeJs
+Comandos do NPM
+npm init 
+npm install --save-dev gulp 
+npm install jsdoc -g 
+npm install --save-dev gulp-jsdoc
+Entender os comandos do NPM ?? 
+*** AUTOMATIZADOR DE TAREFAS
+https://gulpjs.com/ 
+https://rafaelcruz.azurewebsites.net/2017/01/09/gulp-js-uma-nova-maneira-de-automatizar-tarefas/
+Grunt - Automatizador de Tarefas 
+Gulp - Automatizador de Tarefas (depende do Node)
+gulp-jshint - Valida se códigos JavaScript estão com a qualidade proposta pelo JSHint.
+gulp-uglify - Minifica arquivos javascript (*.js) com UglifyJS
+gulp-concat - Concatena arquivos
+gulp-rename - Renomeia arquivos facilmente
+Processo de monitorar os arquivos enquanto trabalha .. 
+

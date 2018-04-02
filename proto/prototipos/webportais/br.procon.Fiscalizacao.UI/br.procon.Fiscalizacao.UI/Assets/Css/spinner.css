@@ -1,0 +1,26 @@
+﻿.spinner {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    text-align: center;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.spinner i.fa {
+    position: relative;
+    top: 50%;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 100px;
+}
+
+body.loading {
+    overflow: hidden;   
+}
+
+body.loading .spinner {
+    display: block;
+}

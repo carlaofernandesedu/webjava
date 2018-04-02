@@ -1,0 +1,299 @@
+﻿/* TABELA ALTERAÇÃO */
+table.dataTable thead th, table.dataTable thead td {
+    padding: 10px 10px;
+    border-right: 1px solid #052a50;
+    background: #004d97;
+    color: #fff;
+}
+
+table.dataTable thead th, table.dataTable tfoot th {
+    font-weight: 200;
+}
+
+.dataTables_filter input {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #ddd;
+}
+
+label {
+    font-weight: normal;
+    text-align:left;
+}
+
+.dataTables_wrapper select {
+    border: 1px solid #ddd;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    color: #FFF !important;
+    border: 0px;
+    background: #004d97!important;
+}
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        color: #FFF !important;
+        border: 0px;
+        background: #103558;
+    }
+
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 4px 4px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ddd;
+}
+
+
+/* RESPONSIVIDADE TABELA */
+/*
+	Max width before this PARTICULAR table gets nasty
+	This query will take effect for any screen smaller than 760px
+	and also iPads specifically.
+	*/
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+    tr {
+        border: 1px solid #ccc;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+        td:before {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 25%;
+            padding-right: 10px;
+            white-space: nowrap;
+        }
+
+        /*
+		Label the data
+		*/
+        td:nth-of-type(1):before {
+            content: "Usuário";
+        }
+
+        td:nth-of-type(2):before {
+            content: "Descrição";
+        }
+
+        td:nth-of-type(3):before {
+            content: "Justificativa";
+        }
+
+        td:nth-of-type(4):before {
+            content: "Status";
+        }
+
+        td:nth-of-type(5):before {
+            content: "Data";
+        }
+
+        td:nth-of-type(6):before {
+            content: "Ações";
+        }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 140px) and (max-device-width: 319px) {
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: static;
+        padding-left: 30%;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        width: 150px;
+    }
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    body {
+        padding: 0;
+        margin: 0;
+        width: 320px;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body {
+        width: 495px;
+    }
+}
+/* FIM TABELA ALTERAÇÃO */
+
+/* ALTERAÇÕES MENU NAVEGAÇÃO */
+.navbar-collapse {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navbar {
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.navbar-default {
+    background-color: #004d97;
+    border: 0px;
+}
+
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+        color: #FFF;
+        background-color: #011d3a;
+    }
+
+    /*.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #FFF;
+    background-color: #011d3a;
+    }*/
+
+    .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+        color: #FFF;
+        background-color: #011d3a;
+    }
+
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+        color: #fff;
+        background-color: transparent;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        color: #FFF;
+    }
+
+.navbar-nav {
+    margin: 0px 0px;
+}
+
+.navbar-right {
+    margin-right: 0px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFF;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+.navbar-toggle {
+    border: 0px solid transparent;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #FFF;
+    }
+
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+            color: #ddd;
+            background-color: transparent;
+        }
+
+    .nav .open {
+        border-bottom: 1px solid #0b2c4e;
+        background: #0b2c4e;
+    }
+}
+/* FIM ALTERAÇÕES MENU NAVEGAÇÃO */
+
+/* ALTERAÇÕES DROPDOWN NAVEGAÇÃO */
+nav .dropdown-menu {
+    background-color: #13385F;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #FFF;
+    text-decoration: none;
+    background-color: #011d3a;
+}
+
+.dropdown-menu > li > a {
+    color: #FFF;
+}
+
+.dropdown-menu {
+    border: 0px solid #ccc;
+    border: 0px solid rgba(0, 0, 0, .15);
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+/* FIM ALTERAÇÕES DROPDOWN NAVEGAÇÃO */
+
+/* ALTERAÇÃO LABEL */
+.label {
+    font-size: 80%;
+    letter-spacing: 1px;
+}
+
+.form-control-static.alert.alert-danger {
+    padding: 7px!important;
+    padding: 7px!important;
+    letter-spacing: 1px;
+    text-align: left;
+}
+/* FIM ALTERAÇÃO LABEL */
+
+.exibir-detalhe {
+    cursor: pointer;
+}
+
+#modalDetalhe label.control-label {
+    font-weight: bold;
+}
+
+.input-validation-error {
+    border: 1px solid red;
+}
+
+.field-validation-error {
+    color: red;
+}
+
+.frm-filtro input[type=search] {
+    width: 100%;
+    -webkit-appearance: initial;
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+/* FIM ALTERAÇÕES DROPDOWN NAVEGAÇÃO */
+
+/* BOTÕES COM ICONES */
+/*.btn i {
+    padding-right: 5px;
+}*/

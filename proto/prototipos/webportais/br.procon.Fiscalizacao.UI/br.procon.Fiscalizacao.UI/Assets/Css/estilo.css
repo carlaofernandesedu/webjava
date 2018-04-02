@@ -1,0 +1,186 @@
+﻿@charset "utf-8";
+
+
+html, body {
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	background: #2d4982; /* Old browsers */
+	background: -moz-linear-gradient(top,  #2d4982 25%, #4165b2 83%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #2d4982 25%,#4165b2 83%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #2d4982 25%,#4165b2 83%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d4982', endColorstr='#4165b2',GradientType=0 ); /* IE6-9 */
+}
+
+div{
+  -webkit-transition: 0.2s ease-in;
+  -moz-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.container{
+	height: 100%;
+}
+
+.form-nav {
+	width: 95%;
+	min-width: 200px;
+	max-width: 390px;
+	max-height: 435px;
+    min-height: 435px;
+	padding: 19px 29px 29px;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	background-color: #F8F8F8;
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	-webkit-box-shadow: 10px 14px 25px -5px rgba(0,0,0,0.65);
+		-moz-box-shadow: 10px 14px 25px -5px rgba(0,0,0,0.65);
+		box-shadow: 10px 14px 25px -5px rgba(0,0,0,0.65);
+}
+
+.form-nav a{
+	width: 100%;
+	float: left;
+	margin: 5px 0;
+	font-size: 20px;
+}
+
+.form-nav h1{
+	font-size: 26px;
+}
+
+/*LOGIN*/
+
+.form-login {
+	width: 95%;
+	min-width: 200px;
+	max-width: 390px;
+	max-height: 435px;
+    min-height: 435px;
+	padding: 19px 29px 29px;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	background-color: #F8F8F8;
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	-webkit-box-shadow: 10px 14px 25px -5px rgba(0,0,0,0.65);
+		-moz-box-shadow: 10px 14px 25px -5px rgba(0,0,0,0.65);
+		box-shadow: 10px 14px 25px -5px rgba(0,0,0,0.65);
+}
+
+.form-login .form-login-heading{
+	width: 100%;
+	margin: 10px 0;
+	text-align: left;
+}
+
+.form-login .acoes {
+	width: 100%;
+	margin: 12px 0 0 12px;
+	text-align: center;
+}
+
+.form-login .obsSocial {
+	width: 100%;
+	margin: 12px 0 0 0;
+	text-align: center;
+	font-size: 20px;
+}
+
+.form-login .acoes a{
+	min-width: 0;
+	color: #000;
+	margin: 0 15px;
+	font-size: 15px;
+	font-weight: normal;
+	float: left;
+}
+
+.separador{
+	width: 2px;
+	float: left;
+	display: block;
+}
+
+.form-login .sociais {
+	width: 100%;
+	margin: 12px 0 0 0;
+	text-align: center;
+}
+
+.form-login .header-login{
+	width: 100%;
+	height: 72px;
+	background: url('../img/header_login.png') no-repeat;
+	background-size: 100%;
+}
+
+.form-login input[type="text"],
+.form-login input[type="password"] {
+	font-size: 17px;
+	height: auto;
+	margin-bottom: 15px;
+	padding: 7px 9px;
+}
+
+.input-100{
+	width: 100%;
+}
+
+.btnFace{
+	width: 49%;
+	height: 40px;
+	float: left;
+	background: url('../img/btnSocialFace.png') no-repeat;
+	background-size: 100%;
+}
+
+.btnTwitter{
+	width: 49%;
+	height: 40px;
+	float: left;
+	margin-left: 2%;
+	background: url('../img/btnSocialTwitter.png') no-repeat;
+	background-size: 100%;
+}
+
+
+.logo_gsp{
+	width: 175px;
+    height: 65px;
+    background: url('../img/logo_gsp_b.png') no-repeat;
+    background-size: 100%;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    bottom: -90px;
+    right: 0;
+}
+
+/*HASH I.E*/
+
+.form-login .acoes {
+	margin: 12px 0 0 0 \0/;
+}
+
+.form-login .acoes a{
+	margin: 0 9px \0/;
+}
+
+/*Mensagens*/
+.mensagemAlerta {
+    position: absolute;
+    z-index: 99999999;
+    bottom: 40px;
+    right: 100px;
+    border-color: #797979;
+}
+

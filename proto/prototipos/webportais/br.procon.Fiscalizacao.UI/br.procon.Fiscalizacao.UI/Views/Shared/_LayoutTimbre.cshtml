@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/css")
+    @Styles.Render("~/bundles/paper")
+    @Styles.Render("~/bundles/timbre")
+</head>
+<body class="A4">
+    <style>
+        @@page {
+            size: A4;
+        }
+    </style>
+    <section class="sheet padding-10mm">
+        <div>
+            <div class="headerdiv headersidediv">
+                <img height="60" src="@Url.Content("~/Assets/Img/logo-governo-sp.png")" />
+            </div>
+            <div class="headerdiv headercenterdiv">
+                <span class="titulo1">SECRETARIA DA FAZENDA JUSTIÇA E DA DEFESA DA CIDADANIA</span>
+                <br />
+                <span class="titulo2">FUNDAÇÃO DE PROTEÇÃO E DEFESA DO CONSUMIDOR</span>
+            </div>
+            <div class="headerdiv headersidediv">
+                <img height="60" src="@Url.Content("~/Assets/Img/logo_procon.png")" />
+            </div>
+        </div>
+        <div style="clear:both"></div>
+        <div id="corpo">
+            @RenderBody()
+        </div>
+    </section>
+    <script>
+        window.print();
+    </script>
+</body>

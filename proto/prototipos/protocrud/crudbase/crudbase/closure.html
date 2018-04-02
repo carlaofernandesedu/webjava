@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Conceitos Clousure</title>
+    <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/licoes/encapsulamento.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+            $("#btnClosure").click(bindbtnClosureContador);
+            $("#btnClosureNovoContador").click(bindbtnClosureNovoContador);
+            $("#btnModuloContador").click(bindbtnModuloContador);
+        });
+    </script>
+    <style>
+        .titulo
+        {
+           color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="tituloprincipal">Titulo Principal</h1>
+    <br />
+    <input type="button" id="btnClosure" value="Closure Exemplo" />
+    <input type="button" id="btnClosureNovoContador" value="Closure Exemplo 02" />    
+    <input type="button" id="btnModuloContador" value="Closure Exemplo 03" />
+    <script type="text/javascript">
+        (() => { $('#tituloprincipal').addClass('titulo'); })(); //funcao anonima autoexecutavel
+    </script>
+</body>
+</html>
