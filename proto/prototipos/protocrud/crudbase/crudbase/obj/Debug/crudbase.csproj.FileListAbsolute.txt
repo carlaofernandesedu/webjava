@@ -60,4 +60,3 @@ F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\
 F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\obj\Debug\crudbase.csproj.CopyComplete
 F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\obj\Debug\crudbase.dll
 F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\obj\Debug\crudbase.pdb
-F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\obj\Debug\crudbase.csprojResolveAssemblyReference.cache

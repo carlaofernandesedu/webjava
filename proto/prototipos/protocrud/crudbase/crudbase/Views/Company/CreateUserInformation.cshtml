@@ -1,0 +1,42 @@
+﻿@model crudbase.Models.Company.UserInformation
+@{ Html.EnableClientValidation();}
+@using (Html.BeginForm("CreateUserInformation", "Company"))
+{
+    <table id="table1">
+        <tr style="background-color:#E8EEF4;font-weight:bold">
+            <td colspan="3" align="center">
+                User Information
+            </td>
+        </tr>
+        <tr>
+            <td>
+                First Name
+            </td>
+            <td>
+                @Html.TextBoxFor(a => a.FirstName)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a => a.FirstName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Name
+            </td>
+            <td>
+                @Html.TextBoxFor(a => a.LastName)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a => a.LastName)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <input type="submit" name="userInformation" value="Next" />
+            </td>
+        </tr>
+    </table>
+}
+
+    @Scripts.Render("~/Scripts/Licoes/unovalidate.js");
+
