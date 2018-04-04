@@ -1,0 +1,31 @@
+﻿@model crudbase.Models.Company.UserCompanyInformation
+@{
+    Layout = "";
+}
+@using (Html.BeginForm("CreateUserCompanyInformation", "Company", FormMethod.Post, new { id = "formcei" }))
+{
+    <table id="table1">
+        <tr style="background-color:#E8EEF4;font-weight:bold">
+            <td colspan="3" align="center">
+                User Company Information
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                @Html.TextBoxFor(a => a.CompanyName)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a => a.CompanyName)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <input type="button" id="prevButton" name="prevButton" value="Previous" />
+                <input type="submit" name="userCompanyInformation" value="Next" />
+                @Html.Hidden("FirstName")
+                @Html.Hidden("LastName")
+            </td>
+        </tr>
+    </table>
+}

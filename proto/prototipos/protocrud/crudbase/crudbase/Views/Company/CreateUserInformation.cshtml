@@ -1,6 +1,9 @@
 ﻿@model crudbase.Models.Company.UserInformation
+@{
+    Layout = "";
+}
 @{ Html.EnableClientValidation();}
-@using (Html.BeginForm("CreateUserInformation", "Company"))
+@using (Html.BeginForm("CreateUserInformation", "Company", FormMethod.Post, new { id = "formcui" }))
 {
     <table id="table1">
         <tr style="background-color:#E8EEF4;font-weight:bold">
@@ -38,5 +41,4 @@
     </table>
 }
 
-    @Scripts.Render("~/Scripts/Licoes/unovalidate.js");
 
