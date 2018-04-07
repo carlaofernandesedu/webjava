@@ -226,11 +226,28 @@ var BASE = (function () {
     }
     //INFO: Fim Validacao de Campos com Jquery Validator
 
+    //INFO: Tratamento de Valiacao de FORM para PARTIAL VIEWS 
+    //https://mfranc.com/javascript/unobtrusive-validation-in-partial-views/
+    function validarDados(form) {
+        BASE.Debug('validarDados');
+        if ($.validator !== undefined) {
+            $.validator.unobtrusive.parse(form);
+        }
+        else {
+            BASE.Debug('problema no jQuery validator', DebugAction.Warn);
+        }
+
+        return form.valid(true);
+    }
+
+
     return {
         Init: init,
         MostrarMensagemInformativa: mostrarMensagemInformativa,
         MostrarMensagemErro: mostrarMensagemErro,
-        MostrarMensagem: mostrarMensagem,
+        MostrarMensagem: mostrarMensagem
+        //ValidarForm: validarDados,
+        //Validacoes: validacoes
     };
 
 }());
