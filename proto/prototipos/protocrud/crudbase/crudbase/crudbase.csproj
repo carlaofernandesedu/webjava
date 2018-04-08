@@ -137,7 +137,8 @@
     <Content Include="Content\font-awesome\css\font-awesome.css" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="controles.html" />
+    <Content Include="controleddlsimples.html" />
+    <Content Include="controledatepicker.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -243,8 +244,11 @@
     <Content Include="Scripts\licoes\encapsulamento.js" />
     <Content Include="Scripts\licoes\Teste.js" />
     <Content Include="Scripts\licoes\unovalidate.js" />
-    <Content Include="Scripts\licoes\validacontroles.js" />
+    <Content Include="Scripts\licoes\validacontroledata.js" />
+    <Content Include="Scripts\licoes\validacontroleddl.js" />
     <Content Include="Scripts\licoes\Validate.js" />
+    <Content Include="Scripts\mask\jquery.mask.js" />
+    <Content Include="Scripts\mask\jquery.maskedinput.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\notifyjs-master\notify-metro.css" />
     <Content Include="Scripts\notifyjs-master\notify-metro.js" />

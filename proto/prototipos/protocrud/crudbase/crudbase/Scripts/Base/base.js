@@ -12,6 +12,26 @@ var BASE = (function () {
         validationRules();
     }
 
+    //INFO: Tratamento para envio de URL 
+    function montarUrl(controller, action) {
+        var urlBase = '';
+
+        var novaUrlBase = $('body').data('urlbase');
+
+        if (novaUrlBase !== undefined && novaUrlBase.length > 0) {
+            urlBase = novaUrlBase;
+        }
+
+        var url = urlBase + '/' + controller;
+
+        if (action !== undefined && action.length > 0) {
+            url += '/' + action;
+        }
+
+        return url;
+    }
+
+
     //INFO: Tratamento para exibicao de Mensagens 
     //INFO: https://notifyjs.jpillora.com/
     function mostrarMensagemInformativa(mensagem) {
@@ -226,7 +246,7 @@ var BASE = (function () {
     }
     //INFO: Fim Validacao de Campos com Jquery Validator
 
-    //INFO: Tratamento de Valiacao de FORM para PARTIAL VIEWS 
+    //INFO: Tratamento de Validacao de FORM para PARTIAL VIEWS 
     //https://mfranc.com/javascript/unobtrusive-validation-in-partial-views/
     function validarDados(form) {
         BASE.Debug('validarDados');
@@ -245,9 +265,12 @@ var BASE = (function () {
         Init: init,
         MostrarMensagemInformativa: mostrarMensagemInformativa,
         MostrarMensagemErro: mostrarMensagemErro,
-        MostrarMensagem: mostrarMensagem
+        MostrarMensagem: mostrarMensagem,
         //ValidarForm: validarDados,
         //Validacoes: validacoes
+        Util: {
+            MontarUrl: montarUrl
+        }
     };
 
 }());

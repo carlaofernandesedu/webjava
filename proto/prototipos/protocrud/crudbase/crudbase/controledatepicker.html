@@ -9,18 +9,22 @@
     <script type="text/javascript" src="Scripts/smalot-datetimepicker/moment-with-locales.js"></script>
     <script type="text/javascript" src="Scripts/smalot-datetimepicker/bootstrap-datetimepicker.js"></script>
     <script type="text/javascript" src="Scripts/smalot-datetimepicker/locales/bootstrap-datetimepicker.pt-BR.js"></script>
+    <script type="text/javascript" src="Scripts/mask/jquery.mask.js"></script>
     <script type="text/javascript" src="Scripts/base/controles.js"></script>
-    <script type="text/javascript" src="Scripts/licoes/validacontroles.js"></script>
+    <script type="text/javascript" src="Scripts/licoes/validacontroledata.js"></script>
 </head>
 <body>
      <form action="" name="form-detalhe" id="form-detalhe">
          <div class="container">
              <!---https://malot.fr/bootstrap-datetimepicker/-->
              <div class="row">
-                 <div class="col-md-2">
-                     <label for="data"></label>
-                     <input type="text" id="PeriodoInicio" class="form-control" placeholder="__/__/____" maxlength="10" data_intervalo="inicial" />
-                     <input type="text" id="PeriodoFim" class="form-control" placeholder="__/__/____" maxlength="10" data_intervalo="inicial" />
+                 <div class="col-md-4">
+                     <label for="data">Periodo</label>
+                     <label for="PeriodoInicio"></label>
+                     <input type="text" id="PeriodoInicio" class="form-control" placeholder="__/__/____" maxlength="10" data-intervalo="inicial" />
+                     <span class="input-group-addon" style="border-left: 0; border-right: 0;">a</span>
+                     <label for="PeriodoFim"></label>
+                     <input type="text" id="PeriodoFim" class="form-control" placeholder="__/__/____" maxlength="10" data-intervalo="final" />
                  </div>
              </div>
          </div>
