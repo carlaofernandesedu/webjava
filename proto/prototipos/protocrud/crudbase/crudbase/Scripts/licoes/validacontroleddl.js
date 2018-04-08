@@ -1,22 +1,31 @@
-﻿var VALIDACONTROLEDDL = (function () {
+﻿'use strict';
+var VALIDACONTROLEDDL = (function () {
 
-    function init() {
+    const ctDdlSimples = '#form-detalhe #ddlsimples';
+    const ctController = 'Home';
+    const ctAction = 'ObterListaSimples';
+
+
+    function init () {
         bindAll();
     }
 
-    function bindAll() {
+    function bindAll () {
+        bindDropDownSimples();
+    }
 
+ 
+    function bindDropDownSimples() {
+        var incluirTextoSelecionePrimeiroItem = true;
+        CONTROLES.DropDown.PreencherSimples(ctDdlSimples, ctController, ctAction, incluirTextoSelecionePrimeiroItem, null);
     }
 
     return {
         Init: init
     } 
 
-    function bindDropDownSimples() {
-        CONTROLES.
-    }
 
-});
+}());
 
 $(function () {
     VALIDACONTROLEDDL.Init();

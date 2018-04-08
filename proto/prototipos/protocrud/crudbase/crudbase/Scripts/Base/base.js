@@ -263,6 +263,14 @@ var BASE = (function () {
 
     return {
         Init: init,
+        Mensagem: {
+            Mostrar: mostrarMensagem
+            //Ocultar: escondeModalConfirmacao,
+            //Confirmacao: mostrarModalConfirmacao,
+           // MostrarListaMensagem: {
+           //     MensagensAlerta: monstrarListaMensagensAlerta
+           // }
+        },
         MostrarMensagemInformativa: mostrarMensagemInformativa,
         MostrarMensagemErro: mostrarMensagemErro,
         MostrarMensagem: mostrarMensagem,

@@ -4,7 +4,7 @@
 
     }
 
-    //TRATAMENTO DO CONTROLE DE COMBO BOX 
+    //INFO TRATAMENTO DO CONTROLE DE COMBO BOX 
     function configurarSeletor(seletor) {
         var controles;
 
@@ -74,10 +74,88 @@
         controles.on(eventoClick, function (e) {
             e.preventDefault();
             this.blur(); //remove o foco do controle 
-            window.focus(); //retornna para a current janela
+            window.focus(); //retorna o foco para a corrente janela
         });
     }
 
+    var popularDropDown = function (lista, controles, criarItemDefault, bind, descricaoItemDefault, propriedadeValue, propriedadeText, propriedadeGroup) {
+        var criarDefault = criarItemDefault;
+        controles.each(function (index, element) {
+            var $this = $(this);
+            if ($this.is('select')) {
+                var idSelecionado = $this.data("valorSelecionado");
+                var options = '';
+
+                if (propriedadeValue === undefined || propriedadeValue.length === 0)
+                    propriedadeValue = "Value";
+                if (propriedadeText === undefined || propriedadeText.length === 0)
+                    propriedadeText = "Text";
+                if (propriedadeGroup === undefined || propriedadeGroup.length === 0)
+                    propriedadeGroup = "Group";
+
+                var readOnly = $this.attr('readonly') !== undefined;
+                var disabled = $this.attr('disabled') !== undefined;
+
+                if (criarDefault && (readOnly == undefined || !readOnly)) {
+                    if (descricaoItemDefault != '') {
+                        options += '<option value="">' + descricaoItemDefault + '</option>';
+                    }
+                }
+
+                for (var i = 0; i < lista.length; i++) {
+                    var idElemento = lista[i][propriedadeValue];
+                    var valor = lista[i][propriedadeValue];
+                    var texto = lista[i][propriedadeText];
+                    var group = lista[i][propriedadeGroup];
+                    var optionDisabled = lista[i]['Disabled'];
+                    var classe = '';
+                    var propriedadesExtras = '';
+                    var selecionado = lista[i].Selected;
+
+                    if (group === null) {
+                        classe = 'pai-opcao';
+                    }
+                    else {
+                        classe = 'filho-opcao';
+                    }
+
+                    if (idSelecionado !== undefined) {
+                        selecionado = idElemento == idSelecionado;
+                    }
+
+                    for (var property in lista[i]) {
+                        if (property !== "Text" && property !== "Value" && property !== "Selected" && property !== "Disabled" && property !== "Group") {
+                            propriedadesExtras += 'data-' + property + '="' + lista[i][property] + '"';
+                        }
+                    }
+                    if (selecionado) {
+                        options += '<option class="' + classe + '" value="' + valor + '" ' + propriedadesExtras + 'selected>' + texto + '</option>';
+                        $this.data('valorSelecionado', idSelecionado);
+                    }
+                    else {
+                        if (!readOnly) {
+                            if (optionDisabled) {
+                                options += '<option class="' + classe + '" value="' + valor + '"' + propriedadesExtras + ' disabled>' + texto + '</option>';
+                            } else {
+                                options += '<option class="' + classe + '" value="' + valor + '"' + propriedadesExtras + '>' + texto + '</option>';
+                            }
+                        }
+                    }
+                }
+                $this.html(options).show();
+
+                if (disabled) {
+                    $this.removeAttr('disabled');
+                }
+
+                if (bind) {
+                    bindDropDown($this);
+                }
+            }
+        });
+    };
+
+    //textoVazio: (?boolean) 
     var dropdownPreencherSimples = function (seletor, controller, action, textoVazio, callback) {
         action = BASE.Util.MontarUrl(controller, action);
         var controles = configurarSeletor(seletor);
