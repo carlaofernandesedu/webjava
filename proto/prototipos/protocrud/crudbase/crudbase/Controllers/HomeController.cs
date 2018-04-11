@@ -35,8 +35,45 @@ namespace crudbase.Controllers
                 new SelectListItem() { Text = "Item 2", Value = "2"},
                 new SelectListItem() { Text = "Item 3", Value = "3" }
             };
-            var objetoResult = new { Resultado = lista, Mensagem = "carregado com sucesso" , Sucesso= true};
+            var objetoResult = new { Resultado = lista, Mensagem = "Nenhum registro para ser exibido" , Sucesso= true};
             var jsonResultado = new JsonResult() { Data = objetoResult , JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return jsonResultado;
+        }
+
+
+        public JsonResult ObterListaPai()
+        {
+            var lista = new List<SelectListItem>
+            {
+                new SelectListItem() { Text = "ItemPai 1", Value = "1" },
+                new SelectListItem() { Text = "ItemPai 2", Value = "2"},
+                new SelectListItem() { Text = "ItemPai 3", Value = "3" }
+            };
+            var objetoResult = new { Resultado = lista, Mensagem = "Nenhum registro para ser exibido", Sucesso = true };
+            var jsonResultado = new JsonResult() { Data = objetoResult, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return jsonResultado;
+        }
+
+        public JsonResult ObterListaFilho(int idPai)
+        { 
+            var lista = new List<SelectListItem>();
+            if (idPai == 1)
+            {
+                lista.Add(new SelectListItem() { Text = "ItemFilho 101", Value = "101" });
+                lista.Add(new SelectListItem() { Text = "ItemFilho 102", Value = "102" });
+            }
+            else if(idPai == 2)
+            {
+                lista.Add(new SelectListItem() { Text = "ItemFilho 201", Value = "201" });
+                lista.Add(new SelectListItem() { Text = "ItemFilho 202", Value = "202" });
+            }
+            else
+            {
+                lista.Add(new SelectListItem() { Text = "ItemFilho 301", Value = "301" });
+            }
+            
+            var objetoResult = new { Resultado = lista, Mensagem = "Nenhum registro para ser exibido", Sucesso = true };
+            var jsonResultado = new JsonResult() { Data = objetoResult, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
             return jsonResultado;
         }
     }

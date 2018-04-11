@@ -78,6 +78,10 @@
         });
     }
 
+    var dropdownReset = function (controle) {
+        $(controle).find('option').remove();
+    }
+
     var popularDropDown = function (lista, controles, criarItemDefault, bind, descricaoItemDefault, propriedadeValue, propriedadeText, propriedadeGroup) {
         var criarDefault = criarItemDefault;
         controles.each(function (index, element) {
@@ -155,7 +159,8 @@
         });
     };
 
-    //textoVazio: (?boolean) 
+    //textoVazio: (boolean) true or null criar o item Selecione 
+    //Define data-valorSelecionado e verifica se o controle possui data-valorSelecionado
     var dropdownPreencherSimples = function (seletor, controller, action, textoVazio, callback) {
         action = BASE.Util.MontarUrl(controller, action);
         var controles = configurarSeletor(seletor);
@@ -210,6 +215,157 @@
             }
         });
     };
+
+    //idPai campo informado na pesquisa 
+    //verifica campos data-remover-ua-usuario-logado e data-valorSelecionado
+    //Por Padrao : pesquisar pelos campos idPai idSelecionado removerUaUsuarioLogado
+    //Campo data: informa os parametros de pesquisa
+    var dropdownPreencher = function (seletor, controller, action, idPai, textoVazio, bind, data, callback) {
+        action = BASE.Util.MontarUrl(controller, action);
+        var method = "post";
+        var controles = configurarSeletor(seletor);
+        if (controles.length > 0) {
+            var removerUaUsuarioLogado = controles.data("remover-ua-usuario-logado");
+            var idSelecionado = controles.data("valorSelecionado");
+
+            var ajaxData = { idPai: idPai, idSelecionado: idSelecionado, removerUaUsuarioLogado: removerUaUsuarioLogado };
+
+            if (data) {
+                ajaxData = data;
+            }
+
+            dropdownReset(controles);
+            dropdownInicializar(controles, 'carregando...');
+
+            $.ajax({
+                url: action,
+                type: method,
+                data: ajaxData,
+                dataType: 'json',
+                cache: false,
+                success: function (result) {
+                    if (result.Sucesso) {
+                        controles.each(function (index, element) {
+                            var $ddl = $(this);
+                            //$ddl.empty();
+
+                            var criarItemDefault = true;
+                            if (textoVazio === true || textoVazio === undefined) {
+                                criarItemDefault = true;
+                                textoVazio = "Selecione";
+                            }
+                            else if (textoVazio === false) {
+                                criarItemDefault = false;
+                            }
+
+                            if (result.Resultado.length === 0) {
+                                dropDownDesabilitar($ddl, true, 'Nenhum item para selecionar');
+                            }
+                            else {
+                                popularDropDown(result.Resultado, $ddl, criarItemDefault, bind, textoVazio);
+                                dropDownHabilitar(seletor);
+                            }
+                        });
+
+                        if (callback)
+                            callback();
+                    } else {
+                        if (result != null && result.Mensagem.length > 0) {
+                            if (result.Sucesso === false) {
+                                BASE.Mensagem.Mostrar(result.Mensagem, TipoMensagem.Error);
+                            }
+                            else {
+                                BASE.Mensagem.Mostrar(result.Mensagem, TipoMensagem.Info);
+                            }
+                        } else {
+                            dropdownReset(controles);
+                            dropDownDesabilitar(controles, true, 'Nenhum item para selecionar');
+                        }
+                    }
+                },
+                error: function (xhr, err) {
+                    BASE.Mensagem.Mostrar("Erro ao carregar dropdown " + controller, TipoMensagem.Error);
+                }
+            });
+
+
+        }
+        else {
+        }
+    };
+
+
+    function desabilitarChain(seletorContexto, seletorFilhos, callback) {
+        $(seletorFilhos).each(function (index, element) {
+            //BASE.Debug('desabilitando chain para ' + $(this).attr('id'));
+            $(seletorContexto).off('change', $(this));
+        });
+
+        if (callback) {
+            callback();
+        }
+    }
+
+    //seletorPai 
+    //seletorFilho
+    //bloquear parece nao ter utilidade 
+    //changecallback - passar o idPai do Combo Selecionado
+    function dropDownDefineChain(seletorContexto, seletorPai, seletorFilho, bloquear, textoInicial, changeCallback) {
+        //BASE.Debug('habilitando chain para ' + $(seletorPai).attr('id'));
+        var pai;
+        var seletorFilhos = seletorContexto + ' ' + seletorFilho;
+        var $filhos = $(seletorFilhos);
+
+        if (seletorPai instanceof jQuery) {
+            pai = seletorPai;
+        }
+        else {
+            pai = $(seletorContexto + ' ' + seletorPai);
+        }
+
+        var idPai = pai.prop('id');
+
+        if (bloquear === undefined || bloquear === null) {
+            bloquear = true;
+        }
+
+        $filhos.addClass('ddl-chain-filho');
+        $filhos.data('ddl-chain-texto-inicial', textoInicial);
+
+        dropDownDesabilitar(seletorFilhos, true, textoInicial);
+
+        if (changeCallback) {
+            desabilitarChain(seletorContexto, seletorFilho);
+
+            var idSelecionado = pai.val();
+
+            if (idSelecionado !== undefined) {
+                changeCallback(idSelecionado);
+            }
+
+            console.log('definindo chain ' + idPai + ' --> ' + seletorFilho);
+
+            $(seletorContexto).off('change', '#' + idPai);
+            $(seletorContexto).on('change', '#' + idPai, function () {
+                idSelecionado = $(pai).val();
+
+                $(seletorFilho).each(function (index, element) {
+                    $(element).removeData('valorSelecionado');
+                    $(element).removeAttr('data-valor-selecionado');
+                });
+
+                if (idSelecionado === undefined || (idSelecionado !== null && idSelecionado.length === 0)) {
+                    dropDownDesabilitar(seletorFilhos, true, textoInicial);
+                }
+                else {
+                    changeCallback(idSelecionado);
+                }
+            });
+        }
+    }
+
+
+
     //TRATAMENTO DO CONTROLE DE DATA 
     //https://malot.fr/bootstrap-datetimepicker/
     function configurarDatePicker(seletorObjeto) {
@@ -242,8 +398,8 @@
             Inicializar: dropdownInicializar,
             Habilitar: dropDownHabilitar,
             Desabilitar: dropDownDesabilitar,
-            //DefinirChain: dropDownDefineChain,
-            //Preencher: dropdownPreencher,
+            DefinirChain: dropDownDefineChain,
+            Preencher: dropdownPreencher,
             PreencherSimples: dropdownPreencherSimples,
             //PreencherPorId: dropdownPreencherPorId,
             //HabilitarCondicional: dropDownOcultarCondicional,
