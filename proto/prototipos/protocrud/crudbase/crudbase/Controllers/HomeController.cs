@@ -6,6 +6,12 @@ using System.Web.Mvc;
 
 namespace crudbase.Controllers
 {
+    public class Lista
+    {
+        public string Text { get; set; }
+        public string Value { get; set; }
+    }
+
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -54,6 +60,21 @@ namespace crudbase.Controllers
             return jsonResultado;
         }
 
+        public JsonResult ObterDadosAhead(string query)
+        {
+            var lista = new List<Lista>
+            {
+                new Lista() { Text = "CARLOS SILVA", Value = "1" },
+                new Lista() { Text = "CARLOS SILVA MELO", Value = "2"},
+                new Lista() { Text = "IVONETE SILVA", Value = "3" },
+                new Lista() { Text = "IVONETE SILVA MELO", Value = "4" },
+                new Lista() { Text = "IVONETE SILVA MELO", Value = "5" }
+            };
+            var result = lista.ToList().Where(x => x.Text.ToLower().Contains(query));
+            //var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            var jsonResultado = new JsonResult() { Data = result, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return jsonResultado;
+        }
         public JsonResult ObterListaFilho(int idPai)
         { 
             var lista = new List<SelectListItem>();

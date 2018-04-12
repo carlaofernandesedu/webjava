@@ -137,6 +137,7 @@
     <Content Include="Content\font-awesome\css\font-awesome.css" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="controletypeahead.html" />
     <Content Include="controleddl.html" />
     <Content Include="controleddlsimples.html" />
     <Content Include="controledatepicker.html" />
@@ -152,6 +153,9 @@
     <Content Include="Scripts\Base\base.js" />
     <Content Include="Scripts\bootstrap-notify\bootstrap-notify.js" />
     <Content Include="Scripts\bootstrap-notify\bootstrap-notify.min.js" />
+    <Content Include="Scripts\bootstrap-typeahead\bootstrap-typeahead-ci.min.js" />
+    <Content Include="Scripts\bootstrap-typeahead\bootstrap-typeahead.js" />
+    <Content Include="Scripts\bootstrap-typeahead\bootstrap-typeahead.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
@@ -249,6 +253,7 @@
     <Content Include="Scripts\licoes\validacontroleddlsimples.js" />
     <Content Include="Scripts\licoes\validacontroleddl.js" />
     <Content Include="Scripts\licoes\Validate.js" />
+    <Content Include="Scripts\licoes\validatypeahead.js" />
     <Content Include="Scripts\mask\jquery.mask.js" />
     <Content Include="Scripts\mask\jquery.maskedinput.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -306,6 +311,10 @@
     <Content Include="Scripts\smalot-datetimepicker\locales\bootstrap-datetimepicker.zh-CN.js" />
     <Content Include="Scripts\smalot-datetimepicker\locales\bootstrap-datetimepicker.zh-TW.js" />
     <Content Include="Scripts\smalot-datetimepicker\moment-with-locales.js" />
+    <Content Include="Scripts\typeahead\bloodhound.js" />
+    <Content Include="Scripts\typeahead\bloodhound.min.js" />
+    <Content Include="Scripts\typeahead\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead\typeahead.jquery.min.js" />
     <Content Include="validate.css" />
     <Content Include="validate.html" />
     <Content Include="Web.config" />

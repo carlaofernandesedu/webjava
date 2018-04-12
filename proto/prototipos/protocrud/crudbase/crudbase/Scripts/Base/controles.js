@@ -4,6 +4,82 @@
 
     }
 
+    //INFO TRATAMENTO DO CONTROLE DE TYPEAHEAD 
+    //https://twitter.github.io/typeahead.js/
+    //https://github.com/twitter/typeahead.js/blob/master/doc/jquery_typeahead.md
+    //https://github.com/andergmartins/Ajax-Typeahead
+    //Ao usar o backspace o Controle limpa a informacao 
+    //Nao entendi se utiliza um campo auxiliar para verificar a informacao do mesmo caso esteja vazio limpa o campo do typeahead
+    //Campos de atributo 
+    //'data-service-displayField' - lista de objetos o que será exibido ajax.displayField
+    //'data-service-valueField' - lista de objetos o que sera retonado 
+    //'data-service-url' - a URL de acessso 
+    //'data-value-field' - indica o nome do campo do typeahead
+    //'data-minlength' - ajax.triggerLength o Minimo de campos para disparar o Ajax 
+    //'data-parametros' - parametros extras na pesquisa para o typeahead
+    function inicializaTypeahead() {
+        $("input[type='text'][data-istypeahead='true']").unbind('keyup').bind('keyup', function (e) {
+            var value = $('input[name="' + $(this).attr('data-value-field') + '"]');
+            if (e.keyCode == 8) {
+                console.log('clear!');
+                value.val('');
+            }
+        });
+        $("input[type='text'][data-istypeahead='true']").unbind('blur').bind('blur', function (e) {
+            var value = $('input[name="' + $(this).attr('data-value-field') + '"]');
+            if (value.val() == '') {
+                console.log('clear this!');
+                $(this).val('');
+            }
+        });
+        $("input[type='text'][data-istypeahead='true']").each(function () {
+            var id = $(this).attr('name');
+            var displayField_value = $(this).attr('data-service-displayField');
+            var valueField_value = $(this).attr('data-service-valueField');
+            var dataServiceUrl_value = $(this).attr('data-service-url');
+            var dataValueField_value = $(this).attr('data-value-field');
+            var minlength_value = parseInt($(this).attr('data-minlength'));
+
+            var parametosExtras = {};
+            if ($(this).attr('data-parametros')) {
+                parametosExtras = JSON.parse($(this).attr('data-parametros'));
+                parametosExtras = "?" + $.param(parametosExtras);
+            }
+
+            if ($.isEmptyObject(parametosExtras)) {
+                parametosExtras = '';
+            }
+
+            $(this).typeahead({
+                onSelect: function (item) {
+                    $('[name="' + dataValueField_value + '"]').val(dataValueField_value).val(item.value);
+                    $('[name="' + dataValueField_value + '"]').trigger('change');
+                    console.log(item.value);
+                },
+                ajax: {
+                    url: $.validator.format(dataServiceUrl_value, $("input[name='" + id + "']").val()) + parametosExtras,
+                    triggerLength: minlength_value,
+                    dataType: "json",
+                    displayField: displayField_value,
+                    valueField: valueField_value,
+                    preDispatch: function (query) {
+                        return {
+                            query: query
+                        }
+                    },
+                    preProcess: function (data) {
+                        var listaSerie = [];
+                        if (data.length === 0) {
+                            return false;
+                        }
+                        return data;
+                    }
+                }
+            });
+        });
+    };
+
+
     //INFO TRATAMENTO DO CONTROLE DE COMBO BOX 
     function configurarSeletor(seletor) {
         var controles;
@@ -405,6 +481,9 @@
             //HabilitarCondicional: dropDownOcultarCondicional,
             ConfigurarSeletor: configurarSeletor,
             PopularDropDown: popularDropDown
+        },
+        Typeahead: {
+            Configurar: inicializaTypeahead
         }
     }
 })();
