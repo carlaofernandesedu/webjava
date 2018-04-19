@@ -5,11 +5,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="Scripts/licoes/editor.css" />
 
-    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>-->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="Scripts/licoes/editor.js"></script>
-    <script type="text/javascript" src="Scripts/licoes/validaEditor.js"></script>
+    <script type="text/javascript" src="Scripts/licoes/validaEditorSI.js"></script>
     <title>LineControl | v1.1.0</title>
 </head>
 <body>
@@ -19,27 +19,22 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 nopadding">
-                        <textarea id="origem" style="width:300px;"></textarea>
+                        <input type="checkbox" name="selectedResposta" />
+                          <div class="row"><span id="span_descricao">valor do texto 1</span></div>
+                        <input type="checkbox" name="selectedResposta" />
+                           <div class="row"><span id="span_descricao">valor do texto 2</span></div>
+                        <input type="checkbox" name="selectedResposta" />
+                            <div class="row"><span id="span_descricao">valor do texto 3</span></div>
                     </div>
                     <div class="col-lg-3 nopadding">
-                        <input type="button" id="adicionareditor" value="Adicionar Editor" />
-                        <input type="button" id="contadoreditor" value="Contador Editor" />
-                    </div>
-                    <div class="col-lg-3 nopadding">
-                        <input type="button" id="adicionareditor2" value="Adicionar Editor 2" />
-                        <input type="button" id="contadoreditor2" value="Contador Editor 2 " />
+                        <input type="button" id="confirmarRespostaPadrao" value="Adicionar Valor Editor" />
+                        <input type="button" id="habilitarcheckbox" value="Habilitar Check" />
                     </div>
                 </div>
                 <h6>EDITOR</h6>
                 <div class="row">
                     <div class="col-lg-12 nopadding">
-                        <textarea id="txtEditor" style="width:900px;height:200px;"></textarea>
-                    </div>
-                </div>
-                <h6>EDITOR 02</h6>
-                <div class="row">
-                    <div class="col-lg-12 nopadding">
-                        <textarea id="txtEditor2" style="width:900px;height:200px;"></textarea>
+                        <textarea name="Resposta" style="width:900px;height:200px;"></textarea>
                     </div>
                 </div>
             </div>

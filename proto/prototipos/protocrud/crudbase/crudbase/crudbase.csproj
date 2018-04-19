@@ -141,6 +141,7 @@
     <Content Include="controleddl.html" />
     <Content Include="controleddlsimples.html" />
     <Content Include="controledatepicker.html" />
+    <Content Include="editorSistemaIntegrado.html" />
     <Content Include="editor.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -240,6 +241,8 @@
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\editor\editor.css" />
+    <Content Include="Scripts\editor\editor.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -255,6 +258,8 @@
     <Content Include="Scripts\licoes\validacontroledata.js" />
     <Content Include="Scripts\licoes\validacontroleddlsimples.js" />
     <Content Include="Scripts\licoes\validacontroleddl.js" />
+    <Content Include="Scripts\licoes\validaEditorSI.js" />
+    <Content Include="Scripts\licoes\validaEditor.js" />
     <Content Include="Scripts\licoes\Validate.js" />
     <Content Include="Scripts\licoes\validatypeahead.js" />
     <Content Include="Scripts\mask\jquery.mask.js" />
