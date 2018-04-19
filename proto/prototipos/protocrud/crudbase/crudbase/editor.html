@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Scripts/licoes/editor.css" />
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/licoes/editor.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#txtEditor").Editor();
+            $("#txtEditor2").Editor();
+            $("#adicionar").on("click", function () {
+                let texto = $("#origem").val();
+                let estaSelecionado = false;
+                var object;
+                if (window.getSelection) {
+                    object = window.getSelection();
+                    let classeEditor = object.anchorNode.parentElement.className;
+                    if (classeEditor == "row-fluid Editor-container"   || classeEditor == "Editor-editor") {
+                        estaSelecionado = true;
+                    }
+                }
+                if (estaSelecionado) {
+                    $("#txtEditor").Editor("insertTextAtSelection", texto);
+                }
+                else {
+                    let textoeditor = $("#txtEditor").Editor("getText");
+                    let linha = (textoeditor != "") ? "<br>" : "";
+                    texto = textoeditor + linha + texto;
+                    $("#txtEditor").Editor("setText", texto);
+                }
+            });
+                
+            $("#adicionar2").on("click", function () {
+                let texto = $("#origem").val();
+                //let textoeditor = $("#txtEditor2").Editor("getText");
+                //let linha = (textoeditor != "") ?  "<br>" : "";
+                //texto = textoeditor + linha + texto;
+                $("#txtEditor2").Editor("setText", texto);
+            });
+            $("#contador").on("click", function () {
+                let caracteres = $("#txtEditor").Editor("getCharCount");
+                alert(caracteres);
+            });
+            $("#contador2").on("click", function () {
+                let caracteres = $("#txtEditor2").Editor("getCharCount");
+                alert(caracteres);
+            });
+
+        });
+    </script>
+    <title>LineControl | v1.1.0</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <h2 class="demo-text">LineControl Demo</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 nopadding">
+                        <textarea id="origem"></textarea>
+                    </div>
+                    <div class="col-lg-2 nopadding">
+                        <input type="button" id="adicionar" value="Adicionar" />
+                        <input type="button" id="adicionar2" value="Adicionar2" />
+                        <input type="button" id="contador" value="Contador" />
+                        <input type="button" id="contador2" value="Contador2" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 nopadding">
+                        <textarea id="txtEditor" style="width:900px;height:200px;"></textarea>
+                    </div>
+                </div>
+                <br />EDITOR 02
+                <div class="row">
+                    <div class="col-lg-12 nopadding">
+                        <textarea id="txtEditor2" style="width:900px;height:200px;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid footer">
+        <p class="pull-right">&copy; Suyati Technologies
+        <script>document.write(new Date().getFullYear())</script>. All rights reserved.</p>
+    </div>
+</body>
+</html>
