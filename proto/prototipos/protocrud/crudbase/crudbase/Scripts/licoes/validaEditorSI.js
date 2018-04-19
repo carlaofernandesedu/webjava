@@ -47,7 +47,8 @@ var VALIDAEDITOR = (function () {
 
         $("#confirmarRespostaPadrao").off("click");
         $("#confirmarRespostaPadrao").on("click", function () {
-            versaoAtual();
+            //versaoAtual();
+            versaoRevisada();
             //let texto = $("#origem").val();
             //let estaSelecionado = false;
             //var object;
@@ -69,6 +70,36 @@ var VALIDAEDITOR = (function () {
             //    $("#txtEditor").Editor("setText", texto);
             //}
         });
+    }
+
+    function versaoRevisada() 
+    {
+        let estaSelecionado = false;
+        var object;
+        //if (window.getSelection) {
+        //    object = window.getSelection();
+        //    let classeEditor = object.anchorNode.parentElement.className;
+        //    if (classeEditor == "row-fluid Editor-container" || classeEditor == "Editor-editor"
+        //        || object.anchorNode.parentElement == "div.Editor-editor" || classeEditor=="manualadd-editor") {
+        //        estaSelecionado = true;
+        //    }
+        //}
+        //if (estaSelecionado) {
+        //    $("#txtEditor").Editor("insertTextAtSelection", texto);
+        //}
+        let textoeditor = $('[name="Resposta"]').Editor("getText");
+        var chechtexto = "";
+        $('input[name=selectedResposta]:checked').each(function () {
+            chechtexto = chechtexto + "<div class='manualadd-editor'>" + $(this).closest("div[class=row]").find('#span_descricao').html() + "</div>";
+            //$('input[type="checkbox"]').prop('disabled', true);
+        });
+        $('input[name=selectedResposta]:checked').each(function () {
+            $(this).prop('checked', false);
+        });
+        //var texto = textoeditor + "<div class='manualadd-editor'>" + chechtexto + "</div>";
+        var texto = textoeditor + chechtexto;
+        $('[name="Resposta"]').Editor("setText", texto);
+        
     }
 
     function versaoAtual()

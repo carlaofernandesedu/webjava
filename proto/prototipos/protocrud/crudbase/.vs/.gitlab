@@ -1,0 +1,11 @@
+{
+  "User": {
+    "id": 136,
+    "username": "151786",
+    "name": "Carlos André Fernandes de Melo",
+    "email": "carlosmelo@sp.gov.br",
+    "new_portrait": null,
+    "host": "http://gitlab.prodesp.sp.gov.br",
+    "two_factor_enabled": false
+  }
+}
