@@ -87,7 +87,10 @@ var VALIDAEDITOR = (function () {
         //if (estaSelecionado) {
         //    $("#txtEditor").Editor("insertTextAtSelection", texto);
         //}
-        let textoeditor = $('[name="Resposta"]').Editor("getText");
+        if ($('input[name=selectedResposta]:checked').length == 0)
+            return;
+
+        var textoeditor = $('[name="Resposta"]').Editor("getText");
         var chechtexto = "";
         $('input[name=selectedResposta]:checked').each(function () {
             chechtexto = chechtexto + "<div class='manualadd-editor'>" + $(this).closest("div[class=row]").find('#span_descricao').html() + "</div>";
