@@ -141,6 +141,7 @@
     <Content Include="controleddl.html" />
     <Content Include="controleddlsimples.html" />
     <Content Include="controledatepicker.html" />
+    <Content Include="editorSistemaIntegrado02.html" />
     <Content Include="editorSistemaIntegrado.html" />
     <Content Include="editor.html" />
     <Content Include="favicon.ico" />
@@ -258,6 +259,7 @@
     <Content Include="Scripts\licoes\validacontroledata.js" />
     <Content Include="Scripts\licoes\validacontroleddlsimples.js" />
     <Content Include="Scripts\licoes\validacontroleddl.js" />
+    <Content Include="Scripts\licoes\validaEditorSI02.js" />
     <Content Include="Scripts\licoes\validaEditorSI.js" />
     <Content Include="Scripts\licoes\validaEditor.js" />
     <Content Include="Scripts\licoes\Validate.js" />
@@ -323,6 +325,7 @@
     <Content Include="Scripts\typeahead\bloodhound.min.js" />
     <Content Include="Scripts\typeahead\typeahead.jquery.js" />
     <Content Include="Scripts\typeahead\typeahead.jquery.min.js" />
+    <Content Include="textarearadio.html" />
     <Content Include="validate.css" />
     <Content Include="validate.html" />
     <Content Include="Web.config" />

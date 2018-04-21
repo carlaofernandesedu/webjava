@@ -10,6 +10,7 @@ var BASE = (function () {
 
     function init() {
         validationRules();
+        contagemCaracteresTextArea();
     }
 
     //INFO: Tratamento para envio de URL 
@@ -260,6 +261,16 @@ var BASE = (function () {
         return form.valid(true);
     }
 
+    //INFO: Tratamento para TextArea contagem regressiva textarea
+    function contagemCaracteresTextArea() {
+        $('textarea').keyup(function () {
+            var maxLength = $(this).attr('maxlength');
+            var length = $(this).val().length;
+            var length = maxLength - length;
+            $('.remaining-chars[data-for="' + $(this).attr('name') + '"]').text(length);
+        });
+    }
+
 
     return {
         Init: init,
@@ -278,7 +289,12 @@ var BASE = (function () {
         //Validacoes: validacoes
         Util: {
             MontarUrl: montarUrl
-        }
+        },
+
     };
 
 }());
+
+$(function(){
+    BASE.Init();
+});
