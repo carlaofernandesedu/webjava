@@ -1,0 +1,205 @@
+{
+  "name": "procon_sistema_integrado",
+  "authors": [
+    "Carlos Melo <carlosmelo@sp.gov.br>"
+  ],
+  "description": "Referencia para instalacao de pacotes frontend Sistema Integrado",
+  "version": "0.1",
+  "main": "bower.json",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "https://portal.procon.sp.gov.br",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.4",
+    "jquery.validation": "1.11.1",
+    "Microsoft.jQuery.Unobtrusive.Validation": "3.2.3",
+    "modernizr": "2.6.2",
+    "bootstrap": "3.3.5",
+    "jquery-mask-plugin": "1.14.10",
+    "jquery.maskedinput": "1.4.1",
+    "smalot-bootstrap-datetimepicker": "2.0.0",
+    "notifyjs": "0.4.2",
+    "font-awesome": "4.7.0",
+    "bs-typeahead": "0.0.5",
+    "moment": "2.22.1",
+    "datatables": "1.10.16",
+    "datatables-responsive": "2.2.1",
+    "bootbox.js": "4.4.0",
+    "bootstrap-modal": "2.2.6",
+    "offline": "0.7.18",
+    "bootstrap-tagsinput":"0.8.0",
+    "bootstrap-duallistbox":"3.0.5"
+  },
+  "install": {
+    "options": {
+      "includePackageNameInInstallPath": false
+    },
+    "base": "assets_review",
+    "path": {
+      "js": "scripts/{name}",
+      "css": "css/{name}",
+      "map": "css/{name}",
+      "eot": "css/fonts",
+      "svg": "css/fonts",
+      "ttf": "css/fonts",
+      "woff": "css/fonts",
+      "woff2": "css/fonts",
+      "otf": "css/fonts",
+      "png": "css/images",
+      "psd": "css/images",
+      "gif": "css/images"
+    },
+    "sources": {
+      "jquery": [
+        {
+          "bower_components/jquery/dist/jquery.js": "jquery.js"
+        },
+        {
+          "bower_components/jquery/dist/jquery.min.js": "jquery.min.js"
+        }
+      ],
+      "jquery.validation": [
+        "bower_components/jquery.validation/jquery.validate.js"
+      ],
+      "Microsoft.jQuery.Unobtrusive.Validation": [
+        "bower_components/Microsoft.jQuery.Unobtrusive.Validation/jquery.validate.unobtrusive.js",
+        "bower_components/Microsoft.jQuery.Unobtrusive.Validation/jquery.validate.unobtrusive.min.js"
+      ],
+      "modernizr": [
+        "bower_components/modernizr/modernizr.js"
+      ],
+      "bootstrap": [
+        "bower_components/bootstrap/dist/css/bootstrap.css",
+        "bower_components/bootstrap/dist/css/bootstrap.css.map",
+        "bower_components/bootstrap/dist/css/bootstrap.min.css",
+        "bower_components/bootstrap/dist/css/bootstrap-theme.css",
+        "bower_components/bootstrap/dist/css/bootstrap-theme.css.map",
+        "bower_components/bootstrap/dist/css/bootstrap-theme.min.css",
+        "bower_components/bootstrap/dist/js/bootstrap.js",
+        "bower_components/bootstrap/dist/js/bootstrap.min.js",
+        "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot",
+        "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg",
+        "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf",
+        "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff"
+      ],
+      "jquery-mask-plugin": [
+        "bower_components/jquery-mask-plugin/dist/jquery.mask.js",
+        "bower_components/jquery-mask-plugin/dist/jquery.mask.min.js"
+      ],
+      "jquery.maskedinput": [
+        "bower_components/jquery.maskedinput/dist/jquery.maskedinput.js",
+        "bower_components/jquery.maskedinput/dist/jquery.maskedinput.min.js"
+      ],
+      "smalot-bootstrap-datetimepicker": {
+        "mapping": [
+          {
+            "bower_components/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.js": "bootstrap-datetimepicker.js"
+          },
+          {
+            "bower_components/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js": "bootstrap-datetimepicker.min.js"
+          },
+          {
+            "bower_components/smalot-bootstrap-datetimepicker/css/datetimepicker.css": "datetimepicker.css"
+          },
+          {
+            "bower_components/smalot-bootstrap-datetimepicker/css/datetimepicker.min.css": "datetimepicker.min.cs"
+          },
+          {
+            "bower_components/smalot-bootstrap-datetimepicker/js/locales/**": "locales"
+          }
+        ]
+      },
+      "notifyjs": [
+        "bower_components/notifyjs/dist/notify.js",
+        "bower_components/notifyjs/dist/styles/metro/notify-metro.js",
+        "bower_components/notifyjs/dist/styles/metro/notify-metro.css"
+      ],
+      "font-awesome": [
+        "bower_components/font-awesome/css/fontawesome-css",
+        "bower_components/font-awesome/css/fontawesome.min.css",
+        "bower_components/font-awesome/fonts/fontawesome-webfont.eot",
+        "bower_components/font-awesome/fonts/fontawesome-webfont.svg",
+        "bower_components/font-awesome/fonts/fontawesome-webfont.ttf",
+        "bower_components/font-awesome/fonts/fontawesome-webfont.woff2",
+        "bower_components/font-awesome/fonts/fontawesome-webfont.woff",
+        "bower_components/font-awesome/fonts/fontawesome-webfont.otf"
+      ],
+      "bs-typeahead": [
+        "bower_components/bs-typeahead/js/bootstrap-typeahead.js",
+        "bower_components/bs-typeahead/js/bootstrap-typeahead.min.js"
+      ],
+      "moment": [
+        "bower_components/moment/min/moment-with-locales.js",
+        "bower_components/moment/min/moment-with-locales.min.js",
+        "bower_components/moment/moment.js",
+        "bower_components/moment/min/moment.min.js"
+      ],
+      "datatables": [
+        "bower_components/datatables/media/js/jquery.dataTables.js",
+        "bower_components/datatables/media/js/jquery.dataTables.min.js",
+        "bower_components/datatables/media/js/dataTables.bootstrap.js",
+        "bower_components/datatables/media/js/dataTables.bootstrap.min.js",
+        "bower_components/datatables/media/css/jquery.dataTables.css",
+        "bower_components/datatables/media/css/jquery.dataTables.min.css",
+        "bower_components/datatables/media/css/dataTables.bootstrap.css",
+        "bower_components/datatables/media/css/dataTables.bootstrap.min.css",
+        "bower_components/datatables/media/images/sort_asc_disabled.png",
+        "bower_components/datatables/media/images/sort_asc.png",
+        "bower_components/datatables/media/images/sort_both.png",
+        "bower_components/datatables/media/images/sort_desc_disabled.png",
+        "bower_components/datatables/media/images/sort_desc.png",
+        "bower_components/datatables/media/images/sorting icons.psd"
+      ],
+      "datatables-responsive": [
+        "bower_components/datatables-responsive/js/dataTables.responsive.js",
+        "bower_components/datatables-responsive/js/responsive.bootstrap.js",
+        "bower_components/datatables-responsive/css/responsive.dataTables.css",
+        "bower_components/datatables-responsive/css/responsive.bootstrap.css"
+      ],
+      "bootbox.js": [
+        "bower_components/bootbox.js/bootbox.js"
+      ],
+      "bootstrap-modal": [
+        "bower_components/bootstrap-modal/js/bootstrap-modal.js",
+        "bower_components/bootstrap-modal/js/bootstrap-modalmanager.js",
+        "bower_components/bootstrap-modal/css/bootstrap-modal-bs3patch.css",
+        "bower_components/bootstrap-modal/css/bootstrap-modal.css",
+        "bower_components/bootstrap-modal/img/ajax-loader.gif"
+      ],
+      "offline": [
+        "bower_components/offline/offline.js",
+        "bower_components/offline/offline.min.js",
+        "bower_components/offline/themes/offline-theme-default.css",
+        "bower_components/offline/themes/offline-theme-default-indicator.css",
+        "bower_components/offline/themes/offline-language-portuguese-brazil.css",
+        "bower_components/offline/themes/offline-language-portuguese-brazil-indicator.css",
+        "bower_components/offline/img/tiny-image.gif"
+      ],
+      "bootstrap-tagsinput":[
+        "bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js",
+        "bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js",
+        "bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css",
+        "bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput-typeahead.css", 
+        "bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js.map"
+      ],
+      "bootstrap-duallistbox":[
+        "bower_components/bootstrap-duallistbox/dist/jquery.bootstrap-duallistbox.js",
+        "bower_components/bootstrap-duallistbox/dist/jquery.bootstrap-duallistbox.min.js",
+        "bower_components/bootstrap-duallistbox/dist/bootstrap-duallistbox.css",
+        "bower_components/bootstrap-duallistbox/dist/bootstrap-duallistbox.min.css"
+      ]
+    }
+  },
+  "resolutions": {
+    "jquery": "2.1.4",
+    "bootstrap": "3.3.5"
+  }
+}
