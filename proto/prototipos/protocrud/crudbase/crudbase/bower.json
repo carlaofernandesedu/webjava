@@ -86,7 +86,8 @@
         "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot",
         "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg",
         "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf",
-        "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff"
+        "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff",
+        "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"
       ],
       "jquery-mask-plugin": [
         "bower_components/jquery-mask-plugin/dist/jquery.mask.js",
@@ -108,7 +109,7 @@
             "bower_components/smalot-bootstrap-datetimepicker/css/datetimepicker.css": "datetimepicker.css"
           },
           {
-            "bower_components/smalot-bootstrap-datetimepicker/css/datetimepicker.min.css": "datetimepicker.min.cs"
+            "bower_components/smalot-bootstrap-datetimepicker/css/datetimepicker.min.css": "datetimepicker.min.css"
           },
           {
             "bower_components/smalot-bootstrap-datetimepicker/js/locales/**": "locales"

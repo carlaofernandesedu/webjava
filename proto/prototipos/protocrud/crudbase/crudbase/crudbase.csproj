@@ -121,8 +121,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="assets\css\bootstrap-datetimepicker\datetimepicker.min.cs" />
-    <Compile Include="assets_review\css\bootstrap-datetimepicker\datetimepicker.min.cs" />
+    <Content Include="assets\css\bootstrap-datetimepicker\datetimepicker.min.css" />
+    <Content Include="assets_review\css\bootstrap-datetimepicker\datetimepicker.min.css" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -158,6 +158,7 @@
     <Content Include="assets\css\offline\offline-language-portuguese-brazil.css" />
     <Content Include="assets\css\offline\offline-theme-default-indicator.css" />
     <Content Include="assets\css\offline\offline-theme-default.css" />
+    <Content Include="assets\css\suyati-line-control\editor.css" />
     <Content Include="assets\scripts\bootbox.js\bootbox.js" />
     <Content Include="assets\scripts\bootstrap-datetimepicker\bootstrap-datetimepicker.js" />
     <Content Include="assets\scripts\bootstrap-datetimepicker\bootstrap-datetimepicker.min.js" />
@@ -230,6 +231,7 @@
     <Content Include="assets\scripts\notifyjs\notify.js" />
     <Content Include="assets\scripts\offline\offline.js" />
     <Content Include="assets\scripts\offline\offline.min.js" />
+    <Content Include="assets\scripts\suyati-line-control\editor.js" />
     <Content Include="assets_review\css\bootstrap-datetimepicker\datetimepicker.css" />
     <Content Include="assets_review\css\bootstrap-duallistbox\bootstrap-duallistbox.css" />
     <Content Include="assets_review\css\bootstrap-duallistbox\bootstrap-duallistbox.min.css" />
@@ -345,6 +347,8 @@
     <Content Include="controleddl.html" />
     <Content Include="controleddlsimples.html" />
     <Content Include="controledatepicker.html" />
+    <Content Include="DataTableBootstrap.html" />
+    <Content Include="DataTable.html" />
     <Content Include="editorSistemaIntegrado02.html" />
     <Content Include="editorSistemaIntegrado.html" />
     <Content Include="editor.html" />
@@ -469,6 +473,8 @@
     <Content Include="assets_review\css\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets_review\css\images\sorting icons.psd" />
     <Content Include="bowerassets_review.json" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets_review\css\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\editor\editor.css" />
     <Content Include="Scripts\editor\editor.js" />
@@ -487,6 +493,7 @@
     <Content Include="Scripts\licoes\validacontroledata.js" />
     <Content Include="Scripts\licoes\validacontroleddlsimples.js" />
     <Content Include="Scripts\licoes\validacontroleddl.js" />
+    <Content Include="Scripts\licoes\validaDataTables.js" />
     <Content Include="Scripts\licoes\validaEditorSI02.js" />
     <Content Include="Scripts\licoes\validaEditorSI.js" />
     <Content Include="Scripts\licoes\validaEditor.js" />
