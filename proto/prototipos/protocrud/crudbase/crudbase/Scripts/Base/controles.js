@@ -440,6 +440,75 @@
         }
     }
 
+    //TRATAMENTO DO DATATABLE
+    //callBackNenhumItem adiciona funcao que faz o tratamento para nenhum item 
+    //callbackSucesso adiciona funcao que faz o tratamento da informacao ser com sucesso 
+    //divLista : 
+    //dataTable: Para configurar o DataTable basta colocar uma classe (table.dataTable)
+    // =  ajax{url} a url para acionar o ajax (datatables-url)
+    // pageLength: configurado se vier (datatables-pagesize) padrao '5'
+    // doc: Number of rows to display on a single page when using pagination. Padrao 10 
+    // paginate : parece que tem erro se vier (tabela-paginar,datatables-paginar)  por padrao true
+    // Estranho parece estar errado na documentacao falar sobre paginar
+    // searching: parece que tem erro se vier (tabela-buscar, datatables-buscar) por padrao false
+    // Habilita o mecanismo de pesquisa
+    // info: true 
+    //When this option is enabled, Datatables will show information about the table including information about filtered data if that action is being performed
+    // ordering : se vier (datatables-ordenar)  por padrao = false
+    // stateSave: false
+    //https://datatables.net/reference/option/stateSave - informacoes sobre pagination position, display length, filtering and sorting mantem localstorage
+    // lengthMenu: [5, 10, 25, 50, 75, 100]
+    //Indica a informacao a ser exibida na parte de informar a paginacao
+    // serverSide: true
+    // deferLoading : se vier (carregar-lista) == false entao = 0 se nao null por padrao null
+    //Delay the loading of server-side data until second draw me parece que evita que ele va na base para carregar todos os dados 
+    //Alem disso trata de valores para quantidade de filtrado e nao filtrados (pendente de testes para entender)
+    /*
+      paginate: paginar,
+                    ordering: ordenar,
+                    searching: buscar,
+                    deferRender: false,
+                    info: true,
+                    stateSave: false,
+                    pageLength: pagesize,
+                    lengthMenu: [5, 10, 25, 50, 75, 100],
+                    serverSide: true,
+                    deferLoading: valueDeferLoading,
+     */
+
+    function configurarTabela(callBackNenhumItem, callbackSucesso) {
+        var divLista = $("#divLista");
+        var tabelaSeletor = 'table.dataTable';
+        var tabela = $(tabelaSeletor);
+
+        var url = tabela.data("datatables-url");
+
+        var pagesize = tabela.data("datatables-pagesize") || 5;
+
+        var paginar = true;
+        if (tabela.data('tabela-paginar') !== undefined) {
+            paginar = tabela.data('datatables-paginar');
+        }
+
+        var ordenar = false;
+        if (tabela.data('datatables-ordenar') !== undefined) {
+            ordenar = tabela.data('datatables-ordenar');
+        }
+
+        var buscar = false;
+        if (tabela.data('tabela-buscar') !== undefined) {
+            buscar = tabela.data('datatables-buscar');
+        }
+
+        var valueDeferLoading = null;
+        if (divLista.data("carregar-lista") !== undefined) {
+            var carregarLista = divLista.data("carregar-lista");
+            carregarLista === false ? valueDeferLoading = 0 : valueDeferLoading = null;
+        }
+
+        // parametrizacao do Ajax 
+        //https://datatables.net/reference/event/xhr
+    }
 
 
     //TRATAMENTO DO CONTROLE DE DATA 

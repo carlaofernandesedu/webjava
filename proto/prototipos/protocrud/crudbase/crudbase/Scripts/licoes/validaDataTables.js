@@ -13,8 +13,8 @@
     }
 
     return {
-        Init:init
-    }
+        Init: init
+    };
 
 }());
 
