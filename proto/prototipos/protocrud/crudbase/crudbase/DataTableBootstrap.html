@@ -12,29 +12,28 @@
     <script type="text/javascript" src="scripts/licoes/validaDataTables.js"></script>
 </head>
 <body>
-    <table id="tabela01" name="tabela01">
-        <thead>
-            <tr>
-                <td>Nome</td>
-                <td>Profissão</td>
-                <td>Idade</td>
-            </tr>
-        </thead>
-        <tr>
-            <td>Carlos</td>
-            <td>Estudante</td>
-            <td>18</td>
-        </tr>
-        <tr>
-            <td>Roberto</td>
-            <td>Empresario</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>Andre</td>
-            <td>Designer</td>
-            <td>30</td>
-        </tr>
-    </table>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md4">
+                <input type="text" id="txtPesquisa" />
+            </div>
+            <div class="col-md8">
+                <input type="button" id="btnfiltro" value="Pesquisar" />
+            </div>
+        </div>
+        <table id="tabela01" name="tabela01" class="no-footer display text-left">
+            <thead>
+                <tr>
+                    <th class="col-md-4">Name</th>
+                    <th class="col-md-4">Position</th>
+                    <th class="col-md-1">Office</th>
+                    <th class="col-md-1">Extn.</th>
+                    <th class="col-md-1">Start date"</th>
+                    <th class="col-md-1">Salary"</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 </body>
 </html>
