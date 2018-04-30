@@ -21,7 +21,7 @@
     }
 
     function bindLimparFiltro() {
-        BASE.LogFunction(arguments.callee, moduleName);
+        //BASE.LogFunction(arguments.callee, moduleName);
 
         $('.frm-filtro').off('click', '.acoes #btnLimpar');
         $('.frm-filtro').on('click', '.acoes #btnLimpar', function () {
@@ -46,10 +46,71 @@
     }
 
     function bindFiltrar() {
+        //BASE.LogFunction(arguments.callee, moduleName);
 
+        $('.frm-filtro').off('click', '.acoes #btnFiltrarPaginado');
+        $('.frm-filtro').on('click', '.acoes #btnFiltrarPaginado', function (e) {
+            //BASE.LogEvent(e, moduleName);
+
+            var tabela = $('table.dataTable').DataTable();
+            tabela.page(1).draw();
+
+            return false;
+        });
+
+        $('.frm-filtro').off('click', '.acoes #btnFiltrar');
+        $('.frm-filtro').on('click', '.acoes #btnFiltrar', function (e) {
+            //BASE.LogEvent(e, moduleName);
+
+            filtrar(true);
+
+            return false;
+        });
+
+        $('.frm-filtro input').keypress(function (e) {
+            if (e.keyCode === 13) {
+                filtrar(true);
+
+                return false;
+            }
+        });
     }
 
-    function filtrar() {
+    function filtrar(filtrado, limpar) {
+       // BASE.LogFunction(arguments.callee, moduleName);
+
+        var data = CRUDFILTRO.Evento.PreListar();
+
+        //if ($('table.dataTable').attr('id') !== "grupo_lista_relacionar") {
+        //    var tabela = $('table.dataTable').DataTable();
+        //    tabela.page(1).draw();
+        //    return false;
+        //}
+      
+
+        var form = $('.frm-filtro');
+        var url = form.attr('action');
+        var method = form.attr('method');
+
+        if (form.length === 0) {
+           // BASE.Debug(".frm-filtro não encontrado!");
+        }
+
+        var div = form.closest('.divFiltro');
+        if (div.length === 0) {
+            div = form.find('.divFiltro');
+        }
+
+        var campos = div.find("input:visible, select:visible").not('[readonly]');
+        var camposVazios = div.find("input:visible, select:visible").not('[readonly]').filter(function () { return $(this).val() === '' || $(this).val() === null; });
+
+        var existeFiltro = campos.length !== camposVazios.length;
+        if (filtrado && existeFiltro === false && (limpar === false || limpar === undefined)) {
+            BASE.Mensagem.Mostrar("Favor preencher um dos campos para efetuar a pesquisa!", TipoMensagem.Alerta);
+            return false;
+        }
+
+        BASE.Mensagem.Mostrar("Pesquisa", TipoMensagem.Informativa);
 
     }
 
