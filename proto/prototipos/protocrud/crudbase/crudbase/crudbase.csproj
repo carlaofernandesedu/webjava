@@ -133,21 +133,8 @@
     <Compile Include="Models\Prototipo\PrototipoFiltroModel.cs" />
     <Compile Include="Models\Prototipo\PrototipoViewModel.cs" />
     <Compile Include="VariaveisGlobaisProt.cs" />
-    <Content Include="assets\css\bootstrap-datetimepicker\datetimepicker.min.css" />
-    <Content Include="assets_review\css\bootstrap-datetimepicker\datetimepicker.min.css" />
-    <Compile Include="Controllers\BaseProtController.cs" />
-    <Compile Include="Controllers\CompanyController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Company\UserCompanyInformation.cs" />
-    <Compile Include="Models\Company\UserInformation.cs" />
-    <Compile Include="Models\FiltroBaseProt.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="assets\css\bootstrap-datetimepicker\datetimepicker.css" />
+    <Content Include="assets\css\bootstrap-datetimepicker\datetimepicker.min.css" />
     <Content Include="assets\css\bootstrap-modal\bootstrap-modal-bs3patch.css" />
     <Content Include="assets\css\bootstrap-modal\bootstrap-modal.css" />
     <Content Include="assets\css\bootstrap\bootstrap-theme.css" />
@@ -158,6 +145,8 @@
     <Content Include="assets\css\datatables\dataTables.bootstrap.min.css" />
     <Content Include="assets\css\datatables\jquery.dataTables.css" />
     <Content Include="assets\css\datatables\jquery.dataTables.min.css" />
+    <Content Include="assets\css\font-awesome\font-awesome.css" />
+    <Content Include="assets\css\font-awesome\font-awesome.min.css" />
     <Content Include="assets\css\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\css\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="assets\css\images\ajax-loader.gif" />
@@ -172,7 +161,6 @@
     <Content Include="assets\css\offline\offline-language-portuguese-brazil.css" />
     <Content Include="assets\css\offline\offline-theme-default-indicator.css" />
     <Content Include="assets\css\offline\offline-theme-default.css" />
-    <Content Include="assets\css\suyati-line-control\editor.css" />
     <Content Include="assets\scripts\bootbox.js\bootbox.js" />
     <Content Include="assets\scripts\bootstrap-datetimepicker\bootstrap-datetimepicker.js" />
     <Content Include="assets\scripts\bootstrap-datetimepicker\bootstrap-datetimepicker.min.js" />
@@ -245,7 +233,19 @@
     <Content Include="assets\scripts\notifyjs\notify.js" />
     <Content Include="assets\scripts\offline\offline.js" />
     <Content Include="assets\scripts\offline\offline.min.js" />
-    <Content Include="assets\scripts\suyati-line-control\editor.js" />
+    <Content Include="assets_review\css\bootstrap-datetimepicker\datetimepicker.min.css" />
+    <Compile Include="Controllers\BaseProtController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Company\UserCompanyInformation.cs" />
+    <Compile Include="Models\Company\UserInformation.cs" />
+    <Compile Include="Models\FiltroBaseProt.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="assets_review\css\bootstrap-datetimepicker\datetimepicker.css" />
     <Content Include="assets_review\css\bootstrap-duallistbox\bootstrap-duallistbox.css" />
     <Content Include="assets_review\css\bootstrap-duallistbox\bootstrap-duallistbox.min.css" />
@@ -261,6 +261,8 @@
     <Content Include="assets_review\css\datatables\dataTables.bootstrap.min.css" />
     <Content Include="assets_review\css\datatables\jquery.dataTables.css" />
     <Content Include="assets_review\css\datatables\jquery.dataTables.min.css" />
+    <Content Include="assets_review\css\font-awesome\font-awesome.css" />
+    <Content Include="assets_review\css\font-awesome\font-awesome.min.css" />
     <Content Include="assets_review\css\fonts\fontawesome-webfont.svg" />
     <Content Include="assets_review\css\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="assets_review\css\images\ajax-loader.gif" />
@@ -464,16 +466,6 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
-    <Content Include="assets\css\bootstrap\bootstrap-theme.css.map" />
-    <Content Include="assets\css\bootstrap\bootstrap.css.map" />
-    <Content Include="assets\css\fonts\fontawesome-webfont.eot" />
-    <Content Include="assets\css\fonts\fontawesome-webfont.ttf" />
-    <Content Include="assets\css\fonts\fontawesome-webfont.woff" />
-    <Content Include="assets\css\fonts\fontawesome-webfont.woff2" />
-    <Content Include="assets\css\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="assets\css\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="assets\css\images\sorting icons.psd" />
     <Content Include="bower.json" />
     <Content Include="bowerfailed_instacaomanual.json" />
     <Content Include="assets_review\css\bootstrap-tagsinput\bootstrap-tagsinput.min.js.map" />
@@ -488,8 +480,20 @@
     <Content Include="assets_review\css\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets_review\css\images\sorting icons.psd" />
     <Content Include="bowerassets_review.json" />
-    <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="assets_review\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\css\bootstrap\bootstrap-theme.css.map" />
+    <Content Include="assets\css\bootstrap\bootstrap.css.map" />
+    <Content Include="assets\css\font-awesome\font-awesome.css.map" />
+    <Content Include="assets\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\css\images\sorting icons.psd" />
+    <Content Include="assets_review\css\font-awesome\font-awesome.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\editor\editor.css" />
     <Content Include="Scripts\editor\editor.js" />

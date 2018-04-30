@@ -122,8 +122,9 @@
         "bower_components/notifyjs/dist/styles/metro/notify-metro.css"
       ],
       "font-awesome": [
-        "bower_components/font-awesome/css/fontawesome-css",
-        "bower_components/font-awesome/css/fontawesome.min.css",
+        "bower_components/font-awesome/css/font-awesome.css",
+        "bower_components/font-awesome/css/font-awesome.min.css",
+        "bower_components/font-awesome/css/font-awesome.css.map",
         "bower_components/font-awesome/fonts/fontawesome-webfont.eot",
         "bower_components/font-awesome/fonts/fontawesome-webfont.svg",
         "bower_components/font-awesome/fonts/fontawesome-webfont.ttf",
