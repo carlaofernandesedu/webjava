@@ -68,7 +68,18 @@
                 { title: "Extn." },
                 { title: "Start date" },
                 { title: "Salary" }
-            ]
+            ],
+            "columnDefs": [
+                {
+                    "targets": [5],
+                    "visible": true,
+                    "className": "dt-body-right"
+                },
+                {
+                    "bSortable": false,
+                    "targets": [4]
+                }
+             ]
         });
     }
 

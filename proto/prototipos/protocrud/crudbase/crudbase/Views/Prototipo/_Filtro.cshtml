@@ -1,0 +1,26 @@
+﻿@model crudbase.Models.Prototipo.PrototipoFiltroModel
+@{
+    Layout = null;
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel-body">
+            <div class="col-md-06">
+                @Html.LabelFor(x => x.Termo, new { @class = "control-label" })
+                @Html.TextBoxFor(x => x.Termo, new { @class = "form-control" })
+            </div>
+            <div class="col-md-06">
+                <div class="pull-right acoes">
+                    <button type="reset" class="btn btn-warning" id="btnLimpar" title="Limpar"><i class="fa fa-eraser">&nbsp;</i>Limpar</button>
+                    <button type="button" class="btn btn-primary" id="btnFiltrar"><i class="fa fa-search" aria-hidden="true">&nbsp;</i>Pesquisar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/Base/crudfiltro.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function () {
+        CRUDFILTRO.Init();
+    });
+</script>

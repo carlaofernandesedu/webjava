@@ -46,10 +46,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataTables.AspNet.Core, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataTables.AspNet.Core.2.0.2\lib\net45\DataTables.AspNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DataTables.AspNet.Mvc5, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataTables.AspNet.Mvc5.2.0.2\lib\net45\DataTables.AspNet.Mvc5.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -113,16 +122,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CRUDBaseProtController.cs" />
+    <Compile Include="Controllers\PrototipoController.cs" />
+    <Compile Include="CoreInfra\ObjectExtensions.cs" />
+    <Compile Include="Enums\CrudOperation.cs" />
+    <Compile Include="Helpers\DataTablesHelper.cs" />
+    <Compile Include="Models\Prototipo\PrototipoFiltroModel.cs" />
+    <Compile Include="Models\Prototipo\PrototipoViewModel.cs" />
+    <Compile Include="VariaveisGlobaisProt.cs" />
     <Content Include="assets\css\bootstrap-datetimepicker\datetimepicker.min.css" />
     <Content Include="assets_review\css\bootstrap-datetimepicker\datetimepicker.min.css" />
+    <Compile Include="Controllers\BaseProtController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -130,6 +143,7 @@
     </Compile>
     <Compile Include="Models\Company\UserCompanyInformation.cs" />
     <Compile Include="Models\Company\UserInformation.cs" />
+    <Compile Include="Models\FiltroBaseProt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -360,6 +374,7 @@
     <Content Include="mensagens.html" />
     <Content Include="Scripts\Base\base2018.js" />
     <Content Include="Scripts\Base\controles.js" />
+    <Content Include="Scripts\Base\crudfiltro.js" />
     <Content Include="Scripts\Base\enums.js" />
     <Content Include="Scripts\Base\base.js" />
     <Content Include="Scripts\bootstrap-notify\bootstrap-notify.js" />
@@ -573,13 +588,17 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutMS.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Company\CreateUser.cshtml" />
     <Content Include="Views\Company\CreateUserInformation.cshtml" />
     <Content Include="Views\Company\CreateUserCompanyInformation.cshtml" />
+    <Content Include="Views\Shared\CrudProtIndex.cshtml" />
+    <Content Include="Views\Shared\_CrudToolbar.cshtml" />
+    <Content Include="Views\Prototipo\_Filtro.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

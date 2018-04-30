@@ -8,6 +8,19 @@ namespace crudbase
         // Para obter mais informações sobre o agrupamento, visite https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            #region Assets Componentes 
+            bundles.Add(new ScriptBundle("~/bundles/assets_jquery").Include(
+               "~/Assets/Scripts/jquery-{version}.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/assets_jqueryval").Include(
+               "~/Assets/Scripts/jquery.validation/jquery.validate.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/assets_bootstrap").Include(
+                      "~/Assets/Scripts/bootstrap/bootstrap.js"));
+
+
+            #endregion 
+            #region padrao MS"
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -26,6 +39,7 @@ namespace crudbase
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            #endregion
         }
     }
 }

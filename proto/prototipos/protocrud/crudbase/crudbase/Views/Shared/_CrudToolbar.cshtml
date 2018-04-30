@@ -1,0 +1,26 @@
+﻿@using crudbase.Enums
+@model CrudOperation
+@{
+    Layout = null;
+}
+
+@if (Model == CrudOperation.None)
+{
+    <div>&nbsp;</div>
+}
+else
+{
+    if (Model.HasFlag(CrudOperation.Create))
+    {
+        <button type="button" id="btnNovo" class="btn btn-primary" data-complexo="@ViewBag.Complexo.ToString().ToLower()" data-url="@Url.Action("Criar")">
+            <i class="fa fa-plus" aria-hidden="true">&nbsp;</i><span>Novo</span>
+        </button>
+    }
+
+    if (Model.HasFlag(CrudOperation.Specific))
+    {
+        <button type="button" id="btnSpecifico" class="btn btn-default" data-url="@Url.Action("CriarSolicitacao")">
+            <span class="m-l-5"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;<span>Novo</span>
+        </button>
+    }
+}

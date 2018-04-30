@@ -1,0 +1,40 @@
+﻿@using crudbase.Enums
+@model Nullable<int>
+@{ 
+    bool filtroAvancadoAberto = (bool)ViewBag.FiltroAvancadoAberto;
+    var controller = ViewContext.RouteData.Values["controller"].ToString();
+    var estiloFiltro = filtroAvancadoAberto == true ? string.Empty : "style=display:none;";
+    string actionFiltro = ViewBag.ActionFiltro ?? "Filtro";
+    string actionListar = ViewBag.ActionListar ?? "Listar";
+    string classeBtnFiltroAvancado = filtroAvancadoAberto ? "fa-search-minus" : "fa-search-minuplus";
+    FormMethod method = actionListar.Equals("Listar") ? FormMethod.Get : FormMethod.Post;
+    string carregarLista = ViewBag.CarregarLista.ToString().ToLower();
+ }
+<h2>@ViewBag.Title</h2>
+<hr />
+<div id="divFiltro" class="divFiltro">
+    <div id="divToolbar">
+        <button type="button" id="btnFiltroAvancado" class="btn btn-default waves-effect waves-light popover-bottom " data-toggle="popover" tabindex="0" data-trigger="hover" data-content="Filtro Avançado">
+            <span class="m-l-5"><i class="fa @(classeBtnFiltroAvancado)" aria-hidden="true">&nbsp;</i></span>Filtro</button>
+        @Html.Action("CrudToolbar", new { operations = (CrudOperation)ViewBag.CrudOperations })
+    </div>
+    @using (Html.BeginForm(actionListar, controller, method, new { id = "frmFiltro" + controller, @class = "frm-filtro" }))
+    {
+        <div id="filtrar" class="divFiltro" @estiloFiltro >
+            @Html.Action(actionFiltro)
+        </div>
+    }
+</div>
+<div class="panel panel-default" >
+    <div class="row panel-body">
+        <div id="divLista" data-carregar-lista="@carregarLista" class="col-md-12 form-group">
+        @*Html.Action("ListaVazia") *@
+     </div>
+</div>
+ <script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+        placement : 'top'
+    });
+});
+ </script>
