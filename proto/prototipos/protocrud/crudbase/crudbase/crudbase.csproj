@@ -127,6 +127,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CRUDBaseProtController.cs" />
     <Compile Include="Controllers\PrototipoController.cs" />
+    <Compile Include="Controllers\VersaoController.cs" />
     <Compile Include="CoreInfra\ObjectExtensions.cs" />
     <Compile Include="Enums\CrudOperation.cs" />
     <Compile Include="Helpers\DataTablesHelper.cs" />
@@ -582,6 +583,9 @@
     <Content Include="textarearadio.html" />
     <Content Include="validate.css" />
     <Content Include="validate.html" />
+    <Content Include="versaodevops.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -603,6 +607,7 @@
     <Content Include="Views\Shared\_CrudToolbar.cshtml" />
     <Content Include="Views\Prototipo\_Filtro.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Versao\Obter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

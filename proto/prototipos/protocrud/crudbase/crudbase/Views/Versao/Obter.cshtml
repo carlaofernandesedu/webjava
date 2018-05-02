@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Obter</title>
+</head>
+<body>
+    <div>
+        <table align="center" width="60%" boder="1">
+            <thead>
+                <tr>
+                    <th>Versao Front End</th>
+                    <th>Versao Back End</th>
+                    <th>Numero Build</th>
+                    <th>Data Hora Execucao</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center">@ViewBag.VersaoFrontEnd</td>
+                    <td align="center">@ViewBag.VersaoBackEnd</td>
+                    <td align="center">@ViewBag.NumeroBuild</td>
+                    <td align="center">@ViewBag.DataHoraExecucao</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>@ViewBag.Informacao</h3>
+    </div>
+</body>
+</html>
