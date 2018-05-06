@@ -1,0 +1,33 @@
+﻿@model Nullable<int>
+@{
+    var controller = ViewContext.RouteData.Values["controller"].ToString();
+    string actionFiltro = ViewBag.ActionFiltro ?? "Filtro";
+    string actionListar = ViewBag.ActionListar ?? "Listar";
+    FormMethod method = actionListar.Equals("Listar") ? FormMethod.Get : FormMethod.Post;
+}
+<h2>@ViewBag.Title</h2>
+<hr />
+<div id="divFiltro" class="divFiltro">
+    @using (Html.BeginForm(actionListar, controller, method, new { id = "frmFiltro" + controller, @class = "form-horizontal frm-filtro" }))
+    {
+        <div id="filtrar" class="divFiltro" >
+            @Html.Action(actionFiltro)
+        </div>
+    }
+</div>
+<div class="panel panel-default">
+    <div class="row panel-body">
+        <div id="divLista" class="col-md-12 form-group">
+            @*Html.Action("ListaVazia") *@
+        </div>
+    </div>
+</div>
+    <link rel="stylesheet" href="~/assets/css/datatables/jquery.dataTables.css" />
+    <script type="text/javascript" src="~/assets/scripts/datatables/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+        placement : 'top'
+    });
+});
+    </script>

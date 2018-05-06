@@ -125,12 +125,21 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FornecedorAtendimentoEliminado.cs" />
+    <Compile Include="Controllers\FornecedorAuditoriaBaseController.cs" />
+    <Compile Include="Controllers\AuditoriaBaseController.cs" />
+    <Compile Include="Controllers\AuditoriaController.cs" />
     <Compile Include="Controllers\CRUDBaseProtController.cs" />
+    <Compile Include="Controllers\FornecedorAtendimentoDuplicado.cs" />
+    <Compile Include="Controllers\FornecedorAtendimentoPJController.cs" />
     <Compile Include="Controllers\PrototipoController.cs" />
     <Compile Include="Controllers\VersaoController.cs" />
     <Compile Include="CoreInfra\ObjectExtensions.cs" />
     <Compile Include="Enums\CrudOperation.cs" />
     <Compile Include="Helpers\DataTablesHelper.cs" />
+    <Compile Include="Models\Auditoria\FornecedorEliminadoViewModel.cs" />
+    <Compile Include="Models\Auditoria\FornecedorEliminadoFiltro.cs" />
+    <Compile Include="Models\Auditoria\AuditoriaFiltroModel.cs" />
     <Compile Include="Models\Prototipo\PrototipoFiltroModel.cs" />
     <Compile Include="Models\Prototipo\PrototipoViewModel.cs" />
     <Compile Include="VariaveisGlobaisProt.cs" />
@@ -608,9 +617,16 @@
     <Content Include="Views\Prototipo\_Filtro.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Versao\Obter.cshtml" />
+    <Content Include="Views\Auditoria\_FiltroEliminado.cshtml" />
+    <Content Include="Views\Auditoria\Index.cshtml" />
+    <Content Include="Views\Shared\FornecedorAuditoriaIndex.cshtml" />
+    <Content Include="Views\FornecedorAtendimentoDuplicado\_Filtro.cshtml" />
+    <Content Include="Views\FornecedorAtendimentoEliminado\_Filtro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AuditoriaBase\" />
+    <Folder Include="Views\FornecedorAtendimentoPJ\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
