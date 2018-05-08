@@ -125,3 +125,6 @@ F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\
 F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\obj\Debug\crudbase.pdb
 F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\bin\versaodevops.xml
 F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\obj\Debug\crudbase.csprojResolveAssemblyReference.cache
+C:\CarlosWorking\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\bin\versaodevops.xml
+C:\CarlosWorking\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\bin\DataTables.AspNet.Core.dll
+C:\CarlosWorking\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\bin\DataTables.AspNet.Mvc5.dll

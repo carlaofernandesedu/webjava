@@ -15,7 +15,9 @@ namespace crudbase.Controllers
            ViewBag.ViewDirectory = string.Empty;
            ViewBag.ActionFiltro = "Filtro";
            ViewBag.ActionListar = "Listar";
+           ViewBag.ActionBarraInferior = "BarraInferior";
            ViewBag.CarregarLista = false;
+           ViewBag.BarraInferior = false;
 
         }
 
@@ -25,6 +27,10 @@ namespace crudbase.Controllers
             return View("FornecedorAuditoriaIndex");
         }
 
+        public virtual ActionResult ListaVazia(TFiltro filtro)
+        {
+            return Listar(filtro);
+        }
 
         public virtual ViewResult Filtro()
         {

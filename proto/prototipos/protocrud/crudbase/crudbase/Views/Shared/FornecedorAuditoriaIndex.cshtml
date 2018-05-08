@@ -3,8 +3,10 @@
     var controller = ViewContext.RouteData.Values["controller"].ToString();
     string actionFiltro = ViewBag.ActionFiltro;
     string actionListar = ViewBag.ActionListar;
+    string actionBarraInferior = ViewBag.ActionBarraInferior;
     FormMethod method = actionListar.Equals("Listar") ? FormMethod.Get : FormMethod.Post;
     string carregarLista = ViewBag.CarregarLista.ToString().ToLower();
+    bool exibirBarraInferior = ViewBag.BarraInferior;
  }
 <h2>@ViewBag.Title</h2>
 <hr />
@@ -19,8 +21,16 @@
 <div class="panel panel-default" >
     <div class="row panel-body">
         <div id="divLista" data-carregar-lista="@carregarLista" class="col-md-12 form-group">
-        @*Html.Action("ListaVazia") *@
+            @Html.Action("ListaVazia")
         </div>
+        @if (exibirBarraInferior == true)
+        {
+            <div id="divBarraInferior" class="col-xs-12">
+                <div class="div-toolbar">
+                    @Html.Action(actionBarraInferior)
+                </div>
+            </div>
+        }
      </div>
 </div>
 <link rel="stylesheet" href="~/assets/css/datatables/jquery.dataTables.css" />

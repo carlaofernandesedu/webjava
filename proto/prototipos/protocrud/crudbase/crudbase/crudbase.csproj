@@ -125,6 +125,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FornecedorAtendimentoDesativado.cs" />
     <Compile Include="Controllers\FornecedorAtendimentoEliminado.cs" />
     <Compile Include="Controllers\FornecedorAuditoriaBaseController.cs" />
     <Compile Include="Controllers\AuditoriaBaseController.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="CoreInfra\ObjectExtensions.cs" />
     <Compile Include="Enums\CrudOperation.cs" />
     <Compile Include="Helpers\DataTablesHelper.cs" />
+    <Compile Include="Models\Auditoria\FornecedorAtivoViewModel.cs" />
     <Compile Include="Models\Auditoria\FornecedorEliminadoViewModel.cs" />
     <Compile Include="Models\Auditoria\FornecedorEliminadoFiltro.cs" />
     <Compile Include="Models\Auditoria\AuditoriaFiltroModel.cs" />
@@ -622,6 +624,10 @@
     <Content Include="Views\Shared\FornecedorAuditoriaIndex.cshtml" />
     <Content Include="Views\FornecedorAtendimentoDuplicado\_Filtro.cshtml" />
     <Content Include="Views\FornecedorAtendimentoEliminado\_Filtro.cshtml" />
+    <Content Include="Views\FornecedorAtendimentoEliminado\_Listar.cshtml" />
+    <Content Include="Views\FornecedorAtendimentoDuplicado\_Listar.cshtml" />
+    <Content Include="Views\FornecedorAtendimentoDesativado\_Filtro.cshtml" />
+    <Content Include="Views\FornecedorAtendimentoDesativado\_Listar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
