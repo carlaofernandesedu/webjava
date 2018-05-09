@@ -519,6 +519,7 @@
     <Content Include="Scripts\licoes\editor.css" />
     <Content Include="Scripts\licoes\editor.js" />
     <Content Include="Scripts\licoes\encapsulamento.js" />
+    <Content Include="Scripts\licoes\exemploDataTableFornecedor.js" />
     <Content Include="Scripts\licoes\Teste.js" />
     <Content Include="Scripts\licoes\unovalidate.js" />
     <Content Include="Scripts\licoes\validacontroledata.js" />
