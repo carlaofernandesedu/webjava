@@ -110,7 +110,43 @@
             return false;
         }
 
-        BASE.Mensagem.Mostrar("Pesquisa", TipoMensagem.Informativa);
+        //BASE.Mensagem.Mostrar("Pesquisa", TipoMensagem.Informativa);
+        if (url !== undefined || filtrado === false || (filtrado === true && existeFiltro)) {
+            //BASE.Debug("filtrar - ajax request", DebugAction.Info);
+
+            CRUDFILTRO.ElementoResultado.html('<div class="text-center"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></div>');
+
+            $.ajax({
+                url: url,
+                data: (data !== false && data !== undefined) ? data : form.serialize(),
+                type: method,
+                cache: false,
+                success: function (response, status, xhr) {
+                    var isJson = BASE.Util.ResponseIsJson(xhr);
+                    if (isJson) {
+                        BASE.Util.TratarRespostaJson(response);
+                        CRUDFILTRO.Evento.PosFitrarErro();
+                    }
+                    else {
+                        carregarLista(response);
+                        CRUDFILTRO.Evento.PosListar();
+                        CONTROLES.Tabela.Configurar();
+                    }
+                },
+                error: function (xhr) {
+                    console.log('err');
+                    BASE.Util.TratarErroAjax(xhr, true);
+                },
+                complete: function () {
+                    //BASE.SpinnerOff("#divLista");
+                }
+            });
+        }
+
+        function carregarLista(html) {
+            CRUDFILTRO.ElementoResultado.html(html);
+            CRUDFILTRO.ElementoResultado.fadeIn();
+        }
 
     }
 

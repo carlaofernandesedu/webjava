@@ -13,6 +13,54 @@ var BASE = (function () {
         contagemCaracteresTextArea();
     }
 
+    //INFO: Tratamentos De Requisicoes Ajax 
+    function responseIsJson(xhr) {
+        var ct = xhr.getResponseHeader("content-type") || "";
+        if (ct.indexOf('html') > -1) {
+            return false;
+        }
+        if (ct.indexOf('json') > -1) {
+            return true;
+        }
+    }
+
+    function tratarErroAjax(xhr, redirect) {
+        if (redirect === true) {
+            if (xhr.status === 403) {
+                window.location = ACESSONEGADOURL;
+            }
+            if (xhr.status === 401) {
+                window.location = LOGINURL;
+            }
+        }
+        else {
+            if (xhr.responseJSON !== undefined) {
+                BASE.Mensagem.Mostrar(xhr.responseJSON.Mensagem, TipoMensagem.Error);
+            }
+            else {
+                //window.location = ERROURL;
+                BASE.Mensagem.Mostrar("Erro ao efetuar chamada.", TipoMensagem.Error);
+            }
+        }
+    }
+
+    function tratarRespostaJson(response, forceRedirect) {
+        if (response !== undefined) {
+            if (response.Sucesso === false) {
+                if ((response.RedirectTo !== undefined && response.RedirectTo !== null) || forceRedirect === true) {
+                    window.location = response.RedirectTo + "?ReturnUrl=" + obterEncodedUrl();
+                }
+                else {
+                    if (response.StatusCode >= 400) {
+                        BASE.Mensagem.Mostrar(response.Mensagem, TipoMensagem.Error);
+                    }
+                }
+            }
+        }
+    }
+
+
+
     //INFO: Tratamento para envio de URL 
     function montarUrl(controller, action) {
         var urlBase = '';
@@ -288,6 +336,9 @@ var BASE = (function () {
         //ValidarForm: validarDados,
         //Validacoes: validacoes
         Util: {
+            ResponseIsJson: responseIsJson,
+            TratarRespostaJson: tratarRespostaJson,
+            TratarErroAjax: tratarErroAjax,
             MontarUrl: montarUrl
         },
 

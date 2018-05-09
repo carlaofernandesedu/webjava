@@ -7,7 +7,7 @@
 <table id="grupo_lista_relacionar" class="order-table display dataTable no-footer dtr-inline text-left">
     <thead>
         <tr>
-            <td class="col-md-1">Selecione</td>
+            <td class="col-md-1">@Html.Display("Selecione")</td>
             <th class="col-md-4">@Html.DisplayNameFor(x => x.NomeFornecedor)</th>
             <th class="col-md-5">@Html.DisplayNameFor(x => x.Endereco)</th>
             <th class="col-md-2">Ações</th>
@@ -19,7 +19,7 @@
             foreach (var item in Model)
             {
                 <tr data-id="@item.Id" >
-                    <td>@Html.CheckBox("Id", new { value = item.Id, @checked = true });</td>
+                    <td><input data-id="@item.Id" type="checkbox" title="Selecione" value="true"></td>
                     <td>@item.NomeFornecedor</td>
                     <td>@item.Endereco</td>
                     <td class="acoes text-center">

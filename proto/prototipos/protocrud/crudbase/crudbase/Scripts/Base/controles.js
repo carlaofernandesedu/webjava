@@ -508,8 +508,86 @@
 
         // parametrizacao do Ajax 
         //https://datatables.net/reference/event/xhr
+        if (url === undefined) {
+            if (!$.fn.DataTable.isDataTable(tabelaSeletor)) {
+                tabela.dataTable({
+                    /*Coluna que não permite ordenação, partindo do array 0*/
+                    //"aoColumnDefs": [{ "bSortable": false, "aTargets": ["no-sort"] },
+                    //                 { "word-wrap": "break-word", "aTargets": ["col-wrap"] }], // HACK no-sort não funciona e quebra o datatables com coluna com checkbox. Mantis 0001908
+
+                    /*Coluna que incia em ORDENAÇÃO ASC ou DESC*/
+                    "order": [[0, "asc"]],
+
+                    /*Resposividade da tabela*/
+                    responsive: false,
+
+                    paginate: true,
+                    ordering: true,
+                    searching: true,
+                    columnDefs: [{
+                        "defaultContent": "-",
+                        "targets": "_all"
+                    }]
+                });
+            }
+        }
+
+
     }
 
+
+    function nenhumItemEncontradoDefault(msg) {
+        BASE.Mensagem.Mostrar(msg, TipoMensagem.Informativa, "Aviso");
+    }
+
+    function dataTablesFormataSelecione(data, type, full, meta) {
+        var html = '';
+
+        if (full != undefined) {
+            html += '<input data-id="' + full.id + '" type="checkbox" title="Selecione" value="true">';
+        }
+
+        return html;
+    }
+
+    function dataTablesFormataAcoes(data, type, full, meta) {
+        var html = '';
+        if (data != undefined) {
+            for (var i = 0; i < data.length; i++) {
+                var margL = ' margL0 ';
+                if (i > 0) {
+                    margL = ' margL5 ';
+                }
+
+                var classe = ' ' + data[i].classe;
+                var disable = data[i].disabled === true ? "disabled='disabled'" : "";
+                var title = data[i].title !== null ? data[i].title : "";
+
+                switch (data[i].tipo) {
+                    case "button":
+                        html += '<button type="button" class="btn btn-sm btn-default' + margL + classe + '" data-url="' + data[i].url + '" title="' + title + '" ' + disable + ' ><i class="' + data[i].icone + '"></i></button>';
+                        break;
+                    case "a":
+                    default:
+                        html += '<a class="btn btn-sm btn-default' + margL + classe + '" href="' + data[i].url + '" title="' + title + '" ' + disable + '><i class="' + data[i].icone + '"></i></a>';
+                }
+            }
+        }
+
+        return html;
+    }
+
+    function dataTablesFormataSimboloLegenda(data, type, full, meta) {
+        var html = '';
+
+        if (data != undefined) {
+            var valorSeparado = data.split('|');
+
+            html += '<span class="' + valorSeparado[1] + '">' + valorSeparado[0] + '</span>';
+        }
+
+        return html;
+    }
 
     //TRATAMENTO DO CONTROLE DE DATA 
     //https://malot.fr/bootstrap-datetimepicker/
@@ -553,6 +631,9 @@
         },
         Typeahead: {
             Configurar: inicializaTypeahead
+        },
+        Tabela: {
+            Configurar: configurarTabela
         }
     }
 })();
