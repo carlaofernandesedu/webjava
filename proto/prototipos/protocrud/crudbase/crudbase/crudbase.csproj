@@ -375,6 +375,7 @@
     <Content Include="controleddl.html" />
     <Content Include="controleddlsimples.html" />
     <Content Include="controledatepicker.html" />
+    <Content Include="DataTable - Copy.html" />
     <Content Include="DataTableBootstrap.html" />
     <Content Include="DataTable.html" />
     <Content Include="editorSistemaIntegrado02.html" />
