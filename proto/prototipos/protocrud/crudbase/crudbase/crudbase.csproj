@@ -227,6 +227,8 @@
     <Content Include="assets\scripts\datatables\dataTables.bootstrap.min.js" />
     <Content Include="assets\scripts\datatables\jquery.dataTables.js" />
     <Content Include="assets\scripts\datatables\jquery.dataTables.min.js" />
+    <Content Include="assets\scripts\FornecedorAtendimentoAuditoria\auditbarrainferior.js" />
+    <Content Include="assets\scripts\FornecedorAtendimentoAuditoria\auditfiltro.js" />
     <Content Include="assets\scripts\jquery-mask-plugin\jquery.mask.js" />
     <Content Include="assets\scripts\jquery-mask-plugin\jquery.mask.min.js" />
     <Content Include="assets\scripts\jquery.maskedinput\jquery.maskedinput.js" />
@@ -633,7 +635,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="assets\scripts\FornecedorAtendimentoAuditoria\" />
     <Folder Include="Views\AuditoriaBase\" />
     <Folder Include="Views\FornecedorAtendimentoPJ\" />
   </ItemGroup>

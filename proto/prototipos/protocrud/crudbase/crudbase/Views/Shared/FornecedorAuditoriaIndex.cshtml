@@ -29,7 +29,10 @@
         {
             <div id="divBarraInferior" class="col-xs-12">
                 <div class="div-toolbar">
-                    @Html.Action(actionBarraInferior)
+                   @* @Html.Action(actionBarraInferior) *@
+                    <button type="button" id="btnacaobarrainferior" class="btn btn-primary" data-acao="@acaoBotaoBarraInferior" >
+                        <i class="fa fa-plus" aria-hidden="true">&nbsp;</i><span>@tituloBotaoBarraInferior</span>
+                    </button>
                 </div>
             </div>
         }
@@ -37,12 +40,14 @@
 </div>
 <link rel="stylesheet" href="~/assets/css/datatables/jquery.dataTables.css" />
 <script type="text/javascript" src="~/assets/scripts/datatables/jquery.dataTables.js"></script>
-<script type="text/javascript" src="~/Scripts/Base/crudfiltro.js"></script>
+<script type="text/javascript" src="~/assets/scripts/FornecedorAtendimentoAuditoria/auditfiltro.js"></script>
+<script type="text/javascript" src="~/assets/scripts/FornecedorAtendimentoAuditoria/auditbarrainferior.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover({
         placement : 'top'
     });
-    CRUDFILTRO.Init();
+    AUDITFILTRO.Init();
+    AUDITBARRAINFERIOR.Init();
 });
  </script>

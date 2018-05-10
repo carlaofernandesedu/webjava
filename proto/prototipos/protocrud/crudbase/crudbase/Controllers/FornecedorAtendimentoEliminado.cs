@@ -12,6 +12,9 @@ namespace crudbase.Controllers
         public FornecedorAtendimentoEliminadoController() : base()
         {
             ViewBag.Title = "Fornecedores Duplicado Eliminados";
+            ViewBag.BarraInferior = true;
+            ViewBag.tituloBotaoBarraInferior = "Recuperar Eliminados";
+            ViewBag.acaoBotaoBarraInferior = "recuperareliminados";
         }
         
         public override ActionResult Listar(FornecedorEliminadoFiltro filtro)
