@@ -7,6 +7,8 @@
     FormMethod method = actionListar.Equals("Listar") ? FormMethod.Get : FormMethod.Post;
     string carregarLista = ViewBag.CarregarLista.ToString().ToLower();
     bool exibirBarraInferior = ViewBag.BarraInferior;
+    string tituloBotaoBarraInferior = ViewBag.tituloBotaoBarraInferior ?? "";
+    string acaoBotaoBarraInferior = ViewBag.acaoBotaoBarraInferior ?? "";
  }
 <h2>@ViewBag.Title</h2>
 <hr />

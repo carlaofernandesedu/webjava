@@ -633,6 +633,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\scripts\FornecedorAtendimentoAuditoria\" />
     <Folder Include="Views\AuditoriaBase\" />
     <Folder Include="Views\FornecedorAtendimentoPJ\" />
   </ItemGroup>
