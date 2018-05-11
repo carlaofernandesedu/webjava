@@ -130,7 +130,7 @@
                     else {
                         carregarLista(response);
                         AUDITFILTRO.Evento.PosListar();
-                        //CONTROLES.Tabela.Configurar();
+                        CONTROLES.Tabela.Configurar();
                     }
                 },
                 error: function (xhr) {

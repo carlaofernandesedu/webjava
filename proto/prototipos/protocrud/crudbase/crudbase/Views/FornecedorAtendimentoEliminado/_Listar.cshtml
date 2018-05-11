@@ -8,7 +8,8 @@
     <thead>
         <tr>
             <td class="col-md-1">@Html.Display("Selecione")</td>
-            <th class="col-md-4">@Html.DisplayNameFor(x => x.NomeFornecedor)</th>
+            <td class="col-md-1">@Html.Display("Selecione Radio")</td>
+            <th class="col-md-3">@Html.DisplayNameFor(x => x.NomeFornecedor)</th>
             <th class="col-md-5">@Html.DisplayNameFor(x => x.Endereco)</th>
             <th class="col-md-2">Ações</th>
         </tr>
@@ -19,7 +20,8 @@
             foreach (var item in Model)
             {
                 <tr data-id="@item.Id" >
-                    <td><input data-id="@item.Id" type="checkbox" title="Selecione" value="true"></td>
+                    <td><input data-id="@item.Id" type="checkbox" class="chkitens" title="Selecione" ></td>
+                    <td><input data-id="@item.Id" type="radio" name="radioitens" class="radioitens" title="Selecione" ></td>
                     <td>@item.NomeFornecedor</td>
                     <td>@item.Endereco</td>
                     <td class="acoes text-center">

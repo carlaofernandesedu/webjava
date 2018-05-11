@@ -29,7 +29,7 @@ namespace crudbase.Controllers
             return View("_Listar", result);
         }
 
-        public ActionResult Eliminar()
+        public ActionResult Eliminar(ParametrosAcao parametros)
         {
             throw new NotImplementedException();
         }

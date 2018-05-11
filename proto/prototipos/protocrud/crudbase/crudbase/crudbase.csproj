@@ -142,6 +142,7 @@
     <Compile Include="Models\Auditoria\FornecedorEliminadoViewModel.cs" />
     <Compile Include="Models\Auditoria\FornecedorEliminadoFiltro.cs" />
     <Compile Include="Models\Auditoria\AuditoriaFiltroModel.cs" />
+    <Compile Include="Models\Auditoria\ParametrosAcao.cs" />
     <Compile Include="Models\Prototipo\PrototipoFiltroModel.cs" />
     <Compile Include="Models\Prototipo\PrototipoViewModel.cs" />
     <Compile Include="VariaveisGlobaisProt.cs" />

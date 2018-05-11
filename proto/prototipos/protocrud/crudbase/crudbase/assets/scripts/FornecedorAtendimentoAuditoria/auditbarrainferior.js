@@ -1,9 +1,15 @@
 ﻿var AUDITBARRAINFERIOR = (function () {
+    'use strict';
     var moduleName = "AUDITBARRAINFERIOR";
 
+    var arrDados = {};
+    arrDados['acao'] = '';
+    arrDados['listaIdsControleCheckbox']= '';
+    arrDados['listaIdsControleRadio'] = '';
+
     var arrMensagensAcoes = {
-        "prosseguireliminacao": { url: "eliminar" ,exibemodal:false , mensagem: "" },
-        "recuperareliminados": {  url: "recuperareliminados", exibemodal: true, mensagem: "Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
+        "prosseguireliminacao": { url: "FornecedorAtendimentoEliminado/Eliminar", exibemodal: false, mensagem: "" },
+        "recuperareliminados": { url: "FornecedorAtendimentoEliminado/Eliminar", exibemodal: true, mensagem: "Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
     }
 
     function init()
@@ -20,23 +26,73 @@
     {
         $('#btnacaobarrainferior').off('click');
         $('#btnacaobarrainferior').on('click', function (e) {
-            var acao = arrMensagensAcoes[$(this).attr('data-acao')]
-            if (acao.exibemodal)
+            var identificadoAcao = $(this).attr('data-acao')
+            var objetoParametrosAcao = arrMensagensAcoes[identificadoAcao];
+            arrDados['acao'] = identificadoAcao;
+            if (objetoParametrosAcao.exibemodal)
             {
-                alert(acao.mensagem);
+                alert(objetoParametrosAcao.mensagem);
             }
             else 
             {
                 alert('sem modal');
             }
+            if (obterValoresCheckbox() && obterValoresRadio())
+            {
+               executarAcao(objetoParametrosAcao.url,"POST",arrDados);
+            }
+             
         });
     }
 
-    function executarAcao() 
+    function obterValoresCheckbox()
+    {
+
+        var chkArray = [];
+
+        $(".chkitens:checked").each(function () {
+              chkArray.push($(this).attr('data-id'));
+        });
+
+        var selected;
+        selected = chkArray.join(',');
+
+        if (selected.length > 0) {
+            arrDados['listaIdsControleCheckbox'] = selected;
+            alert("You have selected " + selected);
+            return true;
+        } else {
+            alert("Please at least check one of the checkbox");
+            return false; 
+        }
+    }
+
+    function obterValoresRadio() {
+
+        var chkArray = [];
+
+        $("input[name=radioitens]:checked").each(function () {
+            chkArray.push($(this).attr('data-id'));
+        });
+
+        var selected;
+        selected = chkArray.join(',');
+
+        if (selected.length > 0) {
+            arrDados['listaIdsControleRadio'] = selected;
+            alert("You have selected radio " + selected);
+            return true;
+        } else {
+            alert("Please at least check one of the radio");
+            return false;
+        }
+    }
+
+    function executarAcao(url, method,data)
     {
         $.ajax({
             url: url,
-            data: (data !== false && data !== undefined) ? data : form.serialize(),
+            data: data,
             type: method,
             cache: false,
             success: function (response, status, xhr) {
