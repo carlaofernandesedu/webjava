@@ -1,0 +1,48 @@
+_FornecAtendAuditoriaBarraInf
+FornecAtendAuditoriaIndex
+_FornecAtendAuditoriaFiltro
+
+FornecedorAtendimentoDesativado 
+Recuperar 
+
+FornecedorAtendimentoAtivo 
+ProsseguirDesativacao 
+Desativar 
+
+FornecedorAtendimentoDuplicado
+ProsseguirEliminacao 
+Eliminar 
+AtualizarFichasFornecedorPadrao
+
+FornecedorAtendimentoEliminado 
+Recuperar 
+
+
+FornecedorAtendimentoDesativadoController 
+FornecedorAtendimentoAtivoController  
+FornecedorAtendimentoDuplicadoController 
+FornecedorAtendimentoEliminadoController 
+
+FornecedorAtendimentoAuditFiltroViewModel
+FornecedorAtendimentoAuditFiltroPJViewModel
+FornecedorAtendimentoAuditViewModel
+FornecedorAtendimentoAuditPJViewModel
+FornecedorAtendimentoAuditEliminacaoViewModel
+
+
+prosseguireliminacao
+eliminar  Os fornecedores selecionados, correspondem ao mesmo fornecedor? 
+atualizarfichasfornecedorpadrao Confirma atualizar as FA´s dos fornecedores eliminados para o fornecedor padrão definido 
+recuperareliminados Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)
+desativar Os fornecedores selecionados como "Desativar" serão referenciados pelo fornecedor selecionado como "Oficial". Você tem certeza que deseja "Oficializar" o fornecedor selecionado, 
+para os que estão selecionados para serem "Desativados"  
+cancelardesativacao Confirma cancelar a desativação, retornando para os valores iniciais
+
+
+acao 
+prosseguireliminacao 
+confirmareliminacao 
+atualizarfichasfornecpadrado
+
+
+
