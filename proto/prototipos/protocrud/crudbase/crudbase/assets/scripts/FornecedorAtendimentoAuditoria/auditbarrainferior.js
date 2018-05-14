@@ -2,14 +2,11 @@
     'use strict';
     var moduleName = "AUDITBARRAINFERIOR";
 
-    var arrDadosEnvio = {};
-    arrDadosEnvio['acao'] = '';
-    arrDadosEnvio['listaIdsControleCheckbox']= '';
-    arrDadosEnvio['listaIdsControleRadio'] = '';
-
+    var dadosEnvioSerializados = '';
+   
     var arrParametrosAcoes = {
-        "prosseguireliminacao": { url: "FornecedorAtendimentoEliminado/Eliminar", exibemodal: false, mensagem: "" },
-        "recuperareliminados": { url: "FornecedorAtendimentoEliminado/Eliminar", exibemodal: true, mensagem: "Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
+        "prosseguireliminacao": { url: "FornecedorAtendimentoEliminado/Eliminar", possuiCheck: true, possuiRadio:true, exibeModal: false, mensagem: "" },
+        "recuperareliminados": { url: "FornecedorAtendimentoEliminado/Eliminar",  possuiCheck: true, possuiRadio:true, exibeModal: true, mensagem: "Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
     }
 
     var controleCheck = '.chkitens:checked';
@@ -25,35 +22,35 @@
     {
         bindbotaoBarraInferior();
     }
-
+    
+ 
     function bindbotaoBarraInferior() 
     {
         $('#btnacaobarrainferior').off('click');
         $('#btnacaobarrainferior').on('click', function (e) {
             var identificadorAcao = $(this).attr('data-acao')
             var objetoParametrosAcao = arrParametrosAcoes[identificadorAcao];
-            arrDadosEnvio['acao'] = identificadorAcao;
             if (validarPreenchimentoControles(objetoParametrosAcao))
             {
-                definirValoresPorControle(controleCheck, arrDadosEnvio['listaIdsControleCheckbox']);
-                definirValoresPorControle(controleRadio, arrDadosEnvio['listaIdsControleRadio']);
+                dadosEnvioSerializados = serializarValoresParaEnvio(identificadorAcao,objetoParametrosAcao);
                 if (objetoParametrosAcao.exibemodal) {
                     alert(objetoParametrosAcao.mensagem);
                 }
                 else {
                     alert('sem modal');
                 }
-                executarAcao(objetoParametrosAcao.url, "POST", arrDados);
+                submeterPorGet(objetoParametrosAcao.url, dadosEnvioSerializados);
             }
         });
     }
 
     function validarPreenchimentoControles(objAcao)
     {
-        if ($(controleCheck).length == 0 && 1 == 1)
-        {
-            alert('Selecione um item do Checkbox');
-            return false;
+        if (objAcao.possuiCheck) {
+            if (!($(controleCheck).length > 0)) {
+                alert('Selecione um item do Checkbox');
+                return false;
+            }
         }
         if ($(controleCheck).length == 0 && 1 == 1) {
             alert('Selecione um item do Radio');
@@ -62,94 +59,43 @@
         return true;
     }
 
+    function serializarValoresParaEnvio(identificadorAcao, objAcao) {
+        var resultado = '';
+        resultado = 'acao=' + identificadorAcao;
+        if (objAcao.possuiCheck) {
+            resultado = resultado + '&listaIdsControleCheckbox='  + obterValoresPorControle(controleCheck);
+        }
+        if (objAcao.possuiRadio) {
+            resultado = resultado + '&listaIdsControleRadio=' + obterValoresPorControle(controleRadio);
+        }
+        return resultado;
+    }
 
-    function definirValoresPorControle(nomeControle, paramEnvio)
+    function obterValoresPorControle(nomeControle)
     {
-        var chkArray = [];
+        var controlArray = [];
 
         $(nomeControle).each(function () {
-            chkArray.push($(this).attr('data-id'));
+            controlArray.push($(this).attr('data-id'));
         });
 
-        var selected;
-        selected = chkArray.join(',');
+        var selecionado;
+        selecionado = controlArray.join(',');
 
-        if (selected.length > 0) {
-            paramEnvio = selected;
-        } 
-    }
-
-
-    function obterValoresCheckbox()
-    {
-
-        var chkArray = [];
-
-        $(".chkitens:checked").each(function () {
-              chkArray.push($(this).attr('data-id'));
-        });
-
-        var selected;
-        selected = chkArray.join(',');
-
-        if (selected.length > 0) {
-            arrDados['listaIdsControleCheckbox'] = selected;
-            alert("You have selected " + selected);
-            return true;
-        } else {
-            alert("Please at least check one of the checkbox");
-            return false; 
+        if (selecionado.length > 0) {
+            return selecionado;
+        }
+        else {
+            return '';
         }
     }
 
-    function obterValoresRadio() {
-
-        var chkArray = [];
-
-        $("input[name=radioitens]:checked").each(function () {
-            chkArray.push($(this).attr('data-id'));
-        });
-
-        var selected;
-        selected = chkArray.join(',');
-
-        if (selected.length > 0) {
-            arrDados['listaIdsControleRadio'] = selected;
-            alert("You have selected radio " + selected);
-            return true;
-        } else {
-            alert("Please at least check one of the radio");
-            return false;
-        }
+    function submeterPorGet(url, data) {
+      window.location = url + '?' + data;
     }
 
-    function executarAcao(url, method,data)
+    function submeterPorAjax(url, method,data)
     {
-        //$.ajax({
-        //    url: url,
-        //    data: data,
-        //    type: method,
-        //    cache: false,
-        //    success: function (response, status, xhr) {
-        //        var isJson = BASE.Util.ResponseIsJson(xhr);
-        //        if (isJson) {
-        //            BASE.Util.TratarRespostaJson(response);
-        //            //CRUDFILTRO.Evento.PosFitrarErro();
-        //        }
-        //        else {
-        //            carregarLista(response);
-        //            //CRUDFILTRO.Evento.PosListar();
-        //            //CONTROLES.Tabela.Configurar();
-        //        }
-        //    },
-        //    error: function (xhr) {
-        //        console.log('err');
-        //        BASE.Util.TratarErroAjax(xhr, true);
-        //    },
-        //    complete: function () {
-        //        //BASE.SpinnerOff("#divLista");
-        //    }
-        //});
         AUDITBARRAINFERIOR.ElementoResultado.html('<div class="text-center"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></div>');
 
         $.ajax({

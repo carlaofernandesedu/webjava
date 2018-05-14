@@ -1,3 +1,20 @@
+https://forums.asp.net/t/2140743.aspx?ajax+does+not+redirect+after+controller+is+called+mvc+5
+https://stackoverflow.com/questions/1538523/how-to-get-an-asp-net-mvc-ajax-response-to-redirect-to-new-page-instead-of-inser
+PLEO CALLBACK>>
+FAZER O AJAX E DEPOIS ELIMINAR 
+
+
+FiltroEliminar = Selecione, Fornecedor, Endereco, CPF/CPJ , Acao
+ParaEliminar =   Fornecedor, Endereco, CPF/CPJ, Padrao, ELiminar 
+PosEliminar = DIV 
+
+FiltroDuplicadoEliminado = Selecione, Fornecedor, Endereco, CPF/CPJ , Fornecedor Padrao ,Acao
+
+Desativar Fornecedor = Fornecedor, Endereco, Oficial , Acao , Desativar 
+Pos Desativar Fornecedor = DIV 
+
+
+
 _FornecAtendAuditoriaBarraInf
 FornecAtendAuditoriaIndex
 _FornecAtendAuditoriaFiltro
