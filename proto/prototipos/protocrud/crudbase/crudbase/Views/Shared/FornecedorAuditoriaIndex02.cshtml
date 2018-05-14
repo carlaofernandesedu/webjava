@@ -23,7 +23,20 @@
 </div>
 <div class="panel panel-default">
     <div class="row panel-body">
-        @Html.Action("ListaVazia")
+        <div id="divLista" data-carregar-lista="@carregarLista" class="col-md-12 form-group">
+            @Html.Action("ListaVazia")
+        </div>
+        @if (exibirBarraInferior == true)
+        {
+                <div id="divBarraInferior" class="col-xs-12">
+                    <div class="div-toolbar">
+                        @* @Html.Action(actionBarraInferior) *@
+                        <button type="button" id="btnacaobarrainferior" class="btn btn-primary" data-acao="@acaoBotaoBarraInferior" data-url="@urlacaoBarraInferior">
+                            <i class="fa fa-plus" aria-hidden="true">&nbsp;</i><span>@tituloBotaoBarraInferior</span>
+                        </button>
+                    </div>
+                </div>
+        }
     </div>
 </div>
 <link rel="stylesheet" href="~/assets/css/datatables/jquery.dataTables.css" />

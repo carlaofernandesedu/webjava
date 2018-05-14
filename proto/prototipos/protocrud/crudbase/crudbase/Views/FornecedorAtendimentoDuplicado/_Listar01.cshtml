@@ -1,0 +1,38 @@
+﻿@model IEnumerable<crudbase.Models.Auditoria.FornecedorEliminadoViewModel>
+
+@{
+    Layout = null;
+}
+
+<table id="grupo_lista_relacionar" class="order-table display dataTable no-footer dtr-inline text-left">
+    <thead>
+        <tr>
+            <td class="col-md-1">&nbsp;</td>
+            <th class="col-md-3">@Html.DisplayNameFor(x => x.NomeFornecedor)</th>
+            <th class="col-md-2">@Html.DisplayNameFor(x => x.Endereco)</th>
+            <th class="col-md-2">@Html.DisplayNameFor(x => x.CPFCNPJ)</th>
+            <th class="col-md-3">@Html.DisplayNameFor(x => x.FornecedorPadrao)</th>
+            <th class="col-md-1">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr data-id="@item.Id">
+                    <td>@Html.CheckBox("Id", new { value = item.Id, @checked = true });</td>
+                    <td>@item.NomeFornecedor</td>
+                    <td>@item.Endereco</td>
+                    <td>@item.CPFCNPJ</td>
+                    <td>@item.FornecedorPadrao</td>
+                    <td class="acoes text-center">
+                        <button type="button" class="btn btn-primary btn-editar" title="Editar" data-url="@Url.Action("Editar", new { id = item.Id })"><i class="fa fa-fw fa-edit"></i></button>
+                        <button type="button" class="btn btn-danger btn-excluir" title="Excluir" data-url="@Url.Action("Excluir", new { id = item.Id })"><i class="fa fa-fw fa-trash"></i></button>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

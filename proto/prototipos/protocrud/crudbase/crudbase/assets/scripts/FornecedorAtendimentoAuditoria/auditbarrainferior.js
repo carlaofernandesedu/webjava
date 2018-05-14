@@ -5,8 +5,8 @@
     var dadosEnvioSerializados = '';
    
     var arrParametrosAcoes = {
-        "prosseguireliminacao": { url: "FornecedorAtendimentoEliminado/Eliminar", possuiCheck: true, possuiRadio:true, exibeModal: false, mensagem: "" },
-        "recuperareliminados": { url: "FornecedorAtendimentoEliminado/Eliminar",  possuiCheck: true, possuiRadio:true, exibeModal: true, mensagem: "Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
+        "prosseguireliminacao": { possuiCheck: true, possuiRadio: true, enviarAjax:false, exibeModal: false, mensagem: "",  },
+        "recuperareliminados":  {possuiCheck: true, possuiRadio:true, enviarAjax:true, exibeModal: true, mensagem: "Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
     }
 
     var controleCheck = '.chkitens:checked';
@@ -28,7 +28,8 @@
     {
         $('#btnacaobarrainferior').off('click');
         $('#btnacaobarrainferior').on('click', function (e) {
-            var identificadorAcao = $(this).attr('data-acao')
+            var identificadorAcao = $(this).attr('data-acao');
+            var urlAcao = $(this).attr('data-url');
             var objetoParametrosAcao = arrParametrosAcoes[identificadorAcao];
             if (validarPreenchimentoControles(objetoParametrosAcao))
             {
@@ -39,7 +40,11 @@
                 else {
                     alert('sem modal');
                 }
-                submeterPorGet(objetoParametrosAcao.url, dadosEnvioSerializados);
+                if (objetoParametrosAcao.enviarAjax)
+                    submeterPorAjax(urlAcao,'POST', dadosEnvioSerializados);
+                else 
+                    submeterPorGet(urlAcao, dadosEnvioSerializados);
+
             }
         });
     }
