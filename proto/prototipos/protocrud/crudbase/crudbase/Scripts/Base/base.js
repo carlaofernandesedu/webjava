@@ -13,6 +13,39 @@ var BASE = (function () {
         contagemCaracteresTextArea();
     }
 
+    //INFO: Tratamento para exibicao de Formulario Modais
+    function mostrarModalConfirmacao(titulo, textoCorpo, callbackSim, callbackNao, element) {
+
+        $('#titulo').text(titulo);
+        $('#textoCorpo').text(textoCorpo);
+
+        $("#modalConfirmacao").modal({
+            show: true,
+            backdrop: 'static',
+            keyboard: false
+        });
+
+        $('#modalConfirmacao #btnSim').off('click');
+        $('#modalConfirmacao #btnSim').on('click', function () {
+            if (callbackSim) {
+                callbackSim(element);
+            }
+            BASE.EscondeModalConfirmacao();
+        });
+
+        $('#modalConfirmacao #btnNao').on('click', function () {
+            if (callbackNao) {
+                callbackNao(element);
+            }
+            BASE.EscondeModalConfirmacao();
+        });
+    }
+
+    function escondeModalConfirmacao() {
+        $("#modalConfirmacao").modal("hide");
+    }
+
+
     //INFO: Tratamentos De Requisicoes Ajax 
     function responseIsJson(xhr) {
         var ct = xhr.getResponseHeader("content-type") || "";
@@ -341,7 +374,7 @@ var BASE = (function () {
             TratarErroAjax: tratarErroAjax,
             MontarUrl: montarUrl
         },
-
+        MostrarModalConfirmacao: mostrarModalConfirmacao
     };
 
 }());

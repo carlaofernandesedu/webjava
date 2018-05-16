@@ -5,8 +5,8 @@
     var dadosEnvioSerializados = '';
    
     var arrParametrosAcoes = {
-        "prosseguireliminacao": { url: "FornecedorAtendimentoEliminado/Eliminar", possuiCheck: true, possuiRadio:true, exibeModal: false, mensagem: "" },
-        "recuperareliminados": { url: "FornecedorAtendimentoEliminado/Eliminar",  possuiCheck: true, possuiRadio:true, exibeModal: true, mensagem: "Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
+        "prosseguireliminacao": { url: "FornecedorAtendimentoEliminado/Eliminar", method:'GET', callbackRedirectServidor: null, possuiCheck: true, possuiRadio: true, exibeModal: false, mensagem: "" },
+        "recuperareliminados": { url: "FornecedorAtendimentoEliminado/Eliminar",  method:'GET', callbackRedirectServidor: null, possuiCheck: true, possuiRadio:true, exibeModal: false, mensagem: "Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
     }
 
     var controleCheck = '.chkitens:checked';
@@ -34,15 +34,19 @@
             {
                 dadosEnvioSerializados = serializarValoresParaEnvio(identificadorAcao,objetoParametrosAcao);
                 if (objetoParametrosAcao.exibemodal) {
-                    alert(objetoParametrosAcao.mensagem);
+                    BASE.MostrarModalConfirmacao('titulo modal', objetoParametrosAcao.mensagem,
+                        submeterPorAjax(objetoParametrosAcao.url, objetoParametrosAcao.method,
+                            dadosEnvioSerializados, null));
                 }
                 else {
                     alert('sem modal');
                 }
-                submeterPorGet(objetoParametrosAcao.url, dadosEnvioSerializados);
+                submeterPorGet(objetoParametrosAcao.url, objetoParametrosAcao.method,dadosEnvioSerializados);
             }
         });
     }
+
+  
 
     function validarPreenchimentoControles(objAcao)
     {
@@ -90,11 +94,11 @@
         }
     }
 
-    function submeterPorGet(url, data) {
+    function submeterPorGet(url, method, data, callback) {
       window.location = url + '?' + data;
     }
 
-    function submeterPorAjax(url, method,data)
+    function submeterPorAjax(url, method,data ,callback)
     {
         AUDITBARRAINFERIOR.ElementoResultado.html('<div class="text-center"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></div>');
 
