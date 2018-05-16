@@ -1,45 +1,47 @@
-﻿@model crudbase.Models.Auditoria.FornecedorEliminadoFiltro
+﻿@model crudbase.Models.Auditoria.AuditoriaFiltroModel
 @{
-   Layout = null;
+    Layout = null;
 }
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            @Html.LabelFor(x => x.Fornecedor, new { @class = "control-label" })
-                            @Html.TextBoxFor(x => x.Fornecedor, new { @class = "form-control", placeholder = "Razão Social ou Nome Fantasia" })
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                @Html.LabelFor(x => x.Fornecedor, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.Fornecedor, new { @class = "form-control", placeholder = "Razão Social ou Nome Fantasia" })
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            @Html.LabelFor(x => x.Documento, new { @class = "control-label" })
-                            @Html.TextBoxFor(x => x.Documento, new { @class = "form-control", placeholder = "CPF, CNPJ ou raiz do CNPJ" })
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                @Html.LabelFor(x => x.Documento, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.Documento, new { @class = "form-control", placeholder = "CPF, CNPJ ou raiz do CNPJ" })
+                            </div>
+                            <div class="col-md-6 form-group">
+                                @Html.LabelFor(x => x.Website, new { @class = "control-label", })
+                                @Html.TextBoxFor(x => x.Website, new { @class = "form-control", placeholder = "URL do Fornecedor" })
+                            </div>
                         </div>
-                        <div class="col-md-6 form-group">
-                            @Html.LabelFor(x => x.Website, new { @class = "control-label", })
-                            @Html.TextBoxFor(x => x.Website, new { @class = "form-control", placeholder = "URL do Fornecedor" })
+                        <div class="row">
+                            <div class="col-md-4 form-group">
+                                @Html.LabelFor(x => x.DataInicial, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.DataInicial, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-4 form-group">
+                                @Html.LabelFor(x => x.DataFinal, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.DataFinal, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-4 form-group"></div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 form-group">
-                            @Html.LabelFor(x => x.DataInicial, new { @class = "control-label" })
-                            @Html.TextBoxFor(x => x.DataInicial, new { @class = "form-control" })
-                        </div>
-                        <div class="col-md-4 form-group">
-                            @Html.LabelFor(x => x.DataFinal, new { @class = "control-label" })
-                            @Html.TextBoxFor(x => x.DataFinal, new { @class = "form-control" })
-                        </div>
-                        <div class="col-md-4 form-group"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-9 form-group"></div>
-                        <div class="col-md-3 form-group">
-                            <div class="pull-right acoes">
-                                <button type="reset" class="btn btn-warning" id="btnLimpar" title="Limpar"><i class="fa fa-eraser">&nbsp;</i>Limpar</button>
-                                <button type="button" class="btn btn-primary waves-effect waves-light" id="btnFiltrar"><i class="fa fa-search" aria-hidden="true">&nbsp;</i>Pesquisar</button>
+                        <div class="row">
+                            <div class="col-md-9 form-group"></div>
+                            <div class="col-md-3 form-group">
+                                <div class="pull-right acoes">
+                                    <button type="reset" class="btn btn-warning" id="btnLimpar" title="Limpar"><i class="fa fa-eraser">&nbsp;</i>Limpar</button>
+                                    <button type="button" class="btn btn-primary waves-effect waves-light" id="btnFiltrar"><i class="fa fa-search" aria-hidden="true">&nbsp;</i>Pesquisar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -47,4 +49,5 @@
             </div>
         </div>
     </div>
-</div>
+
+

@@ -5,8 +5,8 @@
     var dadosEnvioSerializados = '';
    
     var arrParametrosAcoes = {
-        "prosseguireliminacao": { url: "FornecedorAtendimentoEliminado/Eliminar", method:'GET', callbackRedirectServidor: null, possuiCheck: true, possuiRadio: true, exibeModal: false, mensagem: "" },
-        "recuperareliminados": { url: "FornecedorAtendimentoEliminado/Eliminar",  method:'GET', callbackRedirectServidor: null, possuiCheck: true, possuiRadio:true, exibeModal: false, mensagem: "Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
+        "prosseguireliminacao": { possuiCheck: true, possuiRadio: true, enviarAjax:false, exibeModal: false, mensagem: "",  },
+        "recuperareliminados":  {possuiCheck: true, possuiRadio:true, enviarAjax:true, exibeModal: true, mensagem: "Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
     }
 
     var controleCheck = '.chkitens:checked';
@@ -28,25 +28,26 @@
     {
         $('#btnacaobarrainferior').off('click');
         $('#btnacaobarrainferior').on('click', function (e) {
-            var identificadorAcao = $(this).attr('data-acao')
+            var identificadorAcao = $(this).attr('data-acao');
+            var urlAcao = $(this).attr('data-url');
             var objetoParametrosAcao = arrParametrosAcoes[identificadorAcao];
             if (validarPreenchimentoControles(objetoParametrosAcao))
             {
                 dadosEnvioSerializados = serializarValoresParaEnvio(identificadorAcao,objetoParametrosAcao);
                 if (objetoParametrosAcao.exibemodal) {
-                    BASE.MostrarModalConfirmacao('titulo modal', objetoParametrosAcao.mensagem,
-                        submeterPorAjax(objetoParametrosAcao.url, objetoParametrosAcao.method,
-                            dadosEnvioSerializados, null));
+                    alert(objetoParametrosAcao.mensagem);
                 }
                 else {
                     alert('sem modal');
                 }
-                submeterPorGet(objetoParametrosAcao.url, objetoParametrosAcao.method,dadosEnvioSerializados);
+                if (objetoParametrosAcao.enviarAjax)
+                    submeterPorAjax(urlAcao,'POST', dadosEnvioSerializados);
+                else 
+                    submeterPorGet(urlAcao, dadosEnvioSerializados);
+
             }
         });
     }
-
-  
 
     function validarPreenchimentoControles(objAcao)
     {
@@ -94,11 +95,11 @@
         }
     }
 
-    function submeterPorGet(url, method, data, callback) {
+    function submeterPorGet(url, data) {
       window.location = url + '?' + data;
     }
 
-    function submeterPorAjax(url, method,data ,callback)
+    function submeterPorAjax(url, method,data)
     {
         AUDITBARRAINFERIOR.ElementoResultado.html('<div class="text-center"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></div>');
 

@@ -626,13 +626,15 @@
     <Content Include="Views\Versao\Obter.cshtml" />
     <Content Include="Views\Auditoria\_FiltroEliminado.cshtml" />
     <Content Include="Views\Auditoria\Index.cshtml" />
-    <Content Include="Views\Shared\FornecedorAuditoriaIndex.cshtml" />
-    <Content Include="Views\FornecedorAtendimentoDuplicado\_Filtro.cshtml" />
+    <Content Include="Views\Shared\FornecedorAuditoriaIndex02.cshtml" />
     <Content Include="Views\FornecedorAtendimentoEliminado\_Filtro.cshtml" />
     <Content Include="Views\FornecedorAtendimentoEliminado\_Listar.cshtml" />
-    <Content Include="Views\FornecedorAtendimentoDuplicado\_Listar.cshtml" />
+    <Content Include="Views\FornecedorAtendimentoDuplicado\_Listar01.cshtml" />
     <Content Include="Views\FornecedorAtendimentoDesativado\_Filtro.cshtml" />
     <Content Include="Views\FornecedorAtendimentoDesativado\_Listar.cshtml" />
+    <Content Include="Views\FornecedorAtendimentoDuplicado\_Filtro.cshtml" />
+    <Content Include="Views\FornecedorAtendimentoDuplicado\_Listar.cshtml" />
+    <Content Include="Views\Shared\FornecedorAuditoriaIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

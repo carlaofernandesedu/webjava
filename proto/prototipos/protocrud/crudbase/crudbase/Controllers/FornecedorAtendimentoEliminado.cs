@@ -29,7 +29,7 @@ namespace crudbase.Controllers
             return View("_Listar", result);
         }
 
-        public ActionResult Eliminar(ParametrosAcao parametros)
+        public ActionResult Recuperar(ParametrosAcao parametros)
         {
             var result = new List<FornecedorEliminadoViewModel>();
             result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 1 });
