@@ -388,6 +388,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="bootboxmsg.html" />
     <Content Include="mensagens2018 .html" />
     <Content Include="mensagens.html" />
     <Content Include="Scripts\Base\base2018.js" />
@@ -635,6 +636,7 @@
     <Content Include="Views\FornecedorAtendimentoDuplicado\_Filtro.cshtml" />
     <Content Include="Views\FornecedorAtendimentoDuplicado\_Listar.cshtml" />
     <Content Include="Views\Shared\FornecedorAuditoriaIndex.cshtml" />
+    <Content Include="Views\Shared\_ModalConfirmacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

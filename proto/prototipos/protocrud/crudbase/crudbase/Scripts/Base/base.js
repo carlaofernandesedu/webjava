@@ -45,6 +45,141 @@ var BASE = (function () {
         $("#modalConfirmacao").modal("hide");
     }
 
+    //INFO: Tratamentos de Modais com a ferramenta BOOTBOX 
+    function exibirModalConfirmacao(title, mensagem, tamanho, textoBtnNao, classeBtnNao, textoBtnSim, classeBtnSim, callbackSim, callbackNao) {
+
+        bootbox.confirm({
+            title: title,
+            message: mensagem,
+            size: tamanho,
+            buttons: {
+                cancel: {
+                    label: textoBtnNao,
+                    className: classeBtnNao
+                },
+                confirm: {
+                    label: textoBtnSim,
+                    className: classeBtnSim
+                }
+            },
+            callback: function (result) {
+
+                if (result === true) {
+                    if (callbackSim != null && callbackSim != undefined) {
+                        callbackSim();
+                    }
+                } else {
+                    if (callbackNao != null && callbackNao != undefined) {
+                        callbackNao();
+                    }
+                }
+                //bootbox.hideAll();
+            }
+        });
+    }
+
+    function exibirModalAlerta(title, mensagem, tamanho, btnOk, classBtnOk, callbackSucesso) {
+
+        bootbox.alert({
+            title: title,
+            message: mensagem,
+            size: tamanho,
+            buttons: {
+                ok: {
+                    label: btnOk,
+                    className: classBtnOk
+                }
+            },
+            callback: callbackSucesso
+        });
+    }
+
+    //INFO: Inclusao Argumentos Callback 
+    function exibirModalConfirmacaoCallbackArgs(title, mensagem, tamanho, textoBtnNao, classeBtnNao, textoBtnSim, classeBtnSim, callbackSim, callbackNao,args) {
+
+        bootbox.confirm({
+            title: title,
+            message: mensagem,
+            size: tamanho,
+            buttons: {
+                cancel: {
+                    label: textoBtnNao,
+                    className: classeBtnNao
+                },
+                confirm: {
+                    label: textoBtnSim,
+                    className: classeBtnSim
+                }
+            },
+            callback: function (result) {
+
+                if (result === true) {
+                    if (callbackSim != null && callbackSim != undefined) {
+                        callbackSim(args);
+                    }
+                } else {
+                    if (callbackNao != null && callbackNao != undefined) {
+                        callbackNao(args);
+                    }
+                }
+                //bootbox.hideAll();
+            }
+        });
+    }
+
+    function exibirModalAlertaCallbackArgs(title, mensagem, tamanho, btnOk, classBtnOk, callbackSucesso,args) {
+
+        bootbox.alert({
+            title: title,
+            message: mensagem,
+            size: tamanho,
+            buttons: {
+                ok: {
+                    label: btnOk,
+                    className: classBtnOk
+                }
+            },
+            callback: function () {
+                if (callbackSucesso != null && callbackSucesso != undefined) {
+                    callbackSucesso(args);
+                }
+            }
+        });
+    }
+
+    function exibirModalPrompt(title, tipoInput, optionInput, mensagem, tamanho, value, btnNao, classBtnNao, btnSim, classBtnSim, callbackSucesso, callbackErro) {
+        bootbox.prompt({
+            title: title,
+            inputType: tipoInput,
+            inputOptions: optionInput,
+            message: mensagem,
+            size: tamanho,
+            value: value,
+            buttons: {
+                cancel: {
+                    label: btnNao,
+                    className: classBtnNao
+                },
+                confirm: {
+                    label: btnSim,
+                    className: classBtnSim
+                }
+            },
+            callback: function (result) {
+                if (result !== null) {
+                    if (callbackSucesso != null && callbackSucesso != undefined) {
+                        return callbackSucesso(result);
+                    }
+                } else {
+                    if (callbackErro != null && callbackErro != undefined) {
+                        return callbackErro();
+                    }
+                }
+            }
+        });
+    }
+
+
 
     //INFO: Tratamentos De Requisicoes Ajax 
     function responseIsJson(xhr) {
@@ -374,7 +509,16 @@ var BASE = (function () {
             TratarErroAjax: tratarErroAjax,
             MontarUrl: montarUrl
         },
-        MostrarModalConfirmacao: mostrarModalConfirmacao
+        MostrarModalConfirmacao: mostrarModalConfirmacao,
+        EscondeModalConfirmacao: escondeModalConfirmacao,
+        Modal: {
+            ExibirModalConfirmacao: exibirModalConfirmacao,
+            ExibirModalAlerta: exibirModalAlerta,
+            ExibirModalPrompt: exibirModalPrompt,
+            ExibirModalConfirmacaoCallbackArgs: exibirModalConfirmacaoCallbackArgs,
+            ExibirModalAlertaCallbackArgs: exibirModalAlertaCallbackArgs,
+        }
+
     };
 
 }());

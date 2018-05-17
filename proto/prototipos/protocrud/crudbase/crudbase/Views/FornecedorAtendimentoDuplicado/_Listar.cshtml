@@ -45,9 +45,10 @@
             <div class="div-toolbar">
                 @* @Html.Action(actionBarraInferior) *@
                 <button type="button" id="btnacaobarrainferior" class="btn btn-primary" data-acao="@acaoBotaoBarraInferior" data-url="@urlacaoBarraInferior">
-                    <i class="fa fa-plus" aria-hidden="true">&nbsp;</i><span>@tituloBotaoBarraInferior</span>
+                    <span>@tituloBotaoBarraInferior</span>
                 </button>
             </div>
         </div>
     }
 </div>
+@Html.Partial("_ModalConfirmacao")

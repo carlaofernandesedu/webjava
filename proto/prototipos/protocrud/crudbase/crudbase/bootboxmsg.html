@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/scripts/bootbox.js/bootbox.js"></script>
+    <script type="text/javascript" src="Scripts/Base/base.js"></script>
+    <script type="text/javascript" src="Scripts/Base/enums.js"></script>
+    <script type="text/javascript">
+        var respostaModal = 'acao xpto'; 
+        function ModalConfirmacao() {
+               BASE.Modal.ExibirModalConfirmacaoCallbackArgs(
+                'Titulo Modal', 'Confirmar a operação ?',
+                'small',
+                '<i class="fa fa-close margR5"></i>Não',
+                'btn-danger',
+                '<i class="fa fa-check margR5"></i>Sim',
+                'btn-primary',
+                   function (argsx) { alert('sim' + argsx); },
+                   function (argsx) { alert('nao' + argsx); }, respostaModal);
+        }
+        function MensagemAlerta() {
+            respostaModal = 'acao alerta';
+            BASE.Modal.ExibirModalAlertaCallbackArgs('titulo alerta', 'ocorrido com sucesso', 'small', 'OK', 'btn-primary', function (argsx) { alert('alerta' + argsx); }, respostaModal);
+        }
+        jQuery(document).ready(function () {
+            $('#btnalerta').click(MensagemAlerta);
+            $('#btnsucesso').click(ModalConfirmacao);
+            //$('#btnerro').click(MensagemErro);
+            //$('#btninfo').click(MensagemInfo);
+        });
+    </script>
+</head>
+<body>
+    <div>
+        Texto Informativo
+        <input type="button" value="alerta" id="btnalerta" />
+        <input type="button" value="sucesso" id="btnsucesso" />
+        <input type="button" value="informativo" id="btninfo" />
+        <input type="button" value="erro" id="btnerro" />
+    </div>
+</body>
+</html>

@@ -5,7 +5,7 @@
     var dadosEnvioSerializados = '';
    
     var arrParametrosAcoes = {
-        "prosseguireliminacao": { possuiCheck: true, possuiRadio: true, enviarAjax:false, exibeModal: false, mensagem: "",  },
+        "prosseguireliminacao": { possuiCheck: true, possuiRadio: true, enviarAjax:false, exibeModal: true, mensagem: "XXXX",  },
         "recuperareliminados":  {possuiCheck: true, possuiRadio:true, enviarAjax:true, exibeModal: true, mensagem: "Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
     }
 
@@ -33,17 +33,20 @@
             var objetoParametrosAcao = arrParametrosAcoes[identificadorAcao];
             if (validarPreenchimentoControles(objetoParametrosAcao))
             {
-                dadosEnvioSerializados = serializarValoresParaEnvio(identificadorAcao,objetoParametrosAcao);
-                if (objetoParametrosAcao.exibemodal) {
-                    alert(objetoParametrosAcao.mensagem);
+                dadosEnvioSerializados = serializarValoresParaEnvio(identificadorAcao, objetoParametrosAcao);
+                var paramEnvio = { url: urlAcao, method: objetoParametrosAcao.method, data: dadosEnvioSerializados};
+                if (objetoParametrosAcao.exibeModal) {
+                    BASE.MostrarModalConfirmacao('titulo modal', objetoParametrosAcao.mensagem,
+                        submeterPorAjax, null, paramEnvio);
                 }
                 else {
                     alert('sem modal');
+                    if (objetoParametrosAcao.enviarAjax)
+                        submeterPorAjax(paramEnvio);
+                    else
+                        submeterPorGet(urlAcao, dadosEnvioSerializados);
                 }
-                if (objetoParametrosAcao.enviarAjax)
-                    submeterPorAjax(urlAcao,'POST', dadosEnvioSerializados);
-                else 
-                    submeterPorGet(urlAcao, dadosEnvioSerializados);
+               
 
             }
         });
@@ -95,18 +98,22 @@
         }
     }
 
+    function submeterPorModal(parametrosEnvio) {
+        submeterPorAjax(parametrosEnvio);
+    }
+
     function submeterPorGet(url, data) {
       window.location = url + '?' + data;
     }
 
-    function submeterPorAjax(url, method,data)
+    function submeterPorAjax(parametrosEnvio)
     {
         AUDITBARRAINFERIOR.ElementoResultado.html('<div class="text-center"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></div>');
 
         $.ajax({
-            url: url,
-            data: data,
-            type: method,
+            url: parametrosEnvio.url,
+            data: parametrosEnvio.data,
+            type: parametrosEnvio.method,
             cache: false,
             success: function (response, status, xhr) {
                 var isJson = BASE.Util.ResponseIsJson(xhr);
@@ -114,9 +121,7 @@
                     BASE.Util.TratarRespostaJson(response);
                 }
                 else {
-                    AUDITBARRAINFERIOR.ElementoResultado.html(response);
-                    AUDITBARRAINFERIOR.ElementoResultado.fadeIn();
-                    CONTROLES.Tabela.Configurar();
+                    tratarRespostaServidor(response);
                 }
             },
             error: function (xhr) {
@@ -128,6 +133,19 @@
             }
         });
     
+    }
+
+    function tratarRespostaServidor(response) {
+        AUDITBARRAINFERIOR.ElementoResultado.html(response);
+        AUDITBARRAINFERIOR.ElementoResultado.fadeIn();
+        CONTROLES.Tabela.Configurar();
+        var msg = "sucesso operacao";
+        var titulo = 'titulo ok';
+        var tipo = TipoMensagem.Sucesso;
+        BASE.MostrarMensagem(msg, tipo, titulo);
+        submeterPorGet('FornecedorAtendimentoEliminado', '');
+        //BASE.Modal.ExibirModalAlertaCallbackArgs('titulo alerta', 'ocorrido com sucesso', 'small', 'OK', 'btn-primary', function (argsx) { alert('alerta' + argsx); }, respostaModal);
+
     }
 
     return {
