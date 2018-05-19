@@ -5,8 +5,8 @@
     var dadosEnvioSerializados = '';
    
     var arrParametrosAcoes = {
-        "prosseguireliminacao": { possuiCheck: true, possuiRadio: true, enviarAjax:false, exibeModal: true, mensagem: "XXXX",  },
-        "recuperareliminados":  {possuiCheck: true, possuiRadio:true, enviarAjax:true, exibeModal: true, mensagem: "Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
+        "prosseguireliminacao": { possuiCheck:true,msgCheck:'selecione um item do check',possuiRadio:true,msgRadio:'selecione um item da radio',enviarAjax:false,exibeModal:true,msgmodal:"XXXX"},
+        "recuperareliminados" : {  possuiCheck:true,msgCheck:'selecione um item do check',possuiRadio:true,msgRadio:'selecione um item da radio',enviarAjax:true,exibeModal:true,msgmodal:"Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
     }
 
     var controleCheck = '.chkitens:checked';
@@ -36,18 +36,16 @@
                 dadosEnvioSerializados = serializarValoresParaEnvio(identificadorAcao, objetoParametrosAcao);
                 var paramEnvio = { url: urlAcao, method: objetoParametrosAcao.method, data: dadosEnvioSerializados};
                 if (objetoParametrosAcao.exibeModal) {
-                    BASE.MostrarModalConfirmacao('titulo modal', objetoParametrosAcao.mensagem,
-                        submeterPorAjax, null, paramEnvio);
+                    //BASE.MostrarModalConfirmacao('', objetoParametrosAcao.mensagem,submeterPorAjax, null, paramEnvio);
+                    exibirModalConfirmacao('', objetoParametrosAcao.msgmodal, submeterPorAjax, paramEnvio);
                 }
                 else {
                     alert('sem modal');
                     if (objetoParametrosAcao.enviarAjax)
                         submeterPorAjax(paramEnvio);
                     else
-                        submeterPorGet(urlAcao, dadosEnvioSerializados);
+                        submeterPorGet(paramEnvio);
                 }
-               
-
             }
         });
     }
@@ -56,12 +54,12 @@
     {
         if (objAcao.possuiCheck) {
             if (!($(controleCheck).length > 0)) {
-                alert('Selecione um item do Checkbox');
+                alert(objAcao.msgCheck);
                 return false;
             }
         }
         if ($(controleCheck).length == 0 && 1 == 1) {
-            alert('Selecione um item do Radio');
+            alert(objAcao.msgRadio);
             return false;
         }
         return true;
@@ -98,12 +96,20 @@
         }
     }
 
-    function submeterPorModal(parametrosEnvio) {
-        submeterPorAjax(parametrosEnvio);
+    function exibirModalConfirmacao(titulo, msg, callBackSucesso, parametrocallBack) {
+        BASE.Modal.ExibirModalConfirmacaoCallbackArgs(
+            titulo, 'Confirmar a operação ?',
+            'small',
+            '<i class="fa fa-close margR5"></i>Não',
+            'btn-danger',
+            '<i class="fa fa-check margR5"></i>Sim',
+            'btn-primary',
+            callBackSucesso,
+            null, parametrocallBack);
     }
 
-    function submeterPorGet(url, data) {
-      window.location = url + '?' + data;
+    function submeterPorGet(parametrosEnvio) {
+      window.location = parametrosEnvio.url + '?' + parametrosEnvio.data;
     }
 
     function submeterPorAjax(parametrosEnvio)
