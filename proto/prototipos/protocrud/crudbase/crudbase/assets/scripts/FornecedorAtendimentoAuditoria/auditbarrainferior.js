@@ -54,12 +54,14 @@
     {
         if (objAcao.possuiCheck) {
             if (!($(controleCheck).length > 0)) {
-                alert(objAcao.msgCheck);
+                //alert(objAcao.msgCheck);
+                BASE.MostrarMensagem(objAcao.msgCheck, TipoMensagem.Alerta, 'Alerta');
                 return false;
             }
         }
-        if ($(controleCheck).length == 0 && 1 == 1) {
-            alert(objAcao.msgRadio);
+        if ($(controleRadio).length == 0 && objAcao.possuiRadio) {
+            //alert(objAcao.msgRadio);
+            BASE.MostrarMensagem(objAcao.msgRadio, TipoMensagem.Alerta, 'Alerta');
             return false;
         }
         return true;
@@ -149,7 +151,7 @@
         var titulo = 'titulo ok';
         var tipo = TipoMensagem.Sucesso;
         BASE.MostrarMensagem(msg, tipo, titulo);
-        submeterPorGet('FornecedorAtendimentoEliminado', '');
+        //submeterPorGet('FornecedorAtendimentoEliminado', '');
         //BASE.Modal.ExibirModalAlertaCallbackArgs('titulo alerta', 'ocorrido com sucesso', 'small', 'OK', 'btn-primary', function (argsx) { alert('alerta' + argsx); }, respostaModal);
 
     }
