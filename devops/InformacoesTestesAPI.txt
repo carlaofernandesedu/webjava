@@ -1,0 +1,84 @@
+Padronizar e colocar os itens na classe BASE
+https://www.codeproject.com/Articles/1083779/RESTful-Day-sharp-Unit-Testing-and-Integration-T
+
+Entendendo o Codigo para Uso nos Testes
+
+var tokenEntity = _tokenService.GenerateToken(1);
+_token = tokenEntity.AuthToken;
+_client.DefaultRequestHeaders.Add("Token", _token);
+
+[TestFixtureSetUp]
+public void Setup()
+{
+    _products = SetUpProducts();
+    _tokens = SetUpTokens();
+    _dbEntities = new Mock<WebApiDbEntities>().Object;
+    _tokenRepository = SetUpTokenRepository();
+    _productRepository = SetUpProductRepository();
+    var unitOfWork = new Mock<IUnitOfWork>();
+    unitOfWork.SetupGet(s => s.ProductRepository).Returns(_productRepository);
+    unitOfWork.SetupGet(s => s.TokenRepository).Returns(_tokenRepository);
+    _unitOfWork = unitOfWork.Object;
+    _productService = new ProductServices(_unitOfWork);
+    _tokenService = new TokenServices(_unitOfWork);
+    _client = new HttpClient { BaseAddress = new Uri(ServiceBaseURL) };
+    var tokenEntity = _tokenService.GenerateToken(1);
+    _token = tokenEntity.AuthToken;
+    _client.DefaultRequestHeaders.Add("Token", _token);
+}
+
+
+[SetUp]
+ public void ReInitializeTest()
+ {
+     _client = new HttpClient { BaseAddress = new Uri(ServiceBaseURL) };
+     _client.DefaultRequestHeaders.Add("Token", _token);
+ }
+
+[TearDown]
+public void DisposeAllObjects()
+{
+    _tokenService = null;
+    _productService = null;
+    _unitOfWork = null;
+    _tokenRepository = null;
+    _productRepository = null;
+    _tokens = null;
+    _products = null;
+    if (_response != null)
+        _response.Dispose();
+    if (_client != null)
+        _client.Dispose();
+}
+ 
+[TearDown]
+public void DisposeTest()
+{
+    if (_response != null)
+        _response.Dispose();
+    if (_client != null)
+        _client.Dispose();
+}
+
+Exemplo Completro 
+
+#region To be written inside Setup method specifically for integration tests
+        var client = new HttpClient { BaseAddress = new Uri(ServiceBaseURL) };
+        client.DefaultRequestHeaders.Add("Authorization", "Basic YWtoaWw6YWtoaWw=");
+        MediaTypeFormatter jsonFormatter = new JsonMediaTypeFormatter();
+        _response = client.PostAsync("login", null).Result;
+
+        if (_response != null && _response.Headers != null && _response.Headers.Contains("Token") && _response.Headers.GetValues("Token") != null)
+        {
+        client.DefaultRequestHeaders.Clear();
+        _token = ((string[])(_response.Headers.GetValues("Token")))[0];
+        client.DefaultRequestHeaders.Add("Token", _token);
+        }
+    #endregion
+
+    _response = client.GetAsync("v1/Products/Product/allproducts/").Result;
+    var responseResult =
+    JsonConvert.DeserializeObject<List<ProductEntity>>(_response.Content.ReadAsStringAsync().Result);
+    Assert.AreEqual(_response.StatusCode, HttpStatusCode.OK);
+    Assert.AreEqual(responseResult.Any(), true);
+}
