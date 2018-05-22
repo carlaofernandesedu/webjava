@@ -5,8 +5,8 @@
     var dadosEnvioSerializados = '';
    
     var arrParametrosAcoes = {
-        "prosseguireliminacao": { possuiCheck:true,msgCheck:'selecione um item do check',possuiRadio:true,msgRadio:'selecione um item da radio',enviarAjax:false,exibeModal:true,msgmodal:"XXXX"},
-        "recuperareliminados" : {  possuiCheck:true,msgCheck:'selecione um item do check',possuiRadio:true,msgRadio:'selecione um item da radio',enviarAjax:true,exibeModal:true,msgmodal:"Confirma recuperar o(s) cadastro(s) de fornecedor(es) selecionado(s)" }
+        "prosseguireliminacao": { possuiCheck: true, method: 'GET', msgCheck: 'Selecione um fornecedor para eliminar', possuiRadio: false, msgRadio: '', funcaoEnvio: submeterPorGet, exibeModal: false, msgmodal: '' },
+        "eliminar" : {  possuiCheck:true,method:'POST',msgCheck:'Selecione um fornecedor para eliminar',possuiRadio:true,msgRadio:'Selecione um fornecedor padrão',funcaoEnvio:submeterPorAjax,exibeModal:true,msgmodal:"Os fornecedor(es) selecionado(s) correspondem ao mesmo fornecedor" }
     }
 
     var controleCheck = '.chkitens:checked';
@@ -36,15 +36,10 @@
                 dadosEnvioSerializados = serializarValoresParaEnvio(identificadorAcao, objetoParametrosAcao);
                 var paramEnvio = { url: urlAcao, method: objetoParametrosAcao.method, data: dadosEnvioSerializados};
                 if (objetoParametrosAcao.exibeModal) {
-                    //BASE.MostrarModalConfirmacao('', objetoParametrosAcao.mensagem,submeterPorAjax, null, paramEnvio);
-                    exibirModalConfirmacao('', objetoParametrosAcao.msgmodal, submeterPorAjax, paramEnvio);
+                    exibirModalConfirmacao('Confirmação', objetoParametrosAcao.msgmodal, objetoParametrosAcao.funcaoEnvio, paramEnvio);
                 }
                 else {
-                    alert('sem modal');
-                    if (objetoParametrosAcao.enviarAjax)
-                        submeterPorAjax(paramEnvio);
-                    else
-                        submeterPorGet(paramEnvio);
+                    objetoParametrosAcao.funcaoEnvio(paramEnvio);
                 }
             }
         });
@@ -54,13 +49,11 @@
     {
         if (objAcao.possuiCheck) {
             if (!($(controleCheck).length > 0)) {
-                //alert(objAcao.msgCheck);
                 BASE.MostrarMensagem(objAcao.msgCheck, TipoMensagem.Alerta, 'Alerta');
                 return false;
             }
         }
         if ($(controleRadio).length == 0 && objAcao.possuiRadio) {
-            //alert(objAcao.msgRadio);
             BASE.MostrarMensagem(objAcao.msgRadio, TipoMensagem.Alerta, 'Alerta');
             return false;
         }
@@ -100,7 +93,7 @@
 
     function exibirModalConfirmacao(titulo, msg, callBackSucesso, parametrocallBack) {
         BASE.Modal.ExibirModalConfirmacaoCallbackArgs(
-            titulo, 'Confirmar a operação ?',
+            titulo, msg,
             'small',
             '<i class="fa fa-close margR5"></i>Não',
             'btn-danger',

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Teste lietura xml</title>
+    <script language="javascript">
+        function AtualizarTabelaViaXml() {
+            var connect = new XMLHttpRequest();
+            // Define which file to open and
+            // send the request.
+            connect.open("GET", "versaodevops.xml", false);
+            connect.setRequestHeader("Content-Type", "text/xml");
+            connect.send(null);
+            // Place the response in an XML document.
+            var theDocument = connect.responseXML;
+            var frontend = theDocument.getElementsByTagName("versaofrontend")[0].textContent.toString();
+            var backend = theDocument.getElementsByTagName("versaobackend")[0].textContent.toString();
+            var informacao = theDocument.getElementsByTagName("informacao")[0].textContent.toString();
+            var data = '<TD>' + frontend + '</TD><TD>' + backend + '</TD><TD>' + informacao + '</TD><TD>';
+            document.getElementById("rowTable").innerHTML = data;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>frontend</td>
+            <td>backend</td>
+            <td>informacao</td>
+        </tr>
+        <tr id="rowTable">
+        </tr>
+    </table>
+    <script>
+        AtualizarTabelaViaXml();
+    </script>
+</body>
+</html>

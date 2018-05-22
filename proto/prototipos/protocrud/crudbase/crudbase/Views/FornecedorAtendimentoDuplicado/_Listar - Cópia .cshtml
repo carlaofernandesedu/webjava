@@ -14,6 +14,7 @@
         <thead>
             <tr>
                 <td class="col-md-1">@Html.Display("Selecione")</td>
+                <td class="col-md-1">@Html.Display("Selecione Radio")</td>
                 <th class="col-md-3">@Html.DisplayNameFor(x => x.NomeFornecedor)</th>
                 <th class="col-md-5">@Html.DisplayNameFor(x => x.Endereco)</th>
                 <th class="col-md-2">Ações</th>
@@ -26,6 +27,7 @@
                 {
                     <tr data-id="@item.Id">
                         <td><input data-id="@item.Id" type="checkbox" class="chkitens" title="Selecione"></td>
+                        <td><input data-id="@item.Id" type="radio" name="radioitens" class="radioitens" title="Selecione"></td>
                         <td>@item.NomeFornecedor</td>
                         <td>@item.Endereco</td>
                         <td class="acoes text-center">
@@ -37,7 +39,7 @@
             }
         </tbody>
     </table>
-    @if (Model != null)
+    @if (exibirBarraInferior == true)
     {
         <div id="divBarraInferior" class="col-xs-12">
             <div class="div-toolbar">
@@ -49,11 +51,4 @@
         </div>
     }
 </div>
-
-<script type="text/javascript" src="~/assets/scripts/FornecedorAtendimentoAuditoria/auditfiltro.js"></script>
-<script type="text/javascript" src="~/assets/scripts/FornecedorAtendimentoAuditoria/auditbarrainferior.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        AUDITBARRAINFERIOR.Init();
-    });
-</script>
+@Html.Partial("_ModalConfirmacao")

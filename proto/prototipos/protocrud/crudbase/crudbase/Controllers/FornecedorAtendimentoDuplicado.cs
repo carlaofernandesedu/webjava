@@ -21,20 +21,23 @@ namespace crudbase.Controllers
         public override ActionResult Listar(AuditoriaFiltroModel filtro)
         {
             var result = new List<FornecedorEliminadoViewModel>();
-            result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 1, CPFCNPJ = "24567890832", FornecedorPadrao= "Fornecedor Padrao Claro" });
-            result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 2, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
-            result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 3, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
-            result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 4, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
-            result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 5, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
-            result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 6, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
-            return View("_Listar", result);
+            if (!string.IsNullOrWhiteSpace(filtro.Documento))
+            {
+                result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 1, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
+                result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 2, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
+                result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 3, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
+                result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 4, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
+                result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 5, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
+                result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 6, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
+            }
+                return View("_Listar", result);
         }
 
         public ActionResult ListarSelecionados(ParametrosAcao parametros)
         {
-            ViewBag.Title = "";
             ViewBag.acaoBotaoBarraInferior = "eliminar";
-            ViewBag.urlacaoBarraInferior = "FornecedorAtendimentoDuplicado/Eliminar";
+            ViewBag.urlacaoBarraInferior = "Eliminar";
+            ViewBag.tituloBotaoBarraInferior = "Confirmar Eliminacao";
 
             var result = new List<FornecedorEliminadoViewModel>();
             result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 1, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
@@ -46,11 +49,16 @@ namespace crudbase.Controllers
 
             var arrCodigos = parametros.listaIdsControleCheckbox.Split(',');
             var resultadoFiltro = result.Where(x => arrCodigos.Contains(x.Id.ToString()));
-            return View("_Listar", resultadoFiltro);
+            ViewBag.BarraInferior = true;
+            ViewBag.acaoBotaoBarraInferior = "eliminar";
+            ViewBag.urlacaoBarraInferior = "/FornecedorAtendimentoDuplicado/Eliminar";
+            ViewBag.tituloBotaoBarraInferior = "Confirma Eliminacao";
+
+            return View("ListarSelecionados", resultadoFiltro);
 
         }
 
-        public ActionResult Eliminar()
+        public ActionResult Eliminar(ParametrosAcao acao)
         {
             throw new NotImplementedException();
         }

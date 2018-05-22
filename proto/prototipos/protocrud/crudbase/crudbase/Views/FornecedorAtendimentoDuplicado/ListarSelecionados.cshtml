@@ -1,0 +1,64 @@
+﻿@model IEnumerable<crudbase.Models.Auditoria.FornecedorEliminadoViewModel>
+
+@{
+    string actionBarraInferior = ViewBag.ActionBarraInferior;
+    string carregarLista = ViewBag.CarregarLista.ToString().ToLower();
+    bool exibirBarraInferior = ViewBag.BarraInferior;
+    string tituloBotaoBarraInferior = ViewBag.tituloBotaoBarraInferior ?? "";
+    string acaoBotaoBarraInferior = ViewBag.acaoBotaoBarraInferior ?? "";
+    string urlacaoBarraInferior = ViewBag.urlacaoBarraInferior ?? "";
+}
+@using(Html.BeginForm("Eliminar", "FornecedorAtendimentoDuplicado", FormMethod.Post, new { id = "frmeliminar" }))
+{ 
+    <div id="divLista" data-carregar-lista="@carregarLista" class="col-md-12 form-group">
+        <table id="grupo_lista_relacionar" class="order-table display dataTable no-footer dtr-inline text-left">
+            <thead>
+                <tr>
+                    <th class="col-md-3">@Html.DisplayNameFor(x => x.NomeFornecedor)</th>
+                    <th class="col-md-5">@Html.DisplayNameFor(x => x.Endereco)</th>
+                    <td class="col-md-1">Eliminar</td>
+                    <td class="col-md-1">Padrão</td>
+                    <th class="col-md-2">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr data-id="@item.Id">
+                            <td>@item.NomeFornecedor</td>
+                            <td>@item.Endereco</td>
+                            <td><input data-id="@item.Id" type="checkbox" class="chkitens" title="Selecione"></td>
+                            <td><input data-id="@item.Id" type="radio" name="radioitens" class="radioitens" title="Selecione"></td>
+                            <td class="acoes text-center">
+                                <button type="button" class="btn btn-primary btn-editar" title="Editar" data-url="@Url.Action("Editar", new { id = item.Id })"><i class="fa fa-fw fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger btn-excluir" title="Excluir" data-url="@Url.Action("Excluir", new { id = item.Id })"><i class="fa fa-fw fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+}
+@if (Model != null)
+{
+            <div id="divBarraInferior" class="col-xs-12">
+                <div class="div-toolbar">
+                    @* @Html.Action(actionBarraInferior) *@
+                    <button type="button" id="btnacaobarrainferior" class="btn btn-primary" data-acao="@acaoBotaoBarraInferior" data-url="@urlacaoBarraInferior">
+                        <span>@tituloBotaoBarraInferior</span>
+                    </button>
+                </div>
+            </div>
+}
+</div>
+<link rel="stylesheet" href="~/assets/css/datatables/jquery.dataTables.css" />
+<script type="text/javascript" src="~/assets/scripts/datatables/jquery.dataTables.js"></script>
+<script type="text/javascript" src="~/assets/scripts/FornecedorAtendimentoAuditoria/auditbarrainferior.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        AUDITBARRAINFERIOR.Init();
+        CONTROLES.Tabela.Configurar();
+    });
+</script>

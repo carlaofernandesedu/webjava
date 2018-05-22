@@ -603,6 +603,7 @@
     <Content Include="versaodevops.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="versionfile.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -637,6 +638,8 @@
     <Content Include="Views\FornecedorAtendimentoDuplicado\_Listar.cshtml" />
     <Content Include="Views\Shared\FornecedorAuditoriaIndex.cshtml" />
     <Content Include="Views\Shared\_ModalConfirmacao.cshtml" />
+    <Content Include="Views\FornecedorAtendimentoDuplicado\_Listar - Cópia .cshtml" />
+    <Content Include="Views\FornecedorAtendimentoDuplicado\ListarSelecionados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

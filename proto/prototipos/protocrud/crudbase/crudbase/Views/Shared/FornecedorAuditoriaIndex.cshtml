@@ -1,5 +1,5 @@
 ﻿@model Nullable<int>
-@{ 
+@{
     var controller = ViewContext.RouteData.Values["controller"].ToString();
     string actionFiltro = ViewBag.ActionFiltro;
     string actionListar = ViewBag.ActionListar;
@@ -10,13 +10,13 @@
     string tituloBotaoBarraInferior = ViewBag.tituloBotaoBarraInferior ?? "";
     string acaoBotaoBarraInferior = ViewBag.acaoBotaoBarraInferior ?? "";
     string urlacaoBarraInferior = ViewBag.urlacaoBarraInferior ?? "";
- }
+}
 <h2>@ViewBag.Title</h2>
 <hr />
 <div id="divFiltro" class="divFiltro">
     @using (Html.BeginForm(actionListar, controller, method, new { id = "frmFiltro" + controller, @class = "frm-filtro" }))
     {
-        <div id="filtrar" class="divFiltro" >
+        <div id="filtrar" class="divFiltro">
             @Html.Action(actionFiltro)
         </div>
     }
@@ -28,14 +28,10 @@
 </div>
 <link rel="stylesheet" href="~/assets/css/datatables/jquery.dataTables.css" />
 <script type="text/javascript" src="~/assets/scripts/datatables/jquery.dataTables.js"></script>
-<script type="text/javascript" src="~/assets/scripts/FornecedorAtendimentoAuditoria/auditfiltro.js"></script>
-<script type="text/javascript" src="~/assets/scripts/FornecedorAtendimentoAuditoria/auditbarrainferior.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover({
-        placement : 'top'
+    $(document).ready(function () {
+        $('[data-toggle="popover"]').popover({
+            placement: 'top'
+        });
     });
-    AUDITFILTRO.Init();
-    AUDITBARRAINFERIOR.Init();
-});
- </script>
+</script>
