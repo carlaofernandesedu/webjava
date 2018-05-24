@@ -640,6 +640,7 @@
     <Content Include="Views\Shared\_ModalConfirmacao.cshtml" />
     <Content Include="Views\FornecedorAtendimentoDuplicado\_Listar - Cópia .cshtml" />
     <Content Include="Views\FornecedorAtendimentoDuplicado\ListarSelecionados.cshtml" />
+    <Content Include="Views\FornecedorAtendimentoDuplicado\ListarEliminadosComPadrao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

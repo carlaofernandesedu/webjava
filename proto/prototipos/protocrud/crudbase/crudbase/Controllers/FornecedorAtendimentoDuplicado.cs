@@ -51,14 +51,20 @@ namespace crudbase.Controllers
             var resultadoFiltro = result.Where(x => arrCodigos.Contains(x.Id.ToString()));
             ViewBag.BarraInferior = true;
             ViewBag.acaoBotaoBarraInferior = "eliminar";
-            ViewBag.urlacaoBarraInferior = "/FornecedorAtendimentoDuplicado/Eliminar";
+            ViewBag.urlacaoBarraInferior = "FornecedorAtendimentoDuplicado/Eliminar";
             ViewBag.tituloBotaoBarraInferior = "Confirma Eliminacao";
 
             return View("ListarSelecionados", resultadoFiltro);
 
         }
 
-        public ActionResult Eliminar(ParametrosAcao acao)
+        public JsonResult Eliminar(ParametrosAcao acao)
+        {
+            var resultado = new { sucesso=true,exibemensagem=false, mensagem="", urlsolicitacao="FornecedorAtendimentoDuplicado\\ListarEliminadosComPadrao"};
+            return new JsonResult() { Data = resultado };
+        }
+
+        public ActionResult ListarEliminadosComPadrao()
         {
             throw new NotImplementedException();
         }

@@ -6,7 +6,7 @@
    
     var arrParametrosAcoes = {
         "prosseguireliminacao": { possuiCheck: true, method: 'GET', msgCheck: 'Selecione um fornecedor para eliminar', possuiRadio: false, msgRadio: '', funcaoEnvio: submeterPorGet, exibeModal: false, msgmodal: '' },
-        "eliminar" : {  possuiCheck:true,method:'POST',msgCheck:'Selecione um fornecedor para eliminar',possuiRadio:true,msgRadio:'Selecione um fornecedor padrão',funcaoEnvio:submeterPorAjax,exibeModal:true,msgmodal:"Os fornecedor(es) selecionado(s) correspondem ao mesmo fornecedor" }
+        "eliminar" : {  possuiCheck:true,method:'POST',msgCheck:'Selecione um fornecedor para eliminar',possuiRadio:true,msgRadio:'Selecione um fornecedor padrão',funcaoEnvio:submeterPorAjax,exibeModal:true,msgmodal:"Os fornecedor(es) selecionado(s) correspondem ao mesmo fornecedor?" }
     }
 
     var controleCheck = '.chkitens:checked';
