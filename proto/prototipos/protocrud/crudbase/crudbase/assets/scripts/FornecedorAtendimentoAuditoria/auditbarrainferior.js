@@ -5,12 +5,14 @@
     var dadosEnvioSerializados = '';
    
     var arrParametrosAcoes = {
-        "prosseguireliminacao": { possuiCheck: true, method: 'GET', msgCheck: 'Selecione um fornecedor para eliminar', possuiRadio: false, msgRadio: '', funcaoEnvio: submeterPorGet, exibeModal: false, msgmodal: '' },
-        "eliminar" : {  possuiCheck:true,method:'POST',msgCheck:'Selecione um fornecedor para eliminar',possuiRadio:true,msgRadio:'Selecione um fornecedor padrão',funcaoEnvio:submeterPorAjax,exibeModal:true,msgmodal:"Os fornecedor(es) selecionado(s) correspondem ao mesmo fornecedor?" }
+        "prosseguireliminacao": { possuiCheck: true, method: 'GET', msgCheck: 'Selecione um fornecedor para eliminar', possuiRadio: false, msgRadio: '', Enviar: submeterPorGet, exibeModal: false, msgmodal: '' },
+        "eliminar" : {  possuiCheck:true,method:'POST',msgCheck:'Selecione um fornecedor para eliminar',possuiRadio:true,msgRadio:'Selecione um fornecedor padrão',Enviar:submeterPorForm,exibeModal:true,msgmodal:"Os fornecedor(es) selecionado(s) correspondem ao mesmo fornecedor?" }
     }
 
     var controleCheck = '.chkitens:checked';
     var controleRadio = 'input[name=radioitens]:checked';
+    var controlehiddenCheck = 'listaIdsControleCheckbox';
+    var controlehiddenRadio = 'listaIdsControleRadio';
 
     function init()
     {
@@ -34,12 +36,12 @@
             if (validarPreenchimentoControles(objetoParametrosAcao))
             {
                 dadosEnvioSerializados = serializarValoresParaEnvio(identificadorAcao, objetoParametrosAcao);
-                var paramEnvio = { url: urlAcao, method: objetoParametrosAcao.method, data: dadosEnvioSerializados};
+                var paramEnvio = { acao: identificadorAcao, url: urlAcao, method: objetoParametrosAcao.method, data: dadosEnvioSerializados };
                 if (objetoParametrosAcao.exibeModal) {
-                    exibirModalConfirmacao('Confirmação', objetoParametrosAcao.msgmodal, objetoParametrosAcao.funcaoEnvio, paramEnvio);
+                    exibirModalConfirmacao('Confirmação', objetoParametrosAcao.msgmodal, objetoParametrosAcao.Enviar, paramEnvio);
                 }
                 else {
-                    objetoParametrosAcao.funcaoEnvio(paramEnvio);
+                    objetoParametrosAcao.Enviar(paramEnvio);
                 }
             }
         });
@@ -101,6 +103,19 @@
             'btn-primary',
             callBackSucesso,
             null, parametrocallBack);
+    }
+
+    function submeterPorForm(parametrosEnvio) {
+        var form = '#frm' + parametrosEnvio.acao;
+        if ($(controlehiddenCheck).length > 0 && $(controleCheck).length > 0)
+        {
+            $(controlehiddenCheck).val(obterValoresPorControle(controleCheck));
+        }
+        if ($(controlehiddenRadio).length > 0 && $(controleRadio).length > 0) {
+            $(controlehiddenRadio).val(obterValoresPorControle(controleRadio));
+        }
+
+        $(form).submit();
     }
 
     function submeterPorGet(parametrosEnvio) {

@@ -14,7 +14,7 @@ namespace crudbase.Controllers
             ViewBag.Title = "Eliminar Fornecedor";
             ViewBag.BarraInferior = true;
             ViewBag.acaoBotaoBarraInferior = "prosseguireliminacao";
-            ViewBag.urlacaoBarraInferior = "FornecedorAtendimentoDuplicado/ListarSelecionados";
+            ViewBag.urlacaoBarraInferior = "ListarSelecionados";
             ViewBag.tituloBotaoBarraInferior = "Prosseguir Eliminacao";
         }
 
@@ -51,22 +51,28 @@ namespace crudbase.Controllers
             var resultadoFiltro = result.Where(x => arrCodigos.Contains(x.Id.ToString()));
             ViewBag.BarraInferior = true;
             ViewBag.acaoBotaoBarraInferior = "eliminar";
-            ViewBag.urlacaoBarraInferior = "FornecedorAtendimentoDuplicado/Eliminar";
+            ViewBag.urlacaoBarraInferior = "Eliminar";
             ViewBag.tituloBotaoBarraInferior = "Confirma Eliminacao";
 
             return View("ListarSelecionados", resultadoFiltro);
 
         }
 
-        public JsonResult Eliminar(ParametrosAcao acao)
+        public ActionResult Eliminar(ParametrosAcao acao)
         {
-            var resultado = new { sucesso=true,exibemensagem=false, mensagem="", urlsolicitacao="FornecedorAtendimentoDuplicado\\ListarEliminadosComPadrao"};
-            return new JsonResult() { Data = resultado };
+           return  RedirectToAction("ListarEliminadosComPadrao");  
         }
 
         public ActionResult ListarEliminadosComPadrao()
         {
-            throw new NotImplementedException();
+            var result = new List<FornecedorEliminadoViewModel>();
+            result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 1, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
+            result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 2, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
+            result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 3, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
+            result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 4, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
+            result.Add(new FornecedorEliminadoViewModel() { NomeFornecedor = "Claro S.A", Endereco = "Rua dos Goiabas 704", Id = 5, CPFCNPJ = "24567890832", FornecedorPadrao = "Fornecedor Padrao Claro" });
+         
+            return View(result);
         }
     }
 }
