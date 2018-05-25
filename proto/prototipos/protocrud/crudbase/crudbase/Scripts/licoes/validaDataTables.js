@@ -90,6 +90,12 @@
             var dados = texto == 'datatable' ? dataSet : null;
             carregarDataTable(dados);
         });
+
+        $('#tabela01').on('click', 'tr', function (event) {
+            var coluna = $('#tabela01').DataTable().row(this).data()[0];
+            $('#nome').val(coluna);
+            $('#modalclose').click();
+        })
     }
 
     return {

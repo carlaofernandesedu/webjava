@@ -11,29 +11,54 @@
     <script type="text/javascript" src="scripts/licoes/validaDataTables.js"></script>
 </head>
 <body>
-    <table id="tabela01" name="tabela01">
-        <thead>
-            <tr>
-                <td>Nome</td>
-                <td>Profissão</td>
-                <td>Idade</td>
-            </tr>
-        </thead>
-        <tr>
-            <td>Carlos</td>
-            <td>Estudante</td>
-            <td>18</td>
-        </tr>
-        <tr>
-            <td>Roberto</td>
-            <td>Empresario</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>Andre</td>
-            <td>Designer</td>
-            <td>30</td>
-        </tr>
-    </table>
+<div id="endereco">
+    <input type="text" id="nome" data-endereco="nome" />
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md4">
+                    <input type="text" id="txtPesquisa" />
+                </div>
+                <div class="col-md8">
+                    <input type="button" id="btnfiltro" value="Pesquisar" />
+                </div>
+            </div>
+            <table id="tabela01" name="tabela01">
+                <thead>
+                    <tr>
+                        <td>Nome</td>
+                        <td>Profissão</td>
+                        <td>Idade</td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>Carlos</td>
+                    <td>Estudante</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>Roberto</td>
+                    <td>Empresario</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>Andre</td>
+                    <td>Designer</td>
+                    <td>30</td>
+                </tr>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="modalclose" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
