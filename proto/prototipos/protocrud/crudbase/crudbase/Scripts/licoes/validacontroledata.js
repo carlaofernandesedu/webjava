@@ -3,6 +3,8 @@ var VALIDACONTROLEDATA = (function () {
 
     const ctPeriodoInicio = '#form-detalhe #PeriodoInicio';
     const ctPeriodoFim = '#form-detalhe #PeriodoFim';
+    
+    const btnteste = '#testecontrole';
 
     const ctMascaraCampoData = '00/00/0000';
 
@@ -12,6 +14,7 @@ var VALIDACONTROLEDATA = (function () {
 
     function bindAll() {
         bindControlesDatas();
+        bindBotaoTeste();
       }
 
     //TRATAMENTO DE MASCARA DE ELEMENTOS 
@@ -27,6 +30,16 @@ var VALIDACONTROLEDATA = (function () {
         CONTROLES.Configurar.ConfigurarIntervaloData();
         formatarMascaraControlesDatas();
     }
+
+    function bindBotaoTeste() {
+        $(btnteste).off('click');
+        $(btnteste).on('click', function (e) {
+            alert($(ctPeriodoInicio).val()); 
+            alert($(ctPeriodoFim).val());
+        });
+     
+    }
+
     return {
         Init : init
     }
