@@ -52,8 +52,11 @@
 
 <script type="text/javascript" src="~/assets/scripts/FornecedorAtendimentoAuditoria/auditfiltro.js"></script>
 <script type="text/javascript" src="~/assets/scripts/FornecedorAtendimentoAuditoria/auditbarrainferior.js"></script>
+<script type="text/javascript" src="~/Scripts/savy/savy.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         AUDITBARRAINFERIOR.Init();
+        $(".filtrodup").savy('load');
+        AUDITFILTRO.Evento.PosLimparCampos = 
     });
 </script>

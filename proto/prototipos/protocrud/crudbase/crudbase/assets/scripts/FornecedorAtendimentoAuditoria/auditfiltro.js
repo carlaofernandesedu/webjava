@@ -13,6 +13,22 @@
         if (carregarLista) {
             AUDITFILTRO.Filtrar();
         }
+    
+    }
+
+    function persistirCamposLocalStorage() {
+        var sv = 'savy';
+        var identificador = $('#identfiltro');
+        if (localStorage.getItem(sv + identificador.attr("name"))) {
+            if (localStorage.getItem(sv + identificador.attr("name")) != identificador.val()) {
+                $('.filtropersistir').each(function () {
+                    if (localStorage.getItem(sv + $(this).attr("name")))
+                        localStorage.removeItem(sv + $(this).attr("name"));
+
+                });
+            }
+        }
+        $('.filtropersistir').savy('load');
     }
 
     function bindAll() {
@@ -30,6 +46,7 @@
             var form = $('.frm-filtro');
 
             form[0].reset();
+            AUDITFILTRO.Evento.PosLimparCampos();
 
             //CONTROLES.DropDown.Desabilitar('.frm-filtro .ddl-chain-filho', true);
 
@@ -110,9 +127,11 @@
             return false;
         }
 
+
         //BASE.Mensagem.Mostrar("Pesquisa", TipoMensagem.Informativa);
         if (url !== undefined || filtrado === false || (filtrado === true && existeFiltro)) {
             //BASE.Debug("filtrar - ajax request", DebugAction.Info);
+            
 
             AUDITFILTRO.ElementoResultado.html('<div class="text-center"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></div>');
 
@@ -165,6 +184,8 @@
             },
             PosFitrarErro: function () { //BASE.Debug('funcao CRUDFILTRO PosFitrarErro nao definida'); 
                 return false;
+            },
+            PosLimparCampos: function () {//BASE.Debug('funcao AUDITFILTRO PreSubmit nao definida');
             }
         },
         Filtrar: filtrar

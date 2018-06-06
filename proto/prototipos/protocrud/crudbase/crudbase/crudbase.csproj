@@ -549,6 +549,7 @@
     <Content Include="Scripts\notifyjs-master\notify_execucao.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\savy\savy.js" />
     <Content Include="Scripts\smalot-datetimepicker\bootstrap-datepicker.css" />
     <Content Include="Scripts\smalot-datetimepicker\bootstrap-datetimepicker.css" />
     <Content Include="Scripts\smalot-datetimepicker\bootstrap-datetimepicker.js" />
