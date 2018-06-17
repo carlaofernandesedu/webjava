@@ -19,10 +19,11 @@
   ],
   "dependencies": {
     "jquery": "1.10.2",
-    "jquery.validation": "1.11.1",
+    "jquery-validation": "1.15.0",
     "Microsoft.jQuery.Unobtrusive.Validation": "3.2.3",
     "modernizr": "2.6.2",
     "bootstrap": "3.3.5",
+    "jquery-ui": "1.12.0",
     "jquery-mask-plugin": "1.14.10",
     "jquery.maskedinput": "1.4.1",
     "smalot-bootstrap-datetimepicker": "2.0.0",
@@ -34,7 +35,9 @@
     "datatables-responsive": "2.2.1",
     "bootbox.js": "4.4.0",
     "bootstrap-modal": "2.2.6",
-    "offline": "0.7.18"
+    "offline": "0.7.18",
+    "bootstrap-tagsinput":"0.8.0",
+    "bootstrap-duallistbox":"3.0.5"
   },
   "install": {
     "options": {
@@ -64,8 +67,19 @@
           "bower_components/jquery/jquery.min.js": "jquery.min.js"
         }
       ],
-      "jquery.validation": [
-        "bower_components/jquery.validation/jquery.validate.js"
+      "jquery-validation": [
+        {
+          "bower_components/jquery-validation/dist/jquery.validate.js": "jquery.validate.js"
+        },
+        {
+          "bower_components/jquery-validation/dist/jquery.validate.min.js": "jquery.validate.min.js"
+        },
+        {
+          "bower_components/jquery-validation/dist/additional-methods.js": "additional-methods.js"
+        },
+        {
+          "bower_components/jquery-validation/dist/additional-methods.min.js": "additional-methods.min.js"
+        }
       ],
       "Microsoft.jQuery.Unobtrusive.Validation": [
         "bower_components/Microsoft.jQuery.Unobtrusive.Validation/jquery.validate.unobtrusive.js",
@@ -182,6 +196,19 @@
         "bower_components/offline/themes/offline-language-portuguese-brazil.css",
         "bower_components/offline/themes/offline-language-portuguese-brazil-indicator.css",
         "bower_components/offline/img/tiny-image.gif"
+      ],
+      "bootstrap-tagsinput":[
+        "bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js",
+        "bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js",
+        "bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css",
+        "bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput-typeahead.css", 
+        "bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js.map"
+      ],
+      "bootstrap-duallistbox":[
+        "bower_components/bootstrap-duallistbox/dist/jquery.bootstrap-duallistbox.js",
+        "bower_components/bootstrap-duallistbox/dist/jquery.bootstrap-duallistbox.min.js",
+        "bower_components/bootstrap-duallistbox/dist/bootstrap-duallistbox.css",
+        "bower_components/bootstrap-duallistbox/dist/bootstrap-duallistbox.min.css"
       ]
     }
   },
