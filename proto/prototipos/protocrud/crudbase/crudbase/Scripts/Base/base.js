@@ -487,39 +487,45 @@ var BASE = (function () {
         });
     }
 
-
-    return {
-        Init: init,
-        Mensagem: {
-            Mostrar: mostrarMensagem
-            //Ocultar: escondeModalConfirmacao,
-            //Confirmacao: mostrarModalConfirmacao,
-           // MostrarListaMensagem: {
-           //     MensagensAlerta: monstrarListaMensagensAlerta
-           // }
-        },
-        MostrarMensagemInformativa: mostrarMensagemInformativa,
-        MostrarMensagemErro: mostrarMensagemErro,
-        MostrarMensagem: mostrarMensagem,
-        //ValidarForm: validarDados,
-        //Validacoes: validacoes
-        Util: {
-            ResponseIsJson: responseIsJson,
-            TratarRespostaJson: tratarRespostaJson,
-            TratarErroAjax: tratarErroAjax,
-            MontarUrl: montarUrl
-        },
-        MostrarModalConfirmacao: mostrarModalConfirmacao,
-        EscondeModalConfirmacao: escondeModalConfirmacao,
-        Modal: {
-            ExibirModalConfirmacao: exibirModalConfirmacao,
-            ExibirModalAlerta: exibirModalAlerta,
-            ExibirModalPrompt: exibirModalPrompt,
-            ExibirModalConfirmacaoCallbackArgs: exibirModalConfirmacaoCallbackArgs,
-            ExibirModalAlertaCallbackArgs: exibirModalAlertaCallbackArgs,
+    function camelize(str) {
+        if (str == str.toUpperCase()) {
+            return str.toLowerCase();
         }
-
-    };
+    }
+        return {
+            Init: init,
+            Mensagem: {
+                Mostrar: mostrarMensagem
+                //Ocultar: escondeModalConfirmacao,
+                //Confirmacao: mostrarModalConfirmacao,
+                // MostrarListaMensagem: {
+                //     MensagensAlerta: monstrarListaMensagensAlerta
+                // }
+            },
+            MostrarMensagemInformativa: mostrarMensagemInformativa,
+            MostrarMensagemErro: mostrarMensagemErro,
+            MostrarMensagem: mostrarMensagem,
+            //ValidarForm: validarDados,
+            //Validacoes: validacoes
+            Util: {
+                ResponseIsJson: responseIsJson,
+                TratarRespostaJson: tratarRespostaJson,
+                TratarErroAjax: tratarErroAjax,
+                MontarUrl: montarUrl
+            },
+            MostrarModalConfirmacao: mostrarModalConfirmacao,
+            EscondeModalConfirmacao: escondeModalConfirmacao,
+            Modal: {
+                ExibirModalConfirmacao: exibirModalConfirmacao,
+                ExibirModalAlerta: exibirModalAlerta,
+                ExibirModalPrompt: exibirModalPrompt,
+                ExibirModalConfirmacaoCallbackArgs: exibirModalConfirmacaoCallbackArgs,
+                ExibirModalAlertaCallbackArgs: exibirModalAlertaCallbackArgs,
+            },
+            Texto: {
+                ToCamelCase: camelize
+            }
+        };
 
 }());
 

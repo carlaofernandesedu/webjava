@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Conceitos Promise</title>
+    <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/licoes/promisseSimples.js"></script>
+    <script type="text/javascript">
+
+        function executarPromise() {
+            var prom = PROMISSES.obterSemRetorno();
+            prom.then(function (result) {
+                console.log(result);
+            },
+                function (err) {
+                    console.log(err);
+                });
+        }
+
+        function executarPromiseRetorno() {
+            var promret = PROMISSES.obterComRetorno();
+            promret.then(function (result) {
+                console.log('execucao primeira promise');
+                console.log(result);
+                return result + 1;
+            }).then(function (result2) {
+                console.log('execucao segunda promise');
+                console.log(result2);
+            });
+
+        }
+
+        $(document).ready(function ()
+        {
+            $("#btnClosure").click(executarPromise);
+            $("#btnPromiseRetorno").click(executarPromiseRetorno);
+        });
+    </script>
+    <style>
+        .titulo
+        {
+           color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="tituloprincipal">Titulo Principal</h1>
+    <br />
+    <input type="button" id="btnClosure" value="Promisse Simples Exemplo" />
+    <input type="button" id="btnPromiseRetorno" value="Promisse Retorno Exemplo" />
+</body>
+</html>

@@ -68,7 +68,6 @@ F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\
 F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\obj\Debug\crudbase.dll
 F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\obj\Debug\crudbase.pdb
 F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\bin\versaodevops.xml
-F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\obj\Debug\crudbase.csprojResolveAssemblyReference.cache
 C:\CarlosWorking\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\bin\versaodevops.xml
 C:\CarlosWorking\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\bin\crudbase.dll.config
 C:\CarlosWorking\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\bin\crudbase.dll
@@ -128,3 +127,4 @@ C:\CarlosWorking\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\bin
 C:\CarlosWorking\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\obj\Debug\crudbase.dll
 C:\CarlosWorking\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\obj\Debug\crudbase.pdb
 C:\CarlosWorking\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\obj\Debug\crudbase.csprojResolveAssemblyReference.cache
+F:\Andre\devrepogit\github\webjava\proto\prototipos\protocrud\crudbase\crudbase\obj\Debug\crudbase.csprojAssemblyReference.cache

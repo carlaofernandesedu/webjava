@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Configurar DataTable</title>
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/datatables/jquery.dataTables.css" />
+    <link rel="stylesheet" href="assets/css/datatables/dataTables.bootstrap.css" />
+    <script src="assets/scripts/jquery/jquery.js"></script>
+    <script type="text/javascript" src="assets/scripts/bootstrap/bootstrap.js"></script>
+    <!--<script type="text/javascript" src="assets/scripts/datatables/jquery.dataTables.js"></script>-->
+    <script src="assets/scripts/jquery.dataTables.min.js"></script>
+    <script src="Scripts/Base/enums.js"></script>
+    <script src="Scripts/Base/base.js"></script>
+    <!--<script src="Scripts/Base/controles.js"></script>-->
+    <!--<script src="assets/scripts/base.js"></script>-->
+    <script src="assets/scripts/controles.js"></script>
+</head>
+<body>
+    <table id="tblConsumidores" class="dataTable" data-datatables-pagesize="20" data-datatables-url="Home">
+        <thead>
+            <tr>
+                <th class="col-md-2" data-datatables-column-name="cpfFormatado">cpfformatado
+                </th>
+                <th class="col-md-5" data-datatables-column-name="Nome">nome
+                </th>
+                <th class="col-md-2" data-datatables-column-name="NomeSocial">nomesocial
+                </th>
+                <th class="col-md-1" data-datatables-column-name="DataNascimentoFormatada">datanascimento
+                </th>
+                <th class="col-md-1" data-datatables-column-name="Acoes" data-datatables-column-type="html" class="acoes" style="width:30px;">Ações</th>
+            </tr>
+        </thead>
+    </table>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            CONTROLES.Tabela.Configurar();
+        });
+    </script>
+</body>
+</html>
