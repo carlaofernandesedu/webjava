@@ -376,7 +376,9 @@
     <Content Include="assets_review\scripts\notifyjs\notify.js" />
     <Content Include="assets_review\scripts\offline\offline.js" />
     <Content Include="assets_review\scripts\offline\offline.min.js" />
+    <Content Include="chapter-1.json.htm" />
     <Content Include="checkradio.html" />
+    <Content Include="PaginaSyncPromise.html" />
     <Content Include="promessaHttpReq.html" />
     <Content Include="promessaSimples.html" />
     <Content Include="closure.html" />
@@ -524,6 +526,11 @@
     <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="assets\css\images\sorting icons.psd" />
     <Content Include="assets_review\css\font-awesome\font-awesome.css.map" />
+    <Content Include="chapter-1.json" />
+    <Content Include="chapter-2.json" />
+    <Content Include="chapter-3.json" />
+    <Content Include="chapter-4.json" />
+    <Content Include="chapter-5.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\editor\editor.css" />
     <Content Include="Scripts\editor\editor.js" />
@@ -539,8 +546,10 @@
     <Content Include="Scripts\licoes\encapsulamento.js" />
     <Content Include="Scripts\licoes\exemploDataTableFornecedor.js" />
     <Content Include="Scripts\licoes\promisseSimples.js" />
+    <Content Include="Scripts\licoes\stylepromise.css" />
     <Content Include="Scripts\licoes\Teste.js" />
     <Content Include="Scripts\licoes\unovalidate.js" />
+    <Content Include="Scripts\licoes\utilspromise.js" />
     <Content Include="Scripts\licoes\validacheckradio.js" />
     <Content Include="Scripts\licoes\validacontroledata.js" />
     <Content Include="Scripts\licoes\validacontroleddlsimples.js" />
@@ -658,6 +667,7 @@
     <Content Include="Views\FornecedorAtendimentoDuplicado\_Listar - Cópia .cshtml" />
     <Content Include="Views\FornecedorAtendimentoDuplicado\ListarSelecionados.cshtml" />
     <Content Include="Views\FornecedorAtendimentoDuplicado\ListarEliminadosComPadrao.cshtml" />
+    <Content Include="story.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

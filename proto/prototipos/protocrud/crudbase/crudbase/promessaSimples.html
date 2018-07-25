@@ -22,7 +22,7 @@
             promret.then(function (result) {
                 console.log('execucao primeira promise');
                 console.log(result);
-                return result + 1;
+                return result + 2;
             }).then(function (result2) {
                 console.log('execucao segunda promise');
                 console.log(result2);
@@ -30,10 +30,18 @@
 
         }
 
+        function executarPromiseGet() {
+            PROMISSES.get('story.json').then(JSON.parse).then(function (response) {
+                console.log('Json: ' + response);
+            });
+        }
+
         $(document).ready(function ()
         {
             $("#btnClosure").click(executarPromise);
             $("#btnPromiseRetorno").click(executarPromiseRetorno);
+            $("#btnPromiseGet").click(executarPromiseGet);
+
         });
     </script>
     <style>
@@ -48,5 +56,6 @@
     <br />
     <input type="button" id="btnClosure" value="Promisse Simples Exemplo" />
     <input type="button" id="btnPromiseRetorno" value="Promisse Retorno Exemplo" />
+    <input type="button" id="btnPromiseGet" value="GetJson" />
 </body>
 </html>

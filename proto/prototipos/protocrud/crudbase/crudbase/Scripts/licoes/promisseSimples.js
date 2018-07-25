@@ -2,7 +2,7 @@
 
     'use strict';
     var ctSemRetorno = 'Funcionou corretamente';
-    var ctRetorno = 1;
+    var ctRetorno = 5;
     var promisse;
     function promiseSimples() {
         promisse = new Promise(function(resolve, reject) {
@@ -31,9 +31,9 @@
         return promisse;
     }
 
-    function promiseGetJson(url) {
+    function promiseGet(url) {
 
-        return new Promisse(function (resolve, reject) {
+        return new Promise(function (resolve, reject) {
             var req = new XMLHttpRequest();
             req.open('GET', url);
             req.onload = function () {
@@ -51,9 +51,15 @@
         });
     }
 
+    function promiseGetJSON(url) {
+        return promiseGet(url).then(JSON.parse);
+    }
+
     return {
         obterSemRetorno: promiseSimples,
-        obterComRetorno: promiseSimplesComRetorno
+        obterComRetorno: promiseSimplesComRetorno,
+        get: promiseGet,
+        getJSON : promiseGetJSON
     };
 
 }());
