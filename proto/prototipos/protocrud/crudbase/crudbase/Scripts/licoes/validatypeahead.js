@@ -29,7 +29,7 @@ var VALIDATYPEAHEAD = (function () {
                 preProcess: function (data) {
                     var listaSerie = [];
                     if (data.length === 0) {
-                        BASE.MostrarMensagem("Nenhum item foi encontrado!", TipoMensagem.Alerta)
+                        BASE.MostrarMensagem("Nenhum item foi encontrado!", TipoMensagem.Alerta);
                         return false;
                     }
 
